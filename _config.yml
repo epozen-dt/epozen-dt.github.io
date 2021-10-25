@@ -16,7 +16,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "(주)이포즌 기업부설연구소 DT팀 기술 블로그"
+title                    : "(주)이포즌 기업부설연구소 기술 블로그"
 title_separator          : "-"
 subtitle                 : "4차 산업혁명에 발맞춰 Cloud와 AI & 빅데이터를 활용한 신기술을 공유하는 곳입니다."
 name                     : "(주)이포즌 DT팀"
@@ -103,8 +103,8 @@ analytics:
 author:
   name             : "EPOZEN CO.,LTD"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
+  bio              : ""
+  location         : "Seoul"
   email            :
   links:
     - label: "Email"
