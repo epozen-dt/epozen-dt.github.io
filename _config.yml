@@ -103,8 +103,9 @@ analytics:
 author:
   name             : "EPOZEN CO.,LTD"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : ""
-  location         : "Seoul"
+
+  bio              : "기업부설연구소"
+  location         : "서울 "
   email            :
   links:
     - label: "Email"
