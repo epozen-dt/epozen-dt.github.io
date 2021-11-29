@@ -13,14 +13,7 @@
 개요입니다.
 개요입니다.
 
-
-
-
-
-
-
-
-
+![dt_entropy](https://user-images.githubusercontent.com/92897860/143824620-48ad1bce-8029-477b-b7c2-b6ce1e426369.png)
 
 
 
@@ -30,7 +23,6 @@
 구성도입니다.
 구성도입니다.
 구성도입니다.
-
 
 
 ## 레이어 작성
