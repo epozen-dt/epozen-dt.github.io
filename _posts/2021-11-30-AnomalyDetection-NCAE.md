@@ -12,9 +12,11 @@
 
 * 코드 작성
   + 라이브러리 선언
-```
-import tensorflow as tf
-```
+  ```
+  import tensorflow as tf
+  ```
+1. 번호 지정1
+2. 번호 지정2
 
 
 ## 마크다운 테스트
