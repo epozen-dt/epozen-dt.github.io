@@ -1,8 +1,10 @@
 
 목차
-[1.개요](#개요)
-[2.NCAE 구성도](#모델 구성도)
-[3.NeighborConvolution Layer 작성](#레이어 작성)
+[1.개요](#개요) </br>
+[2.NCAE 구성도](#모델-구성도) </br>
+[3.NeighborConvolution Layer 작성](#레이어-작성) </br>
+
+
 
 ## 개요
 개요입니다.
