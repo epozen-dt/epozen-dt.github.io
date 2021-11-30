@@ -13,22 +13,35 @@ date: 2021-11-30
 [1.개요](#개요) </br>
 [2.NCAE 구성](#NCAE-구성) </br>
 [3.Neighbor Convolution Layer 구현](#Neighbor-Convolution-Layer-구현) </br>
-[4.이상치 판별 기준 설정](#이상치-판별-기준-설정) </br>
-[5.성능지표 결과](#성능지표-결과) </br>
+[4.구현 확인](#구현-확인) </br>
 
 
 ## 개요
-Neighbor Convolution AutoEncoder(이하, NCAE)는 기존 Convolutional AE 모델에 새롭게 제안하는 Neighbor Convolution 기법을 적용한 모델입니다. </br>
-또한, 이상탐지 모델이기 때문에 이상치(Anomaly Score)에 따른 정상과 비정상 데이터를 구분하는 기준선이 필요합니다. 하지만, 
+Neighbor Convolution AutoEncoder(이하, NCAE)는 기존 Convolutional AE 모델에 Neighbor Convolution 기법을 적용한 모델입니다.
+
+> **NCAE 모델구성도**
+![모델구성1](https://user-images.githubusercontent.com/92897860/143972463-5ff03959-b345-4863-820b-c0651c39b9f7.png)
+
+> **Neighbor Convolution 기본 아이디어**
+![아이디어](https://user-images.githubusercontent.com/92897860/143973855-850901a9-db40-4865-a59d-4679a10cd18e.png)
 
 
-
-## NCAE 구성
-
-
-
-* 코드 작성
-  + 라이브러리 선언
+## Neighbor Convolution Layer 구현
+* 0. 가중치 생성
   ```
   import tensorflow as tf
   ```
+* 1. 원본 이미지에 패딩 추가
+  ```
+  import tensorflow as tf
+  ```
+* 2. 8채널 이미지 생성
+  ```
+  import tensorflow as tf
+  ```
+* 3. pointwise Convolution 수행
+  ```
+  import tensorflow as tf
+  ```
+  
+## 구현 확인
