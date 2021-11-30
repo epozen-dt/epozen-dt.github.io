@@ -27,21 +27,25 @@ Neighbor Convolution AutoEncoder(이하, NCAE)는 기존 Convolutional AE 모델
 
 
 ## Neighbor Convolution Layer 구현
-* 0. 가중치 생성
+* 가중치 생성
   ```
   import tensorflow as tf
   ```
-* 1. 원본 이미지에 패딩 추가
+* 원본 이미지에 패딩 추가
   ```
   import tensorflow as tf
   ```
-* 2. 8채널 이미지 생성
+* 8채널 이미지 생성
   ```
   import tensorflow as tf
   ```
-* 3. pointwise Convolution 수행
+* pointwise Convolution 수행
   ```
   import tensorflow as tf
   ```
   
 ## 구현 확인
+
+
+
+구현확인
