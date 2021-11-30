@@ -4,42 +4,31 @@ title: "스마트 제조 이상탐지 모델 - NCAE 구현"
 date: 2021-11-30
 
 ---
+> 현재 생산품에 대한 양/불량 판정 알고리즘 구축에 대해서 연구를 진행하고 있습니다. </br>
+> 이번 포스팅에서는 **자체 이상탐지 모델인 Neighbor Convolution AutoEncoder 를 구현한 방법**을 공유해보려고 합니다.
 
 
+
+## 목차 </br>
+[1.개요](#개요) </br>
+[2.NCAE 구성](#NCAE-구성) </br>
+[3.Neighbor Convolution Layer 구현](#Neighbor-Convolution-Layer-구현) </br>
+[4.이상치 판별 기준 설정](#이상치-판별-기준-설정) </br>
+[5.성능지표 결과](#성능지표-결과) </br>
 
 
 ## 개요
-* 그림
-![dt_entropy](https://user-images.githubusercontent.com/92897860/143824620-48ad1bce-8029-477b-b7c2-b6ce1e426369.png)
+Neighbor Convolution AutoEncoder(이하, NCAE)는 기존 Convolutional AE 모델에 새롭게 제안하는 Neighbor Convolution 기법을 적용한 모델입니다. </br>
+또한, 이상탐지 모델이기 때문에 이상치(Anomaly Score)에 따른 정상과 비정상 데이터를 구분하는 기준선이 필요합니다. 하지만, 
+
+
+
+## NCAE 구성
+
+
 
 * 코드 작성
   + 라이브러리 선언
   ```
   import tensorflow as tf
   ```
-
-
-
-## 마크다운 테스트
-**구성도입니다.**
-
-*구성도입니다.*
-
-구성도입니다.
-
-테스트1<sup>테스트<sup>테스트2
-  
-테스트1<sub>테스트<sub>테스트2
-  
-  
-## 표 작성
-> 가
->> 나
->>> 다
-  
----
-  
-| default | left | center | right |
-| --- | :--- | :---: | ---: |
-| 기본설정 | 왼쪽 정렬 | 가운데 정렬 | 오른쪽 정렬 |
-| 이런식으로 | 행을 | 추가할 수 | 있다 |
