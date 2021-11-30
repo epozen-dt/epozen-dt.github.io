@@ -217,7 +217,7 @@ f1_score(Y_test, f1)
 </br>
 ---
 <details>
-  <summary>Contact</summary>
+  <summary><b>Contact</b></summary>
 
   <b>Author. </b>KangGunha </br>
   <b>Email. </b>zxcvbnm9931@epozen.com
