@@ -20,7 +20,6 @@ date: 2021-11-30
 **Neighbor Convolution AutoEncoder(이하, NCAE)는 기존 Convolutional AE 모델에 Neighbor Convolution 기법을 적용한 모델입니다.**
 
 
-
 > **NCAE 모델구성도**
 ![모델구성1](https://user-images.githubusercontent.com/92897860/143972463-5ff03959-b345-4863-820b-c0651c39b9f7.png)
 AutoEncoder 기반의 모델 학습 결과는 이미지 데이터이기 때문에 이미지 데이터 자체만으로는 명확히 구분하기 어렵다.</br>
@@ -35,23 +34,34 @@ Convolution에서 중앙값을 제외하여 주변 이웃 픽셀들에 대해서
 </br>
 
 ## Neighbor Convolution Layer 구현
+**0. 입력**
+  - input ([type]): (N, 300, 300, 1)의 입력 데이터
+  - Kaggle의 주조 제품 입력 이미지(300, 300, 1)
+  <figure>
+     <img src="https://user-images.githubusercontent.com/92897860/143996629-484b319b-1e45-4ebf-8801-af223e8a6fb7.png"  width="200" height="100">
+  </figure>
 
 **1. 원본 이미지에 패딩 추가**
+  - 행복하길 바래
   ```
   import tensorflow as tf
   ```
-**2. 8채널 이미지 생성**
+**2. 8장의 이미지 생성 **
   ```
   import tensorflow as tf
   ```
-**3. pointwise Convolution 수행**
+**3. 8채널 이미지로 변환**
+  ```
+  import tensorflow as tf
+  ```
+**4. pointwise Convolution 수행**
   ```
   import tensorflow as tf
   ```
   
-## 추가 학인
+## 추가 확인
+* 1채널 이미지여야 한다.
 * 가중치 생성
   ```
   import tensorflow as tf
   ```
-
