@@ -11,9 +11,8 @@ date: 2021-11-30
 
 ## 목차 </br>
 [1.개요](#개요) </br>
-[2.NCAE 구성](#NCAE-구성) </br>
-[3.Neighbor Convolution Layer 구현](#Neighbor-Convolution-Layer-구현) </br>
-[4.구현 확인](#구현-확인) </br>
+[2.Neighbor Convolution Layer 구현](#Neighbor-Convolution-Layer-구현) </br>
+[3.추가 확인](#추가-확인) </br>
 
 </br>
 
@@ -50,12 +49,9 @@ Convolution에서 중앙값을 제외하여 주변 이웃 픽셀들에 대해서
   import tensorflow as tf
   ```
   
-## 추가
+## 추가 학인
 * 가중치 생성
   ```
   import tensorflow as tf
   ```
 
-
-
-구현확인
