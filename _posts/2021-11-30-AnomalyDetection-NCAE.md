@@ -214,14 +214,12 @@ f1_score(Y_test, f1)
 ```
 ![Screenshot_12](https://user-images.githubusercontent.com/92897860/144008649-43ddfc55-e455-45d8-b773-4e223e8003a3.png)
 
-
 </br>
 ---
-<details><summary>Contact</summary>
-**Author.**KangGunha </br>
-**Email.**zxcvbnm9931@epozen.com
+<details>
+  <summary>Contact</summary>
+
+  <b>Author. </b>KangGunha </br>
+  <b>Email. </b>zxcvbnm9931@epozen.com
 </details>  
-
-
-
 
