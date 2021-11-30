@@ -68,7 +68,8 @@ Convolution에서 중앙값을 제외하여 주변 이웃 픽셀들에 대해서
   ```
   
 **4. pointwise Convolution 수행**
-  - 
+  - build()에서 설정한 가중치 커널과 편향 추가하여 Convolution 연산 파라미터 계산을 수행하도록 설정
+  - Keras.Backend의 경우, conv2d안에 Activation 과정이 포함되지 않기 때문에 따로 ReLU 적용 수행
   ```
   pw_conv2d = K.conv2d(x=x_total, kernel=self.kernel, strides=self.strides, padding='same')
   pw_conv2d = K.bias_add(pw_conv2d, self.bias)
