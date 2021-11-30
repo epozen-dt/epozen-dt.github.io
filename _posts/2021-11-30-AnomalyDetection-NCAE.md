@@ -131,17 +131,25 @@ super(NeighborConv2D, self).build(input_shape)
   ![Screenshot_1](https://user-images.githubusercontent.com/92897860/144004480-904cabb8-7a1b-486c-a5a2-7407c99eaac9.png)
 
 
+</br>
+
 ## 이상치 적용
 앞서 얘기한 대로 모델의 구성도를 보면 결국 출력은 AutoEncoder와 동일하기 때문에 이미지 데이터를 출력하게 됩니다.
 따라서, 잔차 이미지(원본 - 생성 이미지)에 대한 통계치와 정보 엔트로피 혹은 MSE 값을 이상치로 사용하게 됩니다.
 
 **1. 잔차 이미지 생성**
+* 각 픽셀간의 차이로, 학습이 잘될수록 흑백에 가깝게 잔차 이미지가 도출됩니다.
 ```
 # 원본 이미지 - 생성 이미지 
 img = test_abnorm[i].reshape(img_size, img_size) - hat_abnorm[i].reshape(img_size, img_size)
 ```
+![Screenshot_11](https://user-images.githubusercontent.com/92897860/144008353-567a3967-3609-4251-9eec-ceb6e2340dce.png)
+
+
+</br>
 
 **2. 통계치와 정보 엔트로피 적용**
+* 제공하는 라이브러리를 이용하여 통계치와 엔트로피를 계산하는 함수를 구현했습니다.
 ```
 # 기술 통계 + 정보 엔트로피 계산 함수
 def descriptive_statistics(img):
@@ -177,6 +185,7 @@ def descriptive_statistics(img):
 ```
 
 **3. MSE 적용**
+* 제공하는 라이브러리를 이용하여 구현하였습니다.
 ```
 from sklearn.metrics import mean_squared_error
 
@@ -203,6 +212,16 @@ ap = average_precision_score(Y_test, x_na[0])
 # 조화평균
 f1_score(Y_test, f1)
 ```
+![Screenshot_12](https://user-images.githubusercontent.com/92897860/144008649-43ddfc55-e455-45d8-b773-4e223e8003a3.png)
+
+
+</br>
+---
+<details><summary>Contact</summary>
+**Author.**KangGunha </br>
+**Email.**zxcvbnm9931@epozen.com
+</details>  
+
 
 
 
