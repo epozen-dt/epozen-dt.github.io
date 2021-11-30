@@ -147,7 +147,9 @@ img = test_abnorm[i].reshape(img_size, img_size) - hat_abnorm[i].reshape(img_siz
 
 
 **2. 통계치와 정보 엔트로피 적용**
+
 * 제공하는 라이브러리를 이용하여 통계치와 엔트로피를 계산하는 함수를 구현했습니다.
+
 ```
 # 기술 통계 + 정보 엔트로피 계산 함수
 def descriptive_statistics(img):
@@ -183,7 +185,9 @@ def descriptive_statistics(img):
 ```
 
 **3. MSE 적용**
+
 * 제공하는 라이브러리를 이용하여 구현하였습니다.
+* 
 ```
 from sklearn.metrics import mean_squared_error
 
@@ -194,6 +198,7 @@ mean_squared_error(test_norm[i].reshape(img_size, img_size), hat_norm[i].reshape
 모델의 성능 평가 척도로는 정확도, AUC ROC, AUC PRC, 조화평균 등 총 4개를 기준으로 평가하였습니다.
 
 * **성능 지표**
+
 ```
 # 사이킷런 제공 라이브러리 선언
 from sklearn.metrics import (precision_recall_curve, auc,
