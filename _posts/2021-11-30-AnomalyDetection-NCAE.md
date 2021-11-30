@@ -34,8 +34,13 @@ Convolution에서 중앙값을 제외하여 주변 이웃 픽셀들에 대해서
 </br>
 
 ## Neighbor Convolution Layer 구현
+Layer 클래스를 상속받아 상요자 정의 클래스(custom layer)를 생성하여 구현하였습니다. </br>
+기본 아이디어를 실제로 적용한 코드(*일부, 순방향 연산에 관한 코드*)로, 아래와 같이 순서대로 진행합니다.
+
+
 **0. 입력**
   - input ([type]): (N, 300, 300, 1)의 입력 데이터
+  - 1채널, GrayScale 이미지만 가능하도록 구현함
   - Kaggle의 주조 제품 입력 이미지(300, 300, 1)
   <figure>
      <img src="https://user-images.githubusercontent.com/92897860/143996629-484b319b-1e45-4ebf-8801-af223e8a6fb7.png"  width="200" height="100">
@@ -48,7 +53,7 @@ Convolution에서 중앙값을 제외하여 주변 이웃 픽셀들에 대해서
   x_padding = ZeroPadding2D(padding=1)(x)
   ```
   
-**2. 8장의 이미지 생성 **
+**2. 8장의 이미지 생성**
   - 좌측 상단을 기준으로 좌표 변경을 통해 300 크기의 8장의 이미지 생성
   ```
   img1 = Cropping2D(cropping=((0, 2), (0, 2)))(x_padding)
@@ -77,17 +82,34 @@ Convolution에서 중앙값을 제외하여 주변 이웃 픽셀들에 대해서
   ```
   
 ## 추가 확인
-* 1채널 이미지여야 한다.
-* 가중치 생성
-  ```
-  import tensorflow as tf
-  ```
-* 개발 환경
-  ```
-  import tensorflow as tf
-  ```
+* 가중치 생성 과정
+  - 실제 Convolution 계산을 수행하기 위해서 가중치를 정의
+  - 순방향 연산 수행 전에 내부적으로 실행되는 build()라는 함수에서 구현 
+  - 가중치는 모두 Keras.Conv2D의 디폴트 항목에 맞게 설정
+```
+# 8 채널 & 이미지 크기 
+# 파라미터 계산에 필요한 설정
+self.channels = input_shape[-1] * 8
+self.img_size = input_shape[1]
+
+# 가중치 형태 : (커널 사이즈, 커널 사이즈, 채널, 필터) 정의
+self.shape = (self.kernel_size, self.kernel_size) + (self.channels, self.units)
+# 가중치 정의
+self.kernel = self.add_weight(name='kernel', shape=self.shape,
+                              dtype='float32',
+                              initializer='glorot_uniform', # 가중치 행렬의 디폴트 initializer
+                              trainable=True)  # 훈련 가능한 가중치 설정 (역전파 고려)
+        
+# 편향 정의
+self.bias = self.add_weight(name='bias', shape=(self.units,), 
+                            dtype='float32',
+                            initializer='zeros',  # 디폴트 initializer
+                            trainable=True)
+        
+super(NeighborConv2D, self).build(input_shape)
+```
+
   
   
-  
-  
-<!-- [네이버 바로가기](http://www.naver.com/) -->
+## 전체 코드  
+
