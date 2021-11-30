@@ -21,10 +21,12 @@ Neighbor Convolution AutoEncoder(이하, NCAE)는 기존 Convolutional AE 모델
 
 > **NCAE 모델구성도**
 ![모델구성1](https://user-images.githubusercontent.com/92897860/143972463-5ff03959-b345-4863-820b-c0651c39b9f7.png)
+AutoEncoder 기반의 모델 학습 결과는 이미지 데이터이기 때문에 이미지 데이터 자체만으로는 명확히 구분하기 어렵다.</br>
+따라서, 이상치(Anomaly Score)값으로 잔차이미지에 대한 통계치, MSE, 정보엔트로피로 설정하여 양/불량 판정을 수행하였다.
 
 > **Neighbor Convolution 기본 아이디어**
 ![아이디어](https://user-images.githubusercontent.com/92897860/143973855-850901a9-db40-4865-a59d-4679a10cd18e.png)
-
+Convolution에서 중앙값을 제외하여 주변 이웃 픽셀들에 대해서만 Convolution을 수행하여 중앙값의 의존성을 제거하고 </br> 이웃 픽셀들의 가중치 학습을 강화하여 효율성을 높일 수 있지 않을까라는 아이디어에서 시작되었다. 
 
 ## Neighbor Convolution Layer 구현
 * 가중치 생성
