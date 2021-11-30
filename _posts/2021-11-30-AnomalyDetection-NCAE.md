@@ -89,28 +89,29 @@ Layer 클래스를 상속받아 상요자 정의 클래스(custom layer)를 생�
   - 실제 Convolution 계산을 수행하기 위해서 가중치를 정의해야 됩니다.
   - 순방향 연산 수행 전에 내부적으로 실행되는 build()라는 함수에서 구현되어야 순방향 연산 시 가중치를 주입할 수 있습니다.
   - 가중치는 모두 Keras.Conv2D의 디폴트 항목에 맞게 설정하였습니다.
-```
-# 8 채널 & 이미지 크기 
-# 파라미터 계산에 필요한 설정
-self.channels = input_shape[-1] * 8
-self.img_size = input_shape[1]
-
-# 가중치 형태 : (커널 사이즈, 커널 사이즈, 채널, 필터) 정의
-self.shape = (self.kernel_size, self.kernel_size) + (self.channels, self.units)
-# 가중치 정의
-self.kernel = self.add_weight(name='kernel', shape=self.shape,
+  
+  ```
+  # 8 채널 & 이미지 크기 
+  # 파라미터 계산에 필요한 설정
+  self.channels = input_shape[-1] * 8
+  self.img_size = input_shape[1]
+  
+  # 가중치 형태 : (커널 사이즈, 커널 사이즈, 채널, 필터) 정의
+  self.shape = (self.kernel_size, self.kernel_size) + (self.channels, self.units)
+  # 가중치 정의
+  self.kernel = self.add_weight(name='kernel', shape=self.shape,
+                                dtype='float32',
+                                initializer='glorot_uniform', # 가중치 행렬의 디폴트 initializer
+                                trainable=True)  # 훈련 가능한 가중치 설정 (역전파 고려)
+        
+  # 편향 정의
+  self.bias = self.add_weight(name='bias', shape=(self.units,), 
                               dtype='float32',
-                              initializer='glorot_uniform', # 가중치 행렬의 디폴트 initializer
-                              trainable=True)  # 훈련 가능한 가중치 설정 (역전파 고려)
-        
-# 편향 정의
-self.bias = self.add_weight(name='bias', shape=(self.units,), 
-                            dtype='float32',
-                            initializer='zeros',  # 디폴트 initializer
-                            trainable=True)
-        
-super(NeighborConv2D, self).build(input_shape)
-```
+                              initializer='zeros',  # 디폴트 initializer
+                              trainable=True)
+         
+  super(NeighborConv2D, self).build(input_shape)
+  ```
 
 * **Convolution 가중치(W_c), 편향(B_c), 파라미터 계산(P_c)**
   - I(이미지 크기) = 300
@@ -150,72 +151,70 @@ img = test_abnorm[i].reshape(img_size, img_size) - hat_abnorm[i].reshape(img_siz
 
 * 제공하는 라이브러리를 이용하여 통계치와 엔트로피를 계산하는 함수를 구현했습니다.
 
-```
-# 기술 통계 + 정보 엔트로피 계산 함수
-def descriptive_statistics(img):
-    # 리스트로 변환 (왜도, 첨도)
-    img_tmp = img.reshape(-1)
-    img_list = img_tmp.tolist()
+  ```
+  # 기술 통계 + 정보 엔트로피 계산 함수
+  def descriptive_statistics(img):
+     # 리스트로 변환 (왜도, 첨도)
+     img_tmp = img.reshape(-1)
+     img_list = img_tmp.tolist()
+  
+     # 평균
+     avg = img.mean()
+     # 표준 편차
+     std = img.std()
+     # 분산
+     var = img.var()
 
-    # 평균
-    avg = img.mean()
-    # 표준 편차
-    std = img.std()
-    # 분산
-    var = img.var()
+     # 첨도
+     kurto = kurtosis(img_list)
+     # 왜도
+     skewness = skew(img_list)
 
-    # 첨도
-    kurto = kurtosis(img_list)
-    # 왜도
-    skewness = skew(img_list)
-
-    # 범위
-    img_range = img.max() - img.min()
-    # 최소값
-    _min = img.min()
-    # 최대값
-    _max = img.max()
-    # 누적 합
-    cumsum = img.cumsum()[-1]
+     # 범위
+     img_range = img.max() - img.min()
+     # 최소값
+     _min = img.min()
+     # 최대값
+     _max = img.max()
+     # 누적 합
+     cumsum = img.cumsum()[-1]
     
-    # 정보 엔트로피
-    h_x = np.nan_to_num(entropy(img_list))
+     # 정보 엔트로피
+     h_x = np.nan_to_num(entropy(img_list))
 
-    return avg, std, var, kurto, skewness, img_range, _min, _max, cumsum, h_x
-```
+     return avg, std, var, kurto, skewness, img_range, _min, _max, cumsum, h_x
+  ```
 
 **3. MSE 적용**
 
 * 제공하는 라이브러리를 이용하여 구현하였습니다.
-* 
-```
-from sklearn.metrics import mean_squared_error
+  ```
+  from sklearn.metrics import mean_squared_error
 
-mean_squared_error(test_norm[i].reshape(img_size, img_size), hat_norm[i].reshape(img_size, img_size))
-```
+  mean_squared_error(test_norm[i].reshape(img_size, img_size), hat_norm[i].reshape(img_size, img_size))
+  ```
 
 ## 성능지표 적용
 모델의 성능 평가 척도로는 정확도, AUC ROC, AUC PRC, 조화평균 등 총 4개를 기준으로 평가하였습니다.
 
 * **성능 지표**
+  ```
+  # 사이킷런 제공 라이브러리 선언
+  from sklearn.metrics import (precision_recall_curve, auc,
+                              roc_curve, recall_score, f1_score)
+  from sklearn.metrics import f1_score, average_precision_score
 
-```
-# 사이킷런 제공 라이브러리 선언
-from sklearn.metrics import (precision_recall_curve, auc,
-                             roc_curve, recall_score, f1_score)
-from sklearn.metrics import f1_score, average_precision_score
+  # AUC ROC 
+  fpr, tpr, thresholds = roc_curve(Y_test, x_na[0])
+  roc_auc = auc(fpr, tpr)
 
-# AUC ROC 
-fpr, tpr, thresholds = roc_curve(Y_test, x_na[0])
-roc_auc = auc(fpr, tpr)
+  # AUC PRC
+  precision, recall, th = precision_recall_curve(Y_test, x_na[0])
+  ap = average_precision_score(Y_test, x_na[0])
 
-# AUC PRC
-precision, recall, th = precision_recall_curve(Y_test, x_na[0])
-ap = average_precision_score(Y_test, x_na[0])
-
-# 조화평균
-f1_score(Y_test, f1)
-```
+  # 조화평균
+  f1_score(Y_test, f1)
+  ```
 
 ![Screenshot_12](https://user-images.githubusercontent.com/92897860/144008649-43ddfc55-e455-45d8-b773-4e223e8003a3.png)
 
