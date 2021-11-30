@@ -1,8 +1,12 @@
 이번 포스팅에서는 Sematic Segmentation에 대해 알아보겠습니다.
 
 ------
-
-[toc]
+## 목차
+1. [Semantic Segmentation ](#semantic-segmentation) 
+2. [Semantic Segmentation Models](#semantic-segmentation-models)
+  - [FCN(Fully Convolutional Network for Semantic Segmentation)](#fcnfully-convolutional-network-for-semantic-segmentation)
+  - [DeepLab Models](#deeplab-models)
+3. [References](#references)
 
 ------
 
