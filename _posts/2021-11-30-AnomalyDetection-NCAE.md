@@ -4,18 +4,19 @@ title: "스마트 제조 이상탐지 모델 - NCAE 구현"
 date: 2021-11-30
 
 ---
-> 기존에 스마트 제조 및 Neighbor Convolution AutoEncoder의 개념적인 부분에서만 설명을 드렸기 때문에 </br>
 > 이번 포스팅에서는 **자체 이상탐지 모델인 Neighbor Convolution AutoEncoder 를 구현한 방법**을 공유해보려고 합니다.
 
-</br>
 
-## 목차 </br>
-[1.개요](#개요) </br>
-[2.Neighbor Convolution Layer 구현](#Neighbor-Convolution-Layer-구현) </br>
-[3.이상치 적용](#이상치-적용) </br>
+
+## 목차 
+[1.개요](#개요)
+
+[2.Neighbor Convolution Layer 구현](#Neighbor-Convolution-Layer-구현) 
+
+[3.이상치 적용](#이상치-적용) 
+
 [4.성능지표 적용](#성능지표-적용)
 
-</br>
 
 ## 개요
 **Neighbor Convolution AutoEncoder(이하, NCAE)는 기존 Convolutional AE 모델에 Neighbor Convolution 기법을 적용한 모델입니다.**
@@ -23,19 +24,19 @@ date: 2021-11-30
 
 > **Neighbor Convolution AutoEncoder 모델구성도**
 ![모델구성1](https://user-images.githubusercontent.com/92897860/143972463-5ff03959-b345-4863-820b-c0651c39b9f7.png)
-AutoEncoder 기반의 모델 학습 결과는 이미지 데이터이기 때문에 이미지 데이터 자체만으로는 명확히 구분하기 어렵습니다.</br>
+AutoEncoder 기반의 모델 학습 결과는 이미지 데이터이기 때문에 이미지 데이터 자체만으로는 명확히 구분하기 어렵습니다.
 따라서, 이상치(Anomaly Score)값으로 잔차이미지에 대한 통계치, MSE, 정보엔트로피로 설정하여 양/불량 판정을 수행하도록 모델을 구성하였습니다.
 
-</br>
 
 > **Neighbor Convolution 기본 아이디어**
 ![아이디어](https://user-images.githubusercontent.com/92897860/143973855-850901a9-db40-4865-a59d-4679a10cd18e.png)
-Convolution에서 중앙값을 제외하여 주변 이웃 픽셀들에 대해서만 Convolution을 수행하여 중앙값의 의존성을 제거하고 </br> 이웃 픽셀들의 가중치 학습을 강화하여 효율성을 높일 수 있지 않을까라는 아이디어에서 시작되었습니다.
+Convolution에서 중앙값을 제외하여 주변 이웃 픽셀들에 대해서만 Convolution을 수행하여 중앙값의 의존성을 제거하고 
 
-</br>
+이웃 픽셀들의 가중치 학습을 강화하여 효율성을 높일 수 있지 않을까라는 아이디어에서 시작되었습니다.
+
 
 ## Neighbor Convolution Layer 구현
-Layer 클래스를 상속받아 상요자 정의 클래스(custom layer)를 생성하여 구현하였습니다. </br>
+Layer 클래스를 상속받아 상요자 정의 클래스(custom layer)를 생성하여 구현하였습니다. 
 기본 아이디어를 실제로 적용한 코드(*일부, 순방향 연산에 관한 코드*)로, 아래와 같이 순서대로 진행합니다.
 
 **0. 입력**
@@ -43,7 +44,7 @@ Layer 클래스를 상속받아 상요자 정의 클래스(custom layer)를 생�
   - 1채널, GrayScale 이미지만 가능하도록 구현하였기 때문에 주의해야 됩니다.
   - Kaggle의 주조 제품 입력 이미지(300, 300, 1)
   <figure>
-     <img src="https://user-images.githubusercontent.com/92897860/143996629-484b319b-1e45-4ebf-8801-af223e8a6fb7.png"  width="200" height="100">
+     <img src="https://user-images.githubusercontent.com/92897860/143996629-484b319b-1e45-4ebf-8801-af223e8a6fb7.png"  width="100" height="50">
   </figure>
   
 **1. 원본 이미지에 패딩 추가**
@@ -131,8 +132,6 @@ super(NeighborConv2D, self).build(input_shape)
   ![Screenshot_1](https://user-images.githubusercontent.com/92897860/144004480-904cabb8-7a1b-486c-a5a2-7407c99eaac9.png)
 
 
-</br>
-
 ## 이상치 적용
 앞서 얘기한 대로 모델의 구성도를 보면 결국 출력은 AutoEncoder와 동일하기 때문에 이미지 데이터를 출력하게 됩니다.
 따라서, 잔차 이미지(원본 - 생성 이미지)에 대한 통계치와 정보 엔트로피 혹은 MSE 값을 이상치로 사용하게 됩니다.
@@ -146,7 +145,6 @@ img = test_abnorm[i].reshape(img_size, img_size) - hat_abnorm[i].reshape(img_siz
 ![Screenshot_11](https://user-images.githubusercontent.com/92897860/144008353-567a3967-3609-4251-9eec-ceb6e2340dce.png)
 
 
-</br>
 
 **2. 통계치와 정보 엔트로피 적용**
 * 제공하는 라이브러리를 이용하여 통계치와 엔트로피를 계산하는 함수를 구현했습니다.
@@ -193,7 +191,8 @@ mean_squared_error(test_norm[i].reshape(img_size, img_size), hat_norm[i].reshape
 ```
 
 ## 성능지표 적용
-모델의 성능 평가 척도로는 정확도, AUC ROC, AUC PRC, 조화평균 등 총 4개를 기준으로 평가하였습니다. </br>
+모델의 성능 평가 척도로는 정확도, AUC ROC, AUC PRC, 조화평균 등 총 4개를 기준으로 평가하였습니다.
+
 * **성능 지표**
 ```
 # 사이킷런 제공 라이브러리 선언
@@ -212,14 +211,15 @@ ap = average_precision_score(Y_test, x_na[0])
 # 조화평균
 f1_score(Y_test, f1)
 ```
+
 ![Screenshot_12](https://user-images.githubusercontent.com/92897860/144008649-43ddfc55-e455-45d8-b773-4e223e8003a3.png)
 
-</br>
 ---
 <details>
   <summary><b>Contact</b></summary>
 
-  <b>Author. </b>KangGunha </br>
+  <b>Author. </b>KangGunha 
+  
   <b>Email. </b>zxcvbnm9931@epozen.com
 </details>  
 
