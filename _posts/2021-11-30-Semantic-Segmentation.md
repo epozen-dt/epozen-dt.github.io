@@ -1,8 +1,12 @@
 이번 포스팅에서는 Sematic Segmentation에 대해 알아보겠습니다.
 
 ------
-
-[TOC]
+## 목차
+1. [Semantic Segmentation ](#semantic-segmentation) 
+2. [Semantic Segmentation Models](#semantic-segmentation-models)
+  - [FCN(Fully Convolutional Network for Semantic Segmentation)](#fcnfully-convolutional-network-for-semantic-segmentation)
+  - [DeepLab Models](#deeplab-models)
+3. [References](#references)
 
 ------
 
@@ -15,7 +19,7 @@ Semantic Segmentation은 이러한 Object Segmentation의 한 종류로 이미�
 |      | Image  Segmentation                                          | Semantic  Segmentation                                       | Instance  Segmentation                                       |
 | ---- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | 정의 | 이미지의 영역을 분할하고 알고리즘을 이용해 다시 분할된  영역을 합치는 기술 | 같은 class인 object들은 같은 영역 또는     색으로 분할하는 기술 | 같은 class더라도 서로 다른 instance들을   구분해주는 기술    |
-| 예시 | ![image-20211130095815926](C:\Users\soomi\AppData\Roaming\Typora\typora-user-images\image-20211130095815926.png) | ![image-20211130095825894](C:\Users\soomi\AppData\Roaming\Typora\typora-user-images\image-20211130095825894.png) | ![image-20211130095833863](C:\Users\soomi\AppData\Roaming\Typora\typora-user-images\image-20211130095833863.png) |
+| 예시 | ![image](https://user-images.githubusercontent.com/87166420/144014048-7848c79e-815b-430f-a34b-ce0eb8a047e8.png) | ![image](https://user-images.githubusercontent.com/87166420/144014114-0263a37a-5c66-43e2-b2d5-26603072ae4e.png) | ![image](https://user-images.githubusercontent.com/87166420/144014138-2a19d22e-6171-45af-8dfc-eb2e0d6e273b.png) |
 
 즉, 이미지의 각 픽셀이 어느 클래스에 속하는지 예측해 이미지 내 서로 다른 종류의 물체들을 깔끔하게 분할해내는 것이 목표인 기술입니다.
 
@@ -27,7 +31,7 @@ Semantic Segmentation은 이러한 Object Segmentation의 한 종류로 이미�
 
 보통 Semantic Segmentation모델의 Input은 RGB이미지 혹은 흑백 이미지를, Output은 각 픽셀 별 어느 class에 속하는지를 나타내는 Segmentation Map으로 구성되어 있습니다.
 
-![image-20211130100213125](C:\Users\soomi\AppData\Roaming\Typora\typora-user-images\image-20211130100213125.png)
+![image](https://user-images.githubusercontent.com/87166420/144014340-0a27e1d0-de50-4608-a7c6-bad26782b99d.png)
 
 다양한 구조의 모델들이 있지만, 그 중 대표적으로 사용되는 모델은 Encoder-Decoder 형태의 FCN(Fully Convolutional Network for Semantic Segmentation) 기반의 모델입니다.
 
@@ -44,8 +48,7 @@ DownSampling 과정은 기존의 CNN 모델과 같이 Convolution Layer과 Pooli
 위치 정보의 소실을 막고, 다양한 크기의 입력 이미지 허용을 위해 CNN에서 사용되는 Fully Connected Layer 대신, 1x1 사이즈의 Convolution Layer을 사용합니다.
 
 최종적으로 각  Convolution Layer을 거치고 나서 얻게 되는 마지막 Segmentation Map의 개수는 훈련된 클래스의 개수와 동일합니다.
-
-![image-20211130104447221](C:\Users\soomi\AppData\Roaming\Typora\typora-user-images\image-20211130104447221.png)
+![image](https://user-images.githubusercontent.com/87166420/144014395-c32aaedd-3d33-4f9b-aa16-5d9399f70480.png)
 
 
 
@@ -59,7 +62,7 @@ Deconvolution 과정은 Input 이미지에 임의의 padding을 넣어 Convoluti
 
 다음은 deconvolution에 대한 예시 입니다.
 
-​                                                                         ![image-20211130104827578](C:\Users\soomi\AppData\Roaming\Typora\typora-user-images\image-20211130104827578.png) ![image-20211130104832964](C:\Users\soomi\AppData\Roaming\Typora\typora-user-images\image-20211130104832964.png)
+![image](https://user-images.githubusercontent.com/87166420/144014433-3eb9a809-7c57-410e-a65b-08f722765e85.png)
 
 [예시 1]은 2x2 이미지가 들어가 4x4 이미지로 나오는 과정을 보여줍니다. [예시 2]는 2x2 이미지를 stride=2, kernel_size=3으로 설정해 5x5 이미지로 생성하는 과정입니다.
 
@@ -73,7 +76,7 @@ FCN(Fully Convolutional Network for Semantic Segmentation) 모델은 정해진 R
 
 또한 Pooling을 거치면서 해상도가 줄어든 것을  Upsampling을 통해서 복원하기 때문에 결과가 정확하지 않을 수 있다는 한계를 가지고 있습니다.
 
-![image-20211130110208622](C:\Users\soomi\AppData\Roaming\Typora\typora-user-images\image-20211130110208622.png)
+![image](https://user-images.githubusercontent.com/87166420/144014517-aff4fb23-ab4a-4f81-a986-8626720259d8.png)
 
 ------
 
@@ -95,13 +98,13 @@ Dilated Convolution은 일반적인 Convolution 사이에 공간을 넣어 구�
 
 다음 예제와 같이 필터 사이에 간격을 주면 넓은 영역을 볼 수 있고, 해상도의 손실 없이 Receptive Field 크기를 확장할 수 있습니다.
 
-![image-20211130111142154](C:\Users\soomi\AppData\Roaming\Typora\typora-user-images\image-20211130111142154.png)
+![image](https://user-images.githubusercontent.com/87166420/144014587-6a726f0f-17f7-44db-9861-6aac6d254370.png)
 
 Receptive Field의 크기가 커지고, dilation Rate(확장 비율) 조정 시, 다양한 scale에 대한 대응이 가능해집니다.
 
 Pooling을 이용해 Receptive Field의 확장 효과를 얻는 것 보다 표현력이 더 좋은 양질의 Feature Map을 얻을 수 있어 Segmentation 성능을 향상 시켰습니다.
 
-![image-20211130111959247](C:\Users\soomi\AppData\Roaming\Typora\typora-user-images\image-20211130111959247.png)
+![image](https://user-images.githubusercontent.com/87166420/144014608-37fd0784-b8d0-4233-8c8a-141e65087f27.png)
 
 
 
@@ -111,7 +114,7 @@ Pooling을 이용해 Receptive Field의 확장 효과를 얻는 것 보다 표�
 
 이러한 방법들은 보다 정확한 Semantic Segmentation을 수행할 수 있도록 도우며 이후에 나온 DeepLab모델에서는 ASPP를 기본 모듈로 계속 사용하게 됩니다.
 
-![image-20211130112712342](C:\Users\soomi\AppData\Roaming\Typora\typora-user-images\image-20211130112712342.png)
+![image](https://user-images.githubusercontent.com/87166420/144014818-a9aac0cc-48bc-4b89-8da1-4ca64add83b5.png)
 
 #### DeepLab v3+
 
