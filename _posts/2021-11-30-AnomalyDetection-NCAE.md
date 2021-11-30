@@ -13,6 +13,7 @@ date: 2021-11-30
 [1.개요](#개요) </br>
 [2.Neighbor Convolution Layer 구현](#Neighbor-Convolution-Layer-구현) </br>
 [3.추가 확인](#추가-확인)
+[4.전체 코드](#전체-)
 
 </br>
 
@@ -36,7 +37,6 @@ Convolution에서 중앙값을 제외하여 주변 이웃 픽셀들에 대해서
 ## Neighbor Convolution Layer 구현
 Layer 클래스를 상속받아 상요자 정의 클래스(custom layer)를 생성하여 구현하였습니다. </br>
 기본 아이디어를 실제로 적용한 코드(*일부, 순방향 연산에 관한 코드*)로, 아래와 같이 순서대로 진행합니다.
-
 
 **0. 입력**
   - input ([type]): (N, 300, 300, 1)의 입력 데이터
@@ -111,14 +111,25 @@ self.bias = self.add_weight(name='bias', shape=(self.units,),
 super(NeighborConv2D, self).build(input_shape)
 ```
 
-* **Convolution 파라미터 계산**
+* **Convolution 가중치(W_c), 편향(B_c), 파라미터 계산(P_c)**
   - I(이미지 크기) = 300
   - K(커널 사이즈) = 1
   - N(전체 커널 갯수) = 256
   - S(Stride) = 1, 디폴트
   - P(패딩) = 0
   - C(채널 갯수) = 8
+  ```
+  W_c = K^2 * C * N
+  B_c = N
+  P_c = W_c + B_c
   
-  
+  # 계산수행 => 2048(W_c) + 256(B_c) = 2304
+  ```
+
+* **파라미터값 확인**
+  - 위에서 수행한 계산 결과와 실제 모델에 파라미터 계산 수가 맞으면 순방향은 문제없다는 것을 알수 있습니다.
+  ![Screenshot_1](https://user-images.githubusercontent.com/92897860/144004480-904cabb8-7a1b-486c-a5a2-7407c99eaac9.png)
+
+
 ## 전체 코드  
 
