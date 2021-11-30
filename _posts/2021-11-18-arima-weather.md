@@ -41,7 +41,7 @@
 
 ![image](https://user-images.githubusercontent.com/87160438/142582319-7e42c74b-8bec-4be3-9212-0e6c80263032.png)
 
-
+출처 : https://otexts.com/fppkr/stationarity.html
 
 정상성을 만족하지 못하는 데이터는 분석이나 예측이 어렵기 때문에 정상성을 만족하게 변형해줘야 합니다.
 
@@ -156,6 +156,7 @@ S-ARIMA(p, d, q)(P, D, Q, m)으로 표기할 수 있고, 일반 ARIMA 모형에 
 
 ![image](https://user-images.githubusercontent.com/87160438/142594599-74098f3b-4397-48c4-93c7-544295d501db.png)
 
+공식 출처 : https://otexts.com/fppkr/arima.html
 
 
 ## 날씨 예측 예제
