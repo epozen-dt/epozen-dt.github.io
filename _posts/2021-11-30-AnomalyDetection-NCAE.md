@@ -12,7 +12,7 @@ date: 2021-11-30
 ## 목차 </br>
 [1.개요](#개요) </br>
 [2.Neighbor Convolution Layer 구현](#Neighbor-Convolution-Layer-구현) </br>
-[3.추가 확인](#추가-확인) </br>
+[3.추가 확인](#추가-확인)
 
 </br>
 
@@ -40,23 +40,39 @@ Convolution에서 중앙값을 제외하여 주변 이웃 픽셀들에 대해서
   <figure>
      <img src="https://user-images.githubusercontent.com/92897860/143996629-484b319b-1e45-4ebf-8801-af223e8a6fb7.png"  width="200" height="100">
   </figure>
-
+  
 **1. 원본 이미지에 패딩 추가**
-  - 행복하길 바래
+  - 원본 이미지 주변에 1픽셀씩 추가, 이때 픽셀값은 0
+  - 300 크기의 이미지 => 302 크기의 이미지
   ```
-  import tensorflow as tf
+  x_padding = ZeroPadding2D(padding=1)(x)
   ```
+  
 **2. 8장의 이미지 생성 **
+  - 좌측 상단을 기준으로 좌표 변경을 통해 300 크기의 8장의 이미지 생성
   ```
-  import tensorflow as tf
+  img1 = Cropping2D(cropping=((0, 2), (0, 2)))(x_padding)
+  img2 = Cropping2D(cropping=((0, 2), (1, 1)))(x_padding)
+  img3 = Cropping2D(cropping=((0, 2), (2, 0)))(x_padding)
+  img4 = Cropping2D(cropping=((1, 1), (0, 2)))(x_padding)
+  img5 = Cropping2D(cropping=((1, 1), (2, 0)))(x_padding)
+  img6 = Cropping2D(cropping=((2, 0), (0, 2)))(x_padding)
+  img7 = Cropping2D(cropping=((2, 0), (1, 1)))(x_padding)
+  img8 = Cropping2D(cropping=((2, 0), (2, 0)))(x_padding)
   ```
+  
 **3. 8채널 이미지로 변환**
+  - 8장의 개별 이미지를 8채널 이미지로 변환
   ```
-  import tensorflow as tf
+  x_total = K.concatenate([img1 ,img2, img3, img4, img5, img6, img7, img8], 3)
   ```
+  
 **4. pointwise Convolution 수행**
+  - 
   ```
-  import tensorflow as tf
+  pw_conv2d = K.conv2d(x=x_total, kernel=self.kernel, strides=self.strides, padding='same')
+  pw_conv2d = K.bias_add(pw_conv2d, self.bias)
+  pw_conv2d = K.relu(pw_conv2d)
   ```
   
 ## 추가 확인
@@ -65,3 +81,12 @@ Convolution에서 중앙값을 제외하여 주변 이웃 픽셀들에 대해서
   ```
   import tensorflow as tf
   ```
+* 개발 환경
+  ```
+  import tensorflow as tf
+  ```
+  
+  
+  
+  
+<!-- [네이버 바로가기](http://www.naver.com/) -->
