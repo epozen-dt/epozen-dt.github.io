@@ -4,7 +4,7 @@ title: "스마트 제조 이상탐지 모델 - NCAE 구현"
 date: 2021-11-30
 
 ---
-> 현재 생산품에 대한 양/불량 판정 알고리즘 구축에 대해서 연구를 진행하고 있습니다. </br>
+> 기존에 스마트 제조 및 Neighbor Convolution AutoEncoder의 개념적인 부분에서만 설명을 드렸기 때문에 </br>
 > 이번 포스팅에서는 **자체 이상탐지 모델인 Neighbor Convolution AutoEncoder 를 구현한 방법**을 공유해보려고 합니다.
 
 </br>
@@ -12,8 +12,8 @@ date: 2021-11-30
 ## 목차 </br>
 [1.개요](#개요) </br>
 [2.Neighbor Convolution Layer 구현](#Neighbor-Convolution-Layer-구현) </br>
-[3.추가 확인](#추가-확인)
-[4.전체 코드](#전체-)
+[3.이상치 적용](#이상치-적용) </br>
+[4.성능지표 적용](#성능지표-적용)
 
 </br>
 
@@ -21,7 +21,7 @@ date: 2021-11-30
 **Neighbor Convolution AutoEncoder(이하, NCAE)는 기존 Convolutional AE 모델에 Neighbor Convolution 기법을 적용한 모델입니다.**
 
 
-> **NCAE 모델구성도**
+> **Neighbor Convolution AutoEncoder 모델구성도**
 ![모델구성1](https://user-images.githubusercontent.com/92897860/143972463-5ff03959-b345-4863-820b-c0651c39b9f7.png)
 AutoEncoder 기반의 모델 학습 결과는 이미지 데이터이기 때문에 이미지 데이터 자체만으로는 명확히 구분하기 어렵습니다.</br>
 따라서, 이상치(Anomaly Score)값으로 잔차이미지에 대한 통계치, MSE, 정보엔트로피로 설정하여 양/불량 판정을 수행하도록 모델을 구성하였습니다.
@@ -131,5 +131,78 @@ super(NeighborConv2D, self).build(input_shape)
   ![Screenshot_1](https://user-images.githubusercontent.com/92897860/144004480-904cabb8-7a1b-486c-a5a2-7407c99eaac9.png)
 
 
-## 전체 코드  
+## 이상치 적용
+앞서 얘기한 대로 모델의 구성도를 보면 결국 출력은 AutoEncoder와 동일하기 때문에 이미지 데이터를 출력하게 됩니다.
+따라서, 잔차 이미지(원본 - 생성 이미지)에 대한 통계치와 정보 엔트로피 혹은 MSE 값을 이상치로 사용하게 됩니다.
+
+**1. 잔차 이미지 생성**
+```
+# 원본 이미지 - 생성 이미지 
+img = test_abnorm[i].reshape(img_size, img_size) - hat_abnorm[i].reshape(img_size, img_size)
+```
+
+**2. 통계치와 정보 엔트로피 적용**
+```
+# 기술 통계 + 정보 엔트로피 계산 함수
+def descriptive_statistics(img):
+    # 리스트로 변환 (왜도, 첨도)
+    img_tmp = img.reshape(-1)
+    img_list = img_tmp.tolist()
+
+    # 평균
+    avg = img.mean()
+    # 표준 편차
+    std = img.std()
+    # 분산
+    var = img.var()
+
+    # 첨도
+    kurto = kurtosis(img_list)
+    # 왜도
+    skewness = skew(img_list)
+
+    # 범위
+    img_range = img.max() - img.min()
+    # 최소값
+    _min = img.min()
+    # 최대값
+    _max = img.max()
+    # 누적 합
+    cumsum = img.cumsum()[-1]
+    
+    # 정보 엔트로피
+    h_x = np.nan_to_num(entropy(img_list))
+
+    return avg, std, var, kurto, skewness, img_range, _min, _max, cumsum, h_x
+```
+
+**3. MSE 적용**
+```
+from sklearn.metrics import mean_squared_error
+
+mean_squared_error(test_norm[i].reshape(img_size, img_size), hat_norm[i].reshape(img_size, img_size))
+```
+
+## 성능지표 적용
+모델의 성능 평가 척도로는 정확도, AUC ROC, AUC PRC, 조화평균 등 총 4개를 기준으로 평가하였습니다.
+**성능 지표**
+- 사이킷런에서 제공하는 라이브러리를 사용했습니다.
+```
+from sklearn.metrics import (precision_recall_curve, auc,
+                             roc_curve, recall_score, f1_score)
+from sklearn.metrics import f1_score, average_precision_score
+
+# AUC ROC 
+fpr, tpr, thresholds = roc_curve(Y_test, x_na[0])
+roc_auc = auc(fpr, tpr)
+
+# AUC PRC
+precision, recall, th = precision_recall_curve(Y_test, x_na[0])
+ap = average_precision_score(Y_test, x_na[0])
+
+# 조화평균
+f1_score(Y_test, f1)
+```
+
+
 
