@@ -184,10 +184,10 @@ mean_squared_error(test_norm[i].reshape(img_size, img_size), hat_norm[i].reshape
 ```
 
 ## 성능지표 적용
-모델의 성능 평가 척도로는 정확도, AUC ROC, AUC PRC, 조화평균 등 총 4개를 기준으로 평가하였습니다.
-**성능 지표**
-- 사이킷런에서 제공하는 라이브러리를 사용했습니다.
+모델의 성능 평가 척도로는 정확도, AUC ROC, AUC PRC, 조화평균 등 총 4개를 기준으로 평가하였습니다. </br>
+* **성능 지표**
 ```
+# 사이킷런 제공 라이브러리 선언
 from sklearn.metrics import (precision_recall_curve, auc,
                              roc_curve, recall_score, f1_score)
 from sklearn.metrics import f1_score, average_precision_score
