@@ -57,20 +57,13 @@ Layer 클래스를 상속받아 상요자 정의 클래스(custom layer)를 생�
 **2. 8장의 이미지 생성**
   - 좌측 상단을 기준으로 좌표 변경을 통해 300 크기의 8장의 이미지 생성합니다.
   ```
-  img1 = Cropping2D(cropping=((0, 2), (0, 2)))(x_padding)
-  img2 = Cropping2D(cropping=((0, 2), (1, 1)))(x_padding)
-  img3 = Cropping2D(cropping=((0, 2), (2, 0)))(x_padding)
-  img4 = Cropping2D(cropping=((1, 1), (0, 2)))(x_padding)
-  img5 = Cropping2D(cropping=((1, 1), (2, 0)))(x_padding)
-  img6 = Cropping2D(cropping=((2, 0), (0, 2)))(x_padding)
-  img7 = Cropping2D(cropping=((2, 0), (1, 1)))(x_padding)
-  img8 = Cropping2D(cropping=((2, 0), (2, 0)))(x_padding)
+  Cropping2D
   ```
   
 **3. 8채널 이미지로 변환**
   - 8장의 개별 이미지를 8채널 이미지로 변환합니다.
   ```
-  x_total = K.concatenate([img1 ,img2, img3, img4, img5, img6, img7, img8], 3)
+  K.concatenate
   ```
   
 **4. pointwise Convolution 수행**
@@ -79,9 +72,7 @@ Layer 클래스를 상속받아 상요자 정의 클래스(custom layer)를 생�
   - build()에서 설정한 가중치 커널과 편향 추가하여 Convolution 연산 파라미터 계산을 수행하도록 설정합니다.
   - Keras.Backend의 경우, conv2d안에 Activation 과정이 포함되지 않기 때문에 따로 ReLU 적용합니다.
   ```
-  pw_conv2d = K.conv2d(x=x_total, kernel=self.kernel, strides=self.strides, padding='same')
-  pw_conv2d = K.bias_add(pw_conv2d, self.bias)
-  pw_conv2d = K.relu(pw_conv2d)
+  pw_conv2d = K.conv2d
   ```
   
 ### 추가 확인
@@ -95,22 +86,6 @@ Layer 클래스를 상속받아 상요자 정의 클래스(custom layer)를 생�
   # 파라미터 계산에 필요한 설정
   self.channels = input_shape[-1] * 8
   self.img_size = input_shape[1]
-  
-  # 가중치 형태 : (커널 사이즈, 커널 사이즈, 채널, 필터) 정의
-  self.shape = (self.kernel_size, self.kernel_size) + (self.channels, self.units)
-  # 가중치 정의
-  self.kernel = self.add_weight(name='kernel', shape=self.shape,
-                                dtype='float32',
-                                initializer='glorot_uniform', # 가중치 행렬의 디폴트 initializer
-                                trainable=True)  # 훈련 가능한 가중치 설정 (역전파 고려)
-        
-  # 편향 정의
-  self.bias = self.add_weight(name='bias', shape=(self.units,), 
-                              dtype='float32',
-                              initializer='zeros',  # 디폴트 initializer
-                              trainable=True)
-         
-  super(NeighborConv2D, self).build(input_shape)
   ```
 
 * **Convolution 가중치(W_c), 편향(B_c), 파라미터 계산(P_c)**
@@ -155,35 +130,6 @@ img = test_abnorm[i].reshape(img_size, img_size) - hat_abnorm[i].reshape(img_siz
   ```
   # 기술 통계 + 정보 엔트로피 계산 함수
   def descriptive_statistics(img):
-     # 리스트로 변환 (왜도, 첨도)
-     img_tmp = img.reshape(-1)
-     img_list = img_tmp.tolist()
-  
-     # 평균
-     avg = img.mean()
-     # 표준 편차
-     std = img.std()
-     # 분산
-     var = img.var()
-
-     # 첨도
-     kurto = kurtosis(img_list)
-     # 왜도
-     skewness = skew(img_list)
-
-     # 범위
-     img_range = img.max() - img.min()
-     # 최소값
-     _min = img.min()
-     # 최대값
-     _max = img.max()
-     # 누적 합
-     cumsum = img.cumsum()[-1]
-    
-     # 정보 엔트로피
-     h_x = np.nan_to_num(entropy(img_list))
-
-     return avg, std, var, kurto, skewness, img_range, _min, _max, cumsum, h_x
   ```
 
 **3. MSE 적용**
@@ -192,7 +138,7 @@ img = test_abnorm[i].reshape(img_size, img_size) - hat_abnorm[i].reshape(img_siz
   ```
   from sklearn.metrics import mean_squared_error
 
-  mean_squared_error(test_norm[i].reshape(img_size, img_size), hat_norm[i].reshape(img_size, img_size))
+  mean_squared_error
   ```
 
 ## 성능지표 적용
@@ -206,15 +152,9 @@ img = test_abnorm[i].reshape(img_size, img_size) - hat_abnorm[i].reshape(img_siz
   from sklearn.metrics import f1_score, average_precision_score
 
   # AUC ROC 
-  fpr, tpr, thresholds = roc_curve(Y_test, x_na[0])
+  fpr, tpr, thresholds = roc_curve
   roc_auc = auc(fpr, tpr)
 
-  # AUC PRC
-  precision, recall, th = precision_recall_curve(Y_test, x_na[0])
-  ap = average_precision_score(Y_test, x_na[0])
-
-  # 조화평균
-  f1_score(Y_test, f1)
   ```
 
 ![Screenshot_12](https://user-images.githubusercontent.com/92897860/144008649-43ddfc55-e455-45d8-b773-4e223e8003a3.png)
