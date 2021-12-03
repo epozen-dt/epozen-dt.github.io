@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "Springboot Application에서 Kafka Schema-Registry 사용하기"
 date: 2021-10-20
 

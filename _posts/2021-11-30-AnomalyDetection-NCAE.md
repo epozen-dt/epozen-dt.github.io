@@ -1,5 +1,5 @@
 ---
-
+layout: post
 title: "스마트 제조 이상탐지 모델 - NCAE 구현"
 date: 2021-11-30
 
