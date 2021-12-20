@@ -129,13 +129,94 @@ date: 2021-12-16
  먼저, Maven Dependency를 추가합니다.
  
  ```xml
- <!-- https://mvnrepository.com/artifact/com.influxdb/influxdb-client-java -->
- <dependency>
+  <!-- https://mvnrepository.com/artifact/com.influxdb/influxdb-client-java -->
+  <dependency>
    <groupId>com.influxdb</groupId>
    <artifactId>influxdb-client-java</artifactId>
    <version>3.4.0</version>
- </dependency>
+  </dependency>
+ ```
+ 
+ 다음으로 아래와 같이 InfluxDB 연결 정보를 설정하고 Client를 생성합니다.
+ 
+ ```java
+  // influxDB url
+  private static String url = "http://(InfluxDB 주소):8086";
+  // org Name (초기 설정에서 지정한 Organization Name)
+  private static String org = "test";
+  // bucket name
+  private static String bucket = "write/read";
+  // bucket Token
+  private static char[] token = "(토큰)".toCharArray();
+
+  // Client 생성
+  InfluxDBClient influxDBClient = InfluxDBClientFactory.create(url, token, org, bucket);
  ```
  
 ## Write 테스트
+
+ 생성한 Client로 데이터를 Write 해보겠습니다.
+ 
+ 테스트 코드는 아래와 같고, Point 클래스를 활용했습니다.
+ 
+ ```java
+public void writeInfluxDBWithPoint() {
+      // 클라이언트 생성
+      InfluxDBClient influxDBClient = InfluxDBClientFactory.create(url, token, org, bucket);
+      // write api 호출
+      WriteApiBlocking writeApiBlocking = influxDBClient.getWriteApiBlocking();
+      Random random = new Random();
+      // random 값
+      double i = random.nextDouble();
+      // bucket에 삽입될 point
+      Point point = Point.measurement("test-measurement")
+              .time(Instant.now().toEpochMilli(), WritePrecision.MS)
+              .addTag("test-tag", "tag-1")
+              .addField("test-field", i);
+      // write
+      writeApiBlocking.writePoint(point);
+      // 클라이언트 연결 종료
+      influxDBClient.close();
+}
+ ```
+ 
+실행 결과는 아래와 같이 Data Explorer에서 확인할 수 있습니다. (Write 시 삽입한 정보 지정 후, "Submit" 클릭)
+
+![image](https://user-images.githubusercontent.com/87160438/146727476-7b175cbd-45ec-4c15-a79c-1269d5a75d2f.png)
+
+
 ## Read 테스트
+
+ 생성한 Client로 위에서 Write한 데이터를 Read 해보겠습니다.
+ 
+ 테스트 코드는 아래와 같고, Flux 쿼리를 활용했습니다. (쿼리 내용은 bucket에 있는 데이터를 처음부터 끝까지 가져온다는 것과 같습니다.)
+ 
+ ```java
+ public void readInfluxDB() {
+     InfluxDBClient influxDBClient = InfluxDBClientFactory.create(url, token, org, bucket);
+     // flux 쿼리
+    List<FluxTable> tables = influxDBClient.getQueryApi()
+            .query("from(bucket: \"" + bucket + "\") |> range(start:0)");
+    for (FluxTable fluxTable : tables) {
+        List<FluxRecord> records = fluxTable.getRecords();
+        for (FluxRecord fluxRecord : records) {
+            System.out.println(fluxRecord.getTime() + ", " +
+                    fluxRecord.getValueByKey("_field") + ", " +
+                    fluxRecord.getValueByKey("_value"));
+        }
+    }
+    influxDBClient.close();
+}
+ ```
+ 
+ 아래 그림은 차례로 Data Explorer와 위 코드를 실행한 결과를 비교한 화면입니다.
+ 
+ ![image](https://user-images.githubusercontent.com/87160438/146731754-3a78c96a-6101-4115-a9c4-46777365eaf1.png)
+
+
+ ![image](https://user-images.githubusercontent.com/87160438/146731782-8295119d-94ea-4afe-879a-259ea6c99de2.png)
+
+
+여기까지 InfluxDB관련 설정, Java Client를 활용한 Write/Read 예제를 진행했습니다.
+
+감사합니다.
