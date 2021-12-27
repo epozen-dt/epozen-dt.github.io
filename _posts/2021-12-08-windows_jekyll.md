@@ -2,6 +2,7 @@
 layout: post
 title: "로컬에서 github 블로그 실행하기"
 date: 2021-12-08
+author: Do-soo, KIM
 
 ---
 
