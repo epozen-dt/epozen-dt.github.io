@@ -43,8 +43,8 @@ GradientTape은 선언된 구문 안의 연산들에 대해 어떤 연산이 어
 ```python
 x = tf.constant(3.0)
 with tf.GradientTape() as g:
-  g.watch(x)
-  y = x * x
+	g.watch(x)
+	y = x * x
 dy_dx = g.gradient(y, x)
 print(dy_dx)
 ```
@@ -79,17 +79,17 @@ train_loss = tf.keras.metrics.Mean()
 def train_step(images, labels):
 	# GradientTape 적용
 	with tf.GradientTape() as tape:
-        # 1. 예측
-        predictions = model(images)
-        tf.print("pred:",predictions,"\n")
-        # 2. loss 계산
-        loss = loss_function(labels, predictions)
+		# 1. 예측
+        	predictions = model(images)
+		tf.print("pred:",predictions,"\n")
+        	# 2. loss 계산
+        	loss = loss_function(labels, predictions)
 	# 3. gradients 계산
 	gradients = tape.gradient(loss, model.trainable_variables)
 	tf.print("gradients:",gradients,"\n")
 	# 4. weight 업데이트
-    optimizer.apply_gradients(zip(gradients, model.trainable_variables))
-    # 5. loss 업데이트
+	optimizer.apply_gradients(zip(gradients, model.trainable_variables))
+	# 5. loss 업데이트
 	train_loss(loss)
 ```
 
@@ -112,10 +112,10 @@ optimizer에 batch에 따라 적용하는 방법, 방향성을 고려한 방법 
 ```python
 EPOCHS = 4
 for epoch in range(EPOCHS):
-    for images, labels in zip(ex,sy):
-        train_step(images, labels)
-    template = '에포크: {}, 손실: {:.5f}'
-    print(template.format(epoch + 1, train_loss.result()))
+	for images, labels in zip(ex,sy):
+		train_step(images, labels)
+	template = '에포크: {}, 손실: {:.5f}'
+	print(template.format(epoch + 1, train_loss.result()))
 ```
 
 ---
@@ -131,9 +131,9 @@ GradientTape을 사용할 때, 역전파에 적용하고 싶은 수식이 다른
 def bar(x, y):
 	def grad(upstream):
 		dz_dx = y
-        dz_dy = x
-        return upstream * dz_dx, upstream * dz_dy
-    z = x * y
+		dz_dy = x
+		return upstream * dz_dx, upstream * dz_dy
+	z = x * y
 	return z, grad
 ```
 
@@ -143,7 +143,7 @@ def bar(x, y):
 x = tf.constant([2.0, 5.0], dtype=tf.float32)
 y = tf.constant([3.0, 8.0], dtype=tf.float32)
 with tf.GradientTape(persistent=True) as tape:
-    tape.watch(x)
+	tape.watch(x)
 	tape.watch(y)
 	z = bar(x, y)
 print(z)                  # tf.Tensor([ 6. 40.], shape=(2,), dtype=float32)
