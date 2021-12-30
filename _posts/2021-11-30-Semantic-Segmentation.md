@@ -2,7 +2,7 @@
 layout: post
 title: "Sematic Segmentation"
 date: 2021-11-30
-
+author: "김수민"
 ---
 
 이번 포스팅에서는 Sematic Segmentation에 대해 알아보겠습니다.
