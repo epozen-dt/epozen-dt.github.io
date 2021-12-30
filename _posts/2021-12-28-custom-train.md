@@ -61,10 +61,10 @@ print(dy_dx)
 
 ```python
 def new_model():
-  input = tf.keras.layers.Input((2,2,1))
-  n1 = NewLayer(1)(input)
-  output = tf.keras.Model(inputs=input, outputs=n1)
-  return output
+	input = tf.keras.layers.Input((2,2,1))
+	n1 = NewLayer(1)(input)
+	output = tf.keras.Model(inputs=input, outputs=n1)
+	return output
 
 model = new_model()
 loss_function = tf.keras.losses.MeanSquaredError()
@@ -77,20 +77,20 @@ train_loss = tf.keras.metrics.Mean()
 ```python
 @tf.function
 def train_step(images, labels):
-    # GradientTape 적용
-    with tf.GradientTape() as tape:
-        # 1. 예측
-        predictions = model(images)
-        tf.print("pred:",predictions,"\n")
-        # 2. loss 계산
-        loss = loss_function(labels, predictions)
-    # 3. gradients 계산
-    gradients = tape.gradient(loss, model.trainable_variables)
-    tf.print("gradients:",gradients,"\n")
-    # 4. weight 업데이트
+	# GradientTape 적용
+	with tf.GradientTape() as tape:
+        # 1. 예측
+        predictions = model(images)
+        tf.print("pred:",predictions,"\n")
+        # 2. loss 계산
+        loss = loss_function(labels, predictions)
+	# 3. gradients 계산
+	gradients = tape.gradient(loss, model.trainable_variables)
+	tf.print("gradients:",gradients,"\n")
+	# 4. weight 업데이트
     optimizer.apply_gradients(zip(gradients, model.trainable_variables))
     # 5. loss 업데이트
-    train_loss(loss)
+	train_loss(loss)
 ```
 
 함수 내부에서는 모델에서 1차적으로 예측을 하고 예측한 값을 기반으로 정답과의 loss를 계산, 이후 오차 역전파를 수행합니다.
@@ -129,12 +129,12 @@ GradientTape을 사용할 때, 역전파에 적용하고 싶은 수식이 다른
 ```python
 @tf.custom_gradient
 def bar(x, y):
-  def grad(upstream):
-    dz_dx = y
-    dz_dy = x
-    return upstream * dz_dx, upstream * dz_dy
-  z = x * y
-  return z, grad
+	def grad(upstream):
+		dz_dx = y
+        dz_dy = x
+        return upstream * dz_dx, upstream * dz_dy
+    z = x * y
+	return z, grad
 ```
 
 다음과 같이 @tf.custom_gradient 데코레이션을 붙인 함수를 선언할 때, 내부에 원하는 역전파 수식을 갖는 함수를 선언하고 반환하면 역전파 연산 시 수정된 내용으로 연산이 진행됩니다.
@@ -143,9 +143,9 @@ def bar(x, y):
 x = tf.constant([2.0, 5.0], dtype=tf.float32)
 y = tf.constant([3.0, 8.0], dtype=tf.float32)
 with tf.GradientTape(persistent=True) as tape:
-  tape.watch(x)
-  tape.watch(y)
-  z = bar(x, y)
+    tape.watch(x)
+	tape.watch(y)
+	z = bar(x, y)
 print(z)                  # tf.Tensor([ 6. 40.], shape=(2,), dtype=float32)
 print(tape.gradient(z,x)) # tf.Tensor([3. 8.], shape=(2,), dtype=float32)
 print(tape.gradient(z,y)) # tf.Tensor([2. 5.], shape=(2,), dtype=float32)
