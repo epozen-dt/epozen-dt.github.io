@@ -12,7 +12,7 @@ author: "김수민"
 
 ------
 ## 목차
-1. [훈련루프 직접 정의](#gradienttape)
+1. [훈련루프 직접 정의](# 1.-훈련루프-직접-정의)
 2. [Model 클래스 재 정의](#model-클래스-재-정의)
 3. [References](#references)
 
