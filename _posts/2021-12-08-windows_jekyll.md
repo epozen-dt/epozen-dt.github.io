@@ -49,7 +49,7 @@ MSYS2는 cmd 창에서 ruby 명령어를 사용할 수 있게 해주는 것이�
 ![image](https://user-images.githubusercontent.com/92565548/145145172-845e6408-9e87-4a07-bbd6-1dbc8b519e28.png)
 
 
-앞에서 Finish 버틑을 클릭했다면, 다음과 같은 화면이 보일 겁니다.
+앞에서 Finish 버튼을 클릭했다면, 다음과 같은 화면이 보일 겁니다.
 
 ![image](https://user-images.githubusercontent.com/92565548/145145385-1ab8f62c-5e3c-444a-95a1-ed5badbbccfb.png)
 
