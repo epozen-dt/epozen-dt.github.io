@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Apache Pulsar - 환경 구축 및 테스트"
+title: "Apache Pulsar - 환경 구축 및 테스트 (Spring Boot 활용)"
 date: 2022-01-12
 author: 심건우
 ---
@@ -41,29 +41,202 @@ author: 심건우
  
  또, 별도의 클러스터를 구성하지 않고 Pulsar에서 제공하는 Standalone 모드를 적용했습니다.
  
- 1. 도커 이미지 pull
+  1. 도커 이미지 pull
+  
+  Apache Pulsar 공식 이미지 pull
+  
   ```
   docker pull apachepulsar/pulsar:latest
   ```
- 2. docker-compose.yaml 작성
+  
+  2. docker-compose.yaml 작성
+  
   ```yaml
   version: "3"
-   services:
-     pulsar:
-       image: apachepulsar/pulsar:latest
-       command: bin/pulsar standalone
-       environment:
-         PULSAR_MEM: " -Xms512m -Xmx512m -XX:MaxDirectMemorySize=1g"
-       ports:
-         - 6650:6650
-         - 8080:8080
-       restart: unless-stopped
+  services:
+    pulsar:
+      image: apachepulsar/pulsar:latest
+      command: bin/pulsar standalone
+      environment:
+        PULSAR_MEM: " -Xms512m -Xmx512m -XX:MaxDirectMemorySize=1g"
+      ports:
+        - 6650:6650
+        - 8080:8080
+      restart: unless-stopped
   ```
- 3. 실행
+  
+  3. 실행
+  
   ```
   docker-compose up -d
   ```
+  
 ## Producer & Consumer (Spring Boot)
+ 구축한 Pulsar 환경을 통해 데이터를 주고 받아 보겠습니다.
  
- 펄사 어플 수정 (JSON스키마 적용, 7번오라클 접속X)
+ Producer와 Consumer 모두 Spring Boot 기반의 어플리케이션을 만들었습니다.
+ 
+ Producer에 POST 요청을 보내면 Consumer에서 읽어들이는 구조이고, 대략적인 구성도는 아래와 같습니다.
+ 
+ ![image](https://user-images.githubusercontent.com/87160438/149269549-033c8d5c-68c9-4041-91e9-a38d5fb03f2f.png)
 
+ 
+ 아래는 Producer와 Consumer 어플리케이션 구현 과정 및 테스트 결과입니다.
+ 
+ 구현에 앞서, Pulsar에서 제공하는 Java Client를 사용하려면 pom.xml에 아래와 같은 Maven dependency를 추가해야 합니다.
+ 
+ ```xml
+  <dependency>
+    <groupId>org.apache.pulsar</groupId>
+    <artifactId>pulsar-client</artifactId>
+    <version>2.8.1</version>
+  </dependency>
+ ```
+ 
+ ### Producer 구현
+ - 구조
+ 
+ ```
+ - src
+  - main
+    - java
+      - config
+        - PulsarProducerConfig.java
+      - controller
+        - PulsarProducerController.java
+      - dto
+        - TestDto.java
+      - service
+        - PulsarProducer.java
+      - PulsarProducerApplication.java
+    - resources
+      - application.yaml
+ ```
+ - PulsarProducerConfig.java
+
+```java
+@Component
+@Configuration
+public class PulsarProducerConfig {
+    @Value("${topic-name}")
+    private String topicName; // topic name
+
+    @Value("${pulsar.service-url}")
+    private String serviceURL; // pulsar service url
+
+    public String getTopicName() {
+        return topicName;
+    }
+
+    public void setTopicName(String topicName) {
+        this.topicName = topicName;
+    }
+
+    public String getServiceURL() {
+        return serviceURL;
+    }
+
+    public void setServiceURL(String serviceURL) {
+        this.serviceURL = serviceURL;
+    }
+}
+```
+
+ - PulsarProducerController.java
+
+```java
+@RestController
+@RequestMapping(value = "/user")
+public class PulsarProducerController {
+    @Autowired
+    PulsarProducer pulsarProducer;
+
+    @PostMapping(value = "/publish")
+    public void sendMessage(@RequestParam("name") String name, @RequestParam("age") Integer age) throws PulsarClientException {
+        pulsarProducer.sendMessage(name, age);
+    }
+}
+```
+
+ - TestDto.java
+
+```java
+public class TestDto {
+    private String name;
+    private Integer age;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String toString() {
+        return "name : " + getName() + ", " + "age : " + getAge().toString();
+    }
+}
+```
+
+ - PulsarProducer.java
+
+```java
+@Service
+public class PulsarProducer implements ApplicationRunner {
+    @Autowired
+    PulsarProducerConfig pulsarProducerConfig;
+
+    private static PulsarClient pulsarClient;
+    private static Producer<TestDto> producer;
+
+    public void run(ApplicationArguments args) throws Exception {
+        pulsarClient = PulsarClient.builder().serviceUrl(pulsarProducerConfig.getServiceURL()).build();
+        producer = pulsarClient.newProducer(Schema.JSON(TestDto.class)).topic(pulsarProducerConfig.getTopicName()).create();
+    }
+
+    public void sendMessage(String name, Integer age) throws PulsarClientException {
+        TestDto testDto = new TestDto();
+        testDto.setName(name);
+        testDto.setAge(age);
+        System.out.println(testDto.toString());
+        producer.send(testDto);
+    }
+}
+```
+
+ - PulsarProducerApplication.java
+
+```java
+@SpringBootApplication
+public class PulsarProducerApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(PulsarProducerApplication.class, args);
+    }
+}
+```
+
+ - application.yaml
+
+```yaml
+server:
+  port: 8001
+
+topic-name: "test-topic"
+
+pulsar:
+  service-url: "pulsar://{pulsar service url}:6650"
+```
+
+ ### Consumer 구현
+
+ 
+ 
