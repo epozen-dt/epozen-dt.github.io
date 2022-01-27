@@ -1,7 +1,8 @@
+---
+layout: post
+title: "순환 신경망-RNN, LSTM, GRU"
 date: 2022-01-26
-
-author:  "김수민"
-
+author: 김수민
 ---
 
 이번 포스팅에서는 순환 신경망에 대해 이야기 해보도록 하겠습니다.
