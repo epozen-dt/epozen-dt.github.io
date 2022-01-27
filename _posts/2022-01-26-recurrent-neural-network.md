@@ -24,7 +24,7 @@ autor:  "김수민"
 
 기본적으로 4가지 종류로 task를 구분할 수 있습니다.
 
-![image-20220126143543133](C:\Users\epozen\AppData\Roaming\Typora\typora-user-images\image-20220126143543133.png)
+![그림1](https://user-images.githubusercontent.com/87166420/151270200-a5159997-ce33-4906-b07c-d617b61c8dc8.png)
 
 
 
@@ -38,13 +38,14 @@ autor:  "김수민"
 
 시계열 데이터에서 이전 step의 결과와 현재의 입력값을 가지고 현재 step의 결과를 만들어내는 방식입니다.
 
-![image-20220126144304404](C:\Users\epozen\AppData\Roaming\Typora\typora-user-images\image-20220126144304404.png)
+![그림5](https://user-images.githubusercontent.com/87166420/151270313-875776ab-c8d8-4ca6-8ca8-b57bcd728916.png)
 
 
 
 기본 연산과정을 살펴보겠습니다. 해당 과정을 좀 더 자세한 그림으로 그린다면 다음과 같습니다.
 
-![image-20220126144207572](C:\Users\epozen\AppData\Roaming\Typora\typora-user-images\image-20220126144207572.png)
+![그림2](https://user-images.githubusercontent.com/87166420/151270336-13a077b4-5f31-4c7f-b395-f916a39ad19a.png)
+
 
 1. 처음 h_(t-1) 은 0 혹은 랜덤 값으로 초기화되어 시작합니다.
 
@@ -72,7 +73,7 @@ LSTM은 Long Short Term Memory 라는 뜻의 모델 입니다.
 
 그리고 기존 RNN에서와 같이 현재 step에서 내보낼 output을 전달하는 부분을 hidden state라는 명칭으로 부릅니다.
 
-![image-20220126161617741](C:\Users\epozen\AppData\Roaming\Typora\typora-user-images\image-20220126161617741.png)
+![그림3](https://user-images.githubusercontent.com/87166420/151270371-8e6e58e8-2bdf-4ebe-ae1f-dd63bcd259a0.png)
 
 
 
@@ -80,21 +81,22 @@ LSTM은 Long Short Term Memory 라는 뜻의 모델 입니다.
 
 1. Forget Gate
 
-​	cell state에서 sigmoid 한 결과를 통해 어떤 정보를 버릴것인지를 결정하는 gate입니다.
+	cell state에서 sigmoid 한 결과를 통해 어떤 정보를 버릴것인지를 결정하는 gate입니다.
 
-![image-20220126150054235](C:\Users\epozen\AppData\Roaming\Typora\typora-user-images\image-20220126150054235.png)
+![forget](https://user-images.githubusercontent.com/87166420/151270537-b82258d5-e273-4238-b545-42bcedb51606.png)
+
 
 2. Input Gate
 
    입력된 정보들 중 어떤 것을 cell state에 저장할 것인지를 결정하는 gate 입니다.
 
-![image-20220126150034290](C:\Users\epozen\AppData\Roaming\Typora\typora-user-images\image-20220126150034290.png)
+![input](https://user-images.githubusercontent.com/87166420/151270555-5f443a54-e2ee-4147-ab76-0aa15892cb56.png)
 
 3. Output Gate
 
    어떤 정보를 Output으로 출력할지를 결정하는 gate 입니다.
 
-![image-20220126150134900](C:\Users\epozen\AppData\Roaming\Typora\typora-user-images\image-20220126150134900.png)
+![output](https://user-images.githubusercontent.com/87166420/151270577-20d2830d-de1b-4866-b537-758bb09a270e.png)
 
 
 
@@ -121,7 +123,7 @@ LSTM은 Long Short Term Memory 라는 뜻의 모델 입니다.
 
 GRU는 Gated Recurrent Unit의 약자로, cell state와 hidden state가 합쳐져 있는 모양 갖고 있습니다.
 
-![image-20220126161852669](C:\Users\epozen\AppData\Roaming\Typora\typora-user-images\image-20220126161852669.png)
+![그림4](https://user-images.githubusercontent.com/87166420/151270429-3e97dc28-7a7c-49e9-b842-e1abc2241477.png)
 
 해당 모델에서도 역시 연산을 Gate를 사용해 수행합니다.
 
@@ -133,15 +135,16 @@ GRU에서는 Reset과 Update Gate 두 개를 사용합니다.
 
    직전 시점의 output과 현 시점의 정보에 가중치를 곱해 얻는 결과로 과거의 정보를 리셋하게 됩니다.
 
-![image-20220126162122159](C:\Users\epozen\AppData\Roaming\Typora\typora-user-images\image-20220126162122159.png)
+![reset](https://user-images.githubusercontent.com/87166420/151270634-ab3509fd-c0b9-4d84-bd1c-3d47a0aaa273.png)
 
 2. Update Gate
+
 
    과거와 현재의 정보의 최신화 비율을 정하는 Gate 입니다.
 
    LSTM에서의 forget Gate와 Input Gate를 합쳐놓은 기능을 수행합니다.
 
-![image-20220126162235334](C:\Users\epozen\AppData\Roaming\Typora\typora-user-images\image-20220126162235334.png)
+![update](https://user-images.githubusercontent.com/87166420/151270649-72a259c1-28cd-4508-a542-e1814368fbc5.png)
 
 연산과정을 간략하게 설명하면 다음과 같습니다.
 
