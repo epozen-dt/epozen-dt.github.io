@@ -12,6 +12,7 @@ author: 심건우
   - 각 테스트에 적용될 모형의 파라미터는 Python 분석 결과에 사용된 모형의 파라미터와 같습니다.
   - 데이터셋은 비행기 탑승객 데이터(train : 132개 / test: 12개), 날씨 데이터(train : 731 / test : 20)를 사용했습니다.
   - 테스트에 사용되는 Java 라이브러리 이름은 Signaflo 입니다.
+  - Spring Boot 환경에서 Maven Dependency를 사용했습니다.
   
 ## 테스트 과정
 
