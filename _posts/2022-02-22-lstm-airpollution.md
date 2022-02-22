@@ -419,7 +419,8 @@ history = model.fit(x_train, y_train, epochs=40, batch_size=32,
                     callbacks=[early_stop])
 ```
 
-![gitlab loss변화](C:\Users\epozen\Pictures\gitlab loss변화.png)
+![gitlab loss변화](https://user-images.githubusercontent.com/87166420/155074743-2044fe7f-0cf1-4f26-9a6f-2348a4b028f6.png)
+
 
 ### 5. 테스트
 
@@ -451,8 +452,7 @@ plt.legend()
 plt.show()
 ```
 
-![gitlab 테스트결과](C:\Users\epozen\Pictures\gitlab 테스트결과.png)
-
+![gitlab 테스트결과](https://user-images.githubusercontent.com/87166420/155074757-4c039142-668e-42e3-9912-2d1c75912fa8.png)
 
 
 모델 성능 평가 결과입니다.
