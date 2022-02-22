@@ -1,7 +1,7 @@
 ---
 
 layout: post
-title: "시계열 데이터 분석 - LSTM 모델을 활용한 베이징 공기질 예측"
+title: "순환 신경망 예제 - LSTM 모델을 활용한 베이징 공기질 예측"
 date: 2022-02-22
 author: 김수민
 ---
