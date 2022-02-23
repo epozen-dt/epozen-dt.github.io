@@ -96,6 +96,7 @@ df.drop(['year','month','day','hour'],axis=1,inplace=True)
 df=df.set_index('date')
 df
 ```
+
 |                     | PM2.5 | PM10 |  SO2 |  NO2 |    CO |   O3 | TEMP |   PRES |  DEWP | RAIN |   wd | WSPM |       station |
 | ------------------: | ----: | ---: | ---: | ---: | ----: | ---: | ---: | -----: | ----: | ---: | ---: | ---: | ------------: |
 |                date |       |      |      |      |       |      |      |        |       |      |      |      |               |
