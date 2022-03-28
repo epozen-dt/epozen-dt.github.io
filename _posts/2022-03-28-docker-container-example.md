@@ -177,3 +177,38 @@ docker-compose down
 
 ## 예제 2. (도커 이미지 직접 생성)
  응용 프로그램을 서비스할 수 있는 이미지를 직접 생성하고, 빌드하여 컨테이너로 서비스해보겠습니다.
+ 
+ 모든 과정은 예제 1과 동일하며, 아래 두 파일의 내용과 일부 커맨드 내 ID와 태그만 중복이 일어나지 않게 구분하면 됩니다.
+ 
+ 응용 프로그램은 Spring Boot 작업물을 Maven을 통해 jar 파일로 패키징한 것을 사용했습니다.
+ 
+ - Dockerfile
+```
+FROM openjdk:8
+
+RUN apt-get update
+RUN mkdir /alert-proto
+ADD ./alert-0.0.1-SNAPSHOT.jar /alert-proto
+
+ENTRYPOINT ["java", "-jar", "/alert-proto/alert-0.0.1-SNAPSHOT.jar"]
+```
+
+ - docker-compose.yaml
+```yaml
+version: "3"
+
+services:
+  alert-proto:
+    image: 192.168.10.7:5000/alert-proto:1.0
+    container_name: alert-proto
+    restart: always
+    ports:
+      - 8082:8080
+```
+
+## 정리
+ 간단하게 도커 컨테이너로 서비스를 실행하는 법을 정리해봤습니다.
+ 
+ 호스트 환경에 의존적이지 않고, 일관성 있게 서비스를 제공할 수 있다는게 가장 두드러진 장점인 것 같습니다.
+ 
+ 이상입니다.
