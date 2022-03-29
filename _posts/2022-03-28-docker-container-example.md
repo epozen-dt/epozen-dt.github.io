@@ -85,21 +85,21 @@ author: 심건우
  도커 허브에서 도커 이미지를 가져오고, 일부 수정하여 컨테이너로 서비스해보겠습니다.
  
  
- ## 1. 도커 허브에서 이미지 찾기 (도커 이미지 : PostgreSQL)
-  - 도커 허브 이미지 검색
+## 1. 도커 허브에서 이미지 찾기 (도커 이미지 : PostgreSQL)
+ - 도커 허브 이미지 검색
 
 
 ![image](https://user-images.githubusercontent.com/87160438/160339945-0853e3a3-3936-4ccb-99a3-7a1cca82bb04.png)
 
 
-  - 관련 정보 확인 및 커맨드 복사
+ - 관련 정보 확인 및 커맨드 복사
 
 
 ![image](https://user-images.githubusercontent.com/87160438/160340181-6f07aac6-c79a-4a1e-8299-6f97b95e7f7b.png)
 
 
- ### 2. 도커 이미지 pull
-  - 복사한 커맨드 입력 (필요에 따라 태그 추가)
+## 2. 도커 이미지 pull
+ - 복사한 커맨드 입력 (필요에 따라 태그 추가)
 
 
 ```
@@ -107,7 +107,7 @@ author: 심건우
 ```
 
 
-  - 확인
+ - 확인
 
 
 ```
@@ -118,8 +118,8 @@ docker images postgres:bullseye
 ![image](https://user-images.githubusercontent.com/87160438/160341546-c81ec4ce-9488-4d5f-8af0-a1a909843d8b.png)
 
  
- ## 3. 도커 이미지 일부 수정
-  - Dockerfile 작성 (필요에 따라 기능 수정, 관련 문법은 공식 문서 참조)
+## 3. 도커 이미지 일부 수정
+ - Dockerfile 작성 (필요에 따라 기능 수정, 관련 문법은 공식 문서 참조)
 
 
 ```
@@ -127,7 +127,7 @@ FROM postgres:bullseye
 RUN apt-get update && apt-get install -y --no-install-recommends postgresql-14-wal2json
 ```
 
-  - 수정 이미지 빌드
+ - 수정 이미지 빌드
 
 
 ```
@@ -138,8 +138,8 @@ docker build . -t pg-test:1.0
 ![image](https://user-images.githubusercontent.com/87160438/160343303-04a2c17c-dbb9-4f48-a919-f210ecb23b62.png)
 
 
- ## 4. 도커 컨테이너 생성
-  - docker-compose.yaml 작성 (관련 문법은 공식 문서 참조)
+## 4. 도커 컨테이너 생성
+ - docker-compose.yaml 작성 (관련 문법은 공식 문서 참조)
 
 
 ```yaml
@@ -167,7 +167,7 @@ services:
 ```
 
 
-  - 컨테이너 생성 커맨드 입력 (백그라운드 실행)
+ - 컨테이너 생성 커맨드 입력 (백그라운드 실행)
 
 
 ```
@@ -178,7 +178,7 @@ docker-compose up -d
 ![image](https://user-images.githubusercontent.com/87160438/160344009-e1920ca7-1c1b-4ce3-9606-601ebe09676b.png)
 
 
-  - 컨테이너 상태 확인
+ - 컨테이너 상태 확인
 
 
 ```
@@ -189,7 +189,7 @@ docker ps -l
 ![image](https://user-images.githubusercontent.com/87160438/160344280-d39c465e-c99a-467c-b30a-aee8bbb370cb.png)
 
 
-  - 컨테이너 로그 확인
+ - 컨테이너 로그 확인
 
 
 ```
@@ -200,8 +200,8 @@ docker logs -f (컨테이너 ID)
 ![image](https://user-images.githubusercontent.com/87160438/160344516-88d83efa-a252-46fc-afe9-6ef0c19a19cb.png)
 
 
- ## 5. 서비스 접속 (PostgreSQL)
-  - docker-compose.yaml 에 작성한 설정값으로 PostgreSQL 접속 (DBeaver Test connection)
+## 5. 서비스 접속 (PostgreSQL)
+ - docker-compose.yaml 에 작성한 설정값으로 PostgreSQL 접속 (DBeaver Test connection)
 
 
 ![image](https://user-images.githubusercontent.com/87160438/160345020-18ae9517-d716-4c10-a760-64c68fd88c99.png)
@@ -210,7 +210,7 @@ docker logs -f (컨테이너 ID)
 ![image](https://user-images.githubusercontent.com/87160438/160345118-fb18e2d8-02aa-4c6f-9b8b-643d55f26403.png)
 
 
- ## 6. 컨테이너 삭제
+## 6. 컨테이너 삭제
 
 
 ```
