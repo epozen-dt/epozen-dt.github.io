@@ -71,7 +71,8 @@ author: 심건우
 ## 예제 1. (도커 허브 활용, 도커 이미지 커스터마이징)
  도커 허브에서 도커 이미지를 가져오고, 일부 수정하여 컨테이너로 서비스해보겠습니다.
  
- 1. 도커 허브에서 이미지 찾기 (도커 이미지 : PostgreSQL)
+ 
+ ### 1. 도커 허브에서 이미지 찾기 (도커 이미지 : PostgreSQL)
   - 도커 허브 이미지 검색
 
 ![image](https://user-images.githubusercontent.com/87160438/160339945-0853e3a3-3936-4ccb-99a3-7a1cca82bb04.png)
@@ -82,7 +83,7 @@ author: 심건우
 ![image](https://user-images.githubusercontent.com/87160438/160340181-6f07aac6-c79a-4a1e-8299-6f97b95e7f7b.png)
 
 
- 2. 도커 이미지 pull
+ ### 2. 도커 이미지 pull
   - 복사한 커맨드 입력 (필요에 따라 태그 추가)
 ```
  docker pull postgres:bullseye
@@ -95,7 +96,7 @@ docker images postgres:bullseye
 ![image](https://user-images.githubusercontent.com/87160438/160341546-c81ec4ce-9488-4d5f-8af0-a1a909843d8b.png)
 
  
- 3. 도커 이미지 일부 수정
+ ### 3. 도커 이미지 일부 수정
   - Dockerfile 작성 (필요에 따라 기능 수정, 관련 문법은 공식 문서 참조)
 ```
 FROM postgres:bullseye
@@ -109,7 +110,7 @@ docker build . -t pg-test:1.0
 ![image](https://user-images.githubusercontent.com/87160438/160343303-04a2c17c-dbb9-4f48-a919-f210ecb23b62.png)
 
 
- 4. 도커 컨테이너 생성
+ ### 4. 도커 컨테이너 생성
   - docker-compose.yaml 작성 (관련 문법은 공식 문서 참조)
 ```yaml
 version: "3"
@@ -158,7 +159,7 @@ docker logs -f (컨테이너 ID)
 ![image](https://user-images.githubusercontent.com/87160438/160344516-88d83efa-a252-46fc-afe9-6ef0c19a19cb.png)
 
 
- 5. 서비스 접속 (PostgreSQL)
+ ### 5. 서비스 접속 (PostgreSQL)
   - docker-compose.yaml 에 작성한 설정값으로 PostgreSQL 접속 (DBeaver Test connection)
 
 ![image](https://user-images.githubusercontent.com/87160438/160345020-18ae9517-d716-4c10-a760-64c68fd88c99.png)
@@ -166,7 +167,7 @@ docker logs -f (컨테이너 ID)
 ![image](https://user-images.githubusercontent.com/87160438/160345118-fb18e2d8-02aa-4c6f-9b8b-643d55f26403.png)
 
 
- 6. 컨테이너 삭제
+ ### 6. 컨테이너 삭제
 
 ```
 docker-compose down
