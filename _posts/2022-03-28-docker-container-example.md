@@ -13,12 +13,12 @@ author: 심건우
 [도커 공식 문서](https://docs.docker.com/get-started/overview/)
 
 
-# 도커 (Docker)  
+## 도커 (Docker)  
  - 도커는 응용 프로그램 개발, 전송 및 실행을 위한 개방형 플랫폼입니다.
  - 도커를 사용하면, 응용 프로그램과 환경을 분리하여 신속하고 일관성 있게 서비스를 제공할 수 있습니다.
 
 
-# 도커 구조 (Docker architecture)
+## 도커 구조 (Docker architecture)
  - 도커는 클라이언트-서버 구조를 사용함니다.
  - 도커 클라이언트는 도커 데몬과 통신합니다.
  - 도커 데몬은 도커 컨테이너의 빌드, 실행 및 배포 작업을 수행합니다.
@@ -32,18 +32,18 @@ author: 심건우
 [이미지 출처](https://docs.docker.com/get-started/overview/)
  
  
-# 도커 데몬 (Docker daemon)
+## 도커 데몬 (Docker daemon)
  - 도커 데몬은 Docker API 요청을 수신하고 도커 이미지, 도커 컨테이너, 네트워크 및 볼륨과 같은 Docker 개체를 관리합니다.
  - 데몬은 다른 데몬과 통신하여 도커 서비스를 관리할 수도 있습니다.
 
 
-# 도커 클라이언트 (Docker client)
+## 도커 클라이언트 (Docker client)
  - 도커 클라이언트는 도커 사용자가 도커와 상호작용하는 주된 도구입니다.
  - 'docker run' 같은 명령어를 사용하면 클라이언트는 명령어를 도커로 전송하고, 도커는 명령어를 실행합니다. (Docker API 사용)
  - 도커 클라이언트는 다수의 데몬과 통신할 수 있습니다.
 
 
-# 도커 레지스트리 (Docker registries)
+## 도커 레지스트리 (Docker registries)
  - 도커 레지스트리에는 도커 이미지들이 저장됩니다.
  - 도커 허브(Docker hub)는 누구나 사용 가능한 공용 레지스트리이며, 도커는 기본적으로 도커 허브에서 이미지를 검색합니다.
  - 필요에 따라 독자적인 레지스트리를 생성할 수 있습니다.
@@ -54,7 +54,7 @@ author: 심건우
 [도커 허브 주소](https://hub.docker.com/)
  
  
-# 도커 이미지 (Docker image)
+## 도커 이미지 (Docker image)
  - 도커 이미지는 도커 컨테이너를 작성하기 위한 지침이 포함된 읽기 전용 템플릿입니다.
  - 대부분의 경우, 이미지는 다른 이미지를 기반으로 하며 일부 추가 수정이 가능합니다.
  - 독자적인 이미지를 작성할 수도 있고, 다른 사람들이 만들어 도커 레지스트리에 게시한 이미지만 사용할 수도 있습니다.
@@ -63,7 +63,7 @@ author: 심건우
  - 도커 파일을 변경하고 이미지를 재구축하면 변경된 레이어만 재구축됩니다.
  
  
-# 도커 컨테이너 (Docker Container)
+## 도커 컨테이너 (Docker Container)
  - 도커는 컨테이너라고 하는 격리된 환경에서 응용 프로그램을 패키징하고 실행할 수 있는 기능을 제공합니다.
  - 분리 및 보안을 통해 특정 호스트에서 여러 컨테이너를 동시에 실행할 수 있습니다.
  - 컨테이너는 응용 프로그램 실행에 필요한 것을 포함하므로, 호스트의 환경에 의존적이지 않습니다.
@@ -75,17 +75,18 @@ author: 심건우
  - 도커 컨테이너를 제거하면 영구 스토리지에 저장되지 않은 상태의 변경 사항은 사라집니다.
 
 
-# 도커 컴포즈 (Docker-compose)
+## 도커 컴포즈 (Docker-compose)
  - 도커 컴포즈는 하나 이상의 도커 컨테이너를 포함하는 도커 응용 프로그램을 정의하고 실행하기 위한 도구입니다.
  - 도커 컴포즈에서는 YAML 파일을 사용하여 응용 프로그램의 서비스를 구성합니다.
  - YAML 파일 작성 후, 하나의 명령어로 YAML 파일에 정의한 서비스를 구성하고 시작할 수 있습니다.
  
  
-# 예제 1. (도커 허브 활용, 도커 이미지 커스터마이징)
+## 예제 1. (도커 허브 활용, 도커 이미지 커스터마이징)
  도커 허브에서 도커 이미지를 가져오고, 일부 수정하여 컨테이너로 서비스해보겠습니다.
  
  
-## 1. 도커 허브에서 이미지 찾기 (도커 이미지 : PostgreSQL)
+1. 도커 허브에서 이미지 찾기 (도커 이미지 : PostgreSQL)
+
  - 도커 허브 이미지 검색
 
 
@@ -98,7 +99,8 @@ author: 심건우
 ![image](https://user-images.githubusercontent.com/87160438/160340181-6f07aac6-c79a-4a1e-8299-6f97b95e7f7b.png)
 
 
-## 2. 도커 이미지 pull
+2. 도커 이미지 pull
+
  - 복사한 커맨드 입력 (필요에 따라 태그 추가)
 
 
@@ -118,7 +120,8 @@ docker images postgres:bullseye
 ![image](https://user-images.githubusercontent.com/87160438/160341546-c81ec4ce-9488-4d5f-8af0-a1a909843d8b.png)
 
  
-## 3. 도커 이미지 일부 수정
+3. 도커 이미지 일부 수정
+
  - Dockerfile 작성 (필요에 따라 기능 수정, 관련 문법은 공식 문서 참조)
 
 
@@ -138,7 +141,8 @@ docker build . -t pg-test:1.0
 ![image](https://user-images.githubusercontent.com/87160438/160343303-04a2c17c-dbb9-4f48-a919-f210ecb23b62.png)
 
 
-## 4. 도커 컨테이너 생성
+4. 도커 컨테이너 생성
+
  - docker-compose.yaml 작성 (관련 문법은 공식 문서 참조)
 
 
@@ -200,7 +204,8 @@ docker logs -f (컨테이너 ID)
 ![image](https://user-images.githubusercontent.com/87160438/160344516-88d83efa-a252-46fc-afe9-6ef0c19a19cb.png)
 
 
-## 5. 서비스 접속 (PostgreSQL)
+5. 서비스 접속 (PostgreSQL)
+
  - docker-compose.yaml 에 작성한 설정값으로 PostgreSQL 접속 (DBeaver Test connection)
 
 
@@ -210,7 +215,7 @@ docker logs -f (컨테이너 ID)
 ![image](https://user-images.githubusercontent.com/87160438/160345118-fb18e2d8-02aa-4c6f-9b8b-643d55f26403.png)
 
 
-## 6. 컨테이너 삭제
+6. 컨테이너 삭제
 
 
 ```
@@ -221,7 +226,7 @@ docker-compose down
 ![image](https://user-images.githubusercontent.com/87160438/160345975-10423058-9b21-481f-bb6e-87c24fad61cf.png)
 
 
-# 예제 2. (도커 이미지 직접 생성)
+## 예제 2. (도커 이미지 직접 생성)
  응용 프로그램을 서비스할 수 있는 이미지를 직접 생성하고, 빌드하여 컨테이너로 서비스해보겠습니다.
  
  모든 과정은 예제 1과 동일하며, 아래 두 파일의 내용과 일부 커맨드 내 ID와 태그만 중복이 일어나지 않게 구분하면 됩니다.
@@ -250,7 +255,7 @@ version: "3"
 
 services:
   alert-proto:
-    image: 192.168.10.7:5000/alert-proto:1.0
+    image: alert-proto:1.0
     container_name: alert-proto
     restart: always
     ports:
@@ -258,7 +263,7 @@ services:
 ```
 
 
-# 정리
+## 정리
  간단하게 도커 컨테이너로 서비스를 실행하는 법을 정리해봤습니다.
  
  호스트 환경에 의존적이지 않고, 일관성 있게 서비스를 제공할 수 있다는게 가장 두드러진 장점인 것 같습니다.
