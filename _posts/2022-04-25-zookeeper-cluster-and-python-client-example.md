@@ -238,5 +238,13 @@ zk.close()
 ```
 
  - ZooNavigator 확인
+ 
  ![image](https://user-images.githubusercontent.com/87160438/165039412-024edac0-82f6-43d0-b7e5-a43533fd347b.png)
 
+
+## 정리
+ Zookeeper 관련 정보를 알아보았고, 간단하게 cluster 구성 방법 및 파이썬 클라이언트 예제를 진행해봤습니다.
+ 
+ 사용하기 쉽고, 처리 속도가 빠른 편이라 활용도가 높을 것 같습니다. 
+ 
+ 감사합니다.
