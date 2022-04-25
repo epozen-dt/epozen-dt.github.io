@@ -23,10 +23,17 @@ author: 심건우
   - 파일 시스템과 다르게 Zookeeper 데이터는 메모리에 저장 -> 높은 처리량, 낮은 지연 시간
  #### 2. 복제 가능하다.
   - Zookeeper 자체는 앙상블이라 불리는 호스트 집합을 통해 복제됨
+![image](https://user-images.githubusercontent.com/87160438/165010597-301cd827-6b62-4eb8-b4e3-d68c4899b2de.png)
+
+[이미지 출처](https://zookeeper.apache.org/doc/current/zookeeperOver.html)
+
  #### 3. 순차적이다.
  #### 4. 속도가 빠르다.
 
 ## Data model 및 hierarchical namespace
+![image](https://user-images.githubusercontent.com/87160438/165010787-48d1438d-574d-417a-8895-1f6946a2a5f7.png)
+
+[이미지 출처](https://zookeeper.apache.org/doc/current/zookeeperOver.html)
 
 ## Nodes 와 Ephemeral nodes
 
