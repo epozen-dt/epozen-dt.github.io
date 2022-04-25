@@ -238,4 +238,5 @@ zk.close()
 ```
 
  - ZooNavigator 확인
- 
+ ![image](https://user-images.githubusercontent.com/87160438/165039412-024edac0-82f6-43d0-b7e5-a43533fd347b.png)
+
