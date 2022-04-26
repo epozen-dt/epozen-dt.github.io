@@ -47,11 +47,11 @@ CRUD는 대부분의 컴퓨터 소프트웨어가 가지는 기본적인 데이�
 
 ​	2. **행위(Verb): HTTP Method**
 
--    HTTP 프로토콜은 GET, POST, PUT, DELETE롸 같은 메서드를 제공합니다
+-    HTTP 프로토콜은 GET, POST, PUT, DELETE와 같은 메서드를 제공합니다
 
 ​	3. **표현(Representation of Resource)**
 
--    \REST에서 하나의 자원은 JSON, XML, TEXT, RSS등 여러 형태의 Representation으로 나타내어 질 수 있습니다
+-    REST에서 하나의 자원은 JSON, XML, TEXT, RSS등 여러 형태의 Representation으로 나타내어 질 수 있습니다
 
 ### REST의 장단점
 
@@ -118,7 +118,7 @@ REST는 HTTP표준을 기반으로 구현하므로, HTTP를 지원하는 프로�
 >
 > 두 번째 : 자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE)로 표현
 
-​    
+
 
 ##### **<규칙>**
 
