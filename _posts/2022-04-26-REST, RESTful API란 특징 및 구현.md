@@ -215,12 +215,12 @@ REST는 HTTP표준을 기반으로 구현하므로, HTTP를 지원하는 프로�
 
 
 
-##### REST API설계
+#### REST API설계
 
 ![캡처](https://user-images.githubusercontent.com/102636902/165222669-5858a0b6-fef9-4ffb-b6a6-1d7856e8f56a.PNG)
 
 
-##### 응답 상태 코드 
+#### 응답 상태 코드 
 
 - 1XX : 전송 프로토콜 수준의 정보 교환
 - 2XX : 클라이언트 요청이 성공적으로 수행됨
@@ -230,7 +230,7 @@ REST는 HTTP표준을 기반으로 구현하므로, HTTP를 지원하는 프로�
 
 
 
-##### REST API개발 예제
+#### REST API개발 예제
 
 아래 코드는 URI에서 {id}에 해당하는 부분을 매개변수 값으로 보겠다는 것입니다
 ![image01](https://user-images.githubusercontent.com/102636902/165222890-0c3959ad-8b1f-4524-8de7-393aa07b6b08.png)
@@ -238,13 +238,13 @@ REST는 HTTP표준을 기반으로 구현하므로, HTTP를 지원하는 프로�
 
 ## RESTful API
 
-##### RESTful이란
+#### RESTful이란
 
 - REST API를 제공하는 웹서비스를 나타내기 위한 용어입니다
 - REST API를 제공하는 웹서비스를 “RESTful”하다고 할 수 있습니다
 - RESTful은 REST를 REST답게 쓰기 위한 방법으로, 누군가가 공식적으로 발표한 것은 아닙니다
 
-##### RESTful API 목적
+#### RESTful API 목적
 
 - 이해하기 쉽고 사용하기 쉬운 REST API를 만드는 것입니다
 - RESTful API를 구현하는 근본적인 목적이 성능 향상에 있는 것이 아니라 일관적인 컨벤션을 통한 API의 이해도 및 호환성을 높이는 것이 주 동기이니, 성능이 중요한 상황에서는 굳이 RESTful한 API를 구현할 필요는 없습니다
