@@ -1,3 +1,11 @@
+---
+layout: post
+title: "REST API"
+date: 2022-4-26
+author: zeuskwon
+---
+
+
 # REST, RESTful API란 특징 및 구현
 
 이번 포스팅은 HTTP 프로토콜을 사용할 때 필요한 REST API에 대해서 포스팅 하겠습니다.
