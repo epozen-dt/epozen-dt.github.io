@@ -6,6 +6,7 @@ author: zeuskwon
 ---
 
 
+
 # REST, RESTful API란 특징 및 구현
 
 이번 포스팅은 HTTP 프로토콜을 사용할 때 필요한 REST API에 대해서 포스팅 하겠습니다.
@@ -224,8 +225,7 @@ REST는 HTTP표준을 기반으로 구현하므로, HTTP를 지원하는 프로�
 
 ##### REST API설계
 
-![image-20220426111813475](C:\Users\epozen\AppData\Roaming\Typora\typora-user-images\image-20220426111813475.png)
-
+![캡처](https://user-images.githubusercontent.com/102636902/165222669-5858a0b6-fef9-4ffb-b6a6-1d7856e8f56a.PNG)
 
 
 ##### 응답 상태 코드 
