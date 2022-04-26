@@ -241,8 +241,8 @@ REST는 HTTP표준을 기반으로 구현하므로, HTTP를 지원하는 프로�
 ##### REST API개발 예제
 
 아래 코드는 URI에서 {id}에 해당하는 부분을 매개변수 값으로 보겠다는 것입니다
+![image01](https://user-images.githubusercontent.com/102636902/165222890-0c3959ad-8b1f-4524-8de7-393aa07b6b08.png)
 
-  ![그림입니다. 원본 그림의 이름: CLP000083b8040e.bmp 원본 그림의 크기: 가로 717pixel, 세로 120pixel](file:///C:\Users\epozen\AppData\Local\Temp\tmpDEC4.jpg)  
 
 ## RESTful API
 
