@@ -5,11 +5,7 @@ date: 2022-4-26
 author: 권재우
 ---
 
-# REST, RESTful API란 특징 및 구현
-
 이번 포스팅은 HTTP 프로토콜을 사용할 때 필요한 REST API에 대해서 포스팅 하겠습니다.
-
-
 
 ## REST란?
 
@@ -23,19 +19,21 @@ author: 권재우
 
 HTTP URI(Uniform Resource Identifier)를 통해 자원(Resource)를 명시하고, HTTP Method(POST, GET, PUT, DELETE)를 통해 Resource를 처리하도록 설계된 아키테처를 의미합니다. 
 
-- CRUD Operation
+#### CRUD Operation
 
 CRUD는 대부분의 컴퓨터 소프트웨어가 가지는 기본적인 데이터 Create(생성), Read(읽기), Update(갱신), Delete(삭제)를 묶어서 일컫는 말입니다.
 
-​	- Create : 생성(POST)
+  - Create : 생성(POST,PUT)
+    - POST는 key를 모를때 사용  
+    - PUT은 key를 알고 있을때 사용
 
-​    \- Read : 조회(GET)
+  - Read : 조회(GET)
 
-​    \- Update : 수정(PUT)
+  - Update : 수정(PUT)
 
-​    \- Delete : 삭제(DELETE)
+  - Delete : 삭제(DELETE)
 
-​    \- HEAD : header정보 조회(HEAD)
+  - HEAD : header정보 조회(HEAD)
 
 #### REST 구성 요소
 
@@ -88,19 +86,17 @@ REST가 나온 이유는 확장성과, 분산시스템, 데이터 소모량 감�
 
 ## REST API란?
 
-#### REST API의 개념
-
-##### API(Application Programming Interface)의 정의
+#### API(Application Programming Interface)의 정의
 
 - 응용 프로그램에서 사용할 수 있도록, 운영체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻한다. – 위키백과
 - 쉽게 말해서 컴퓨터 프로그램간 상호작용을 촉진하여, 서로 정보를 교환 가능하도록 하는 것입니다
 
-##### REST API의 정의
+#### REST API의 정의
 
 - REST기반으로 서비스 API를 구현한 것입니다
 - 최근 OpenAPI(누구나 사용할 수 있도록 공개된 API: 구글맵, 공공데이터 등), 마이크로 서비스(하나의 큰 애플리케이션을 여러 개의 작은 애플리케이션으로 쪼개어 변경과 조합이 가능하도록 만든 아키텍처) 등을 제공하는 업체 대부분은 REST API를 제공합니다
 
-##### REST API특징
+#### REST API특징
 
 사내 시스템들도 REST 기반으로 시스템을 분산해 확장성과 재사용성을 높여 유지보수 및  운용을 편리하게 할 수 있게 합니다. 
 
