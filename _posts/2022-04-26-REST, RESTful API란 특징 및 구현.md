@@ -24,8 +24,8 @@ HTTP URI(Uniform Resource Identifier)를 통해 자원(Resource)를 명시하고
 CRUD는 대부분의 컴퓨터 소프트웨어가 가지는 기본적인 데이터 Create(생성), Read(읽기), Update(갱신), Delete(삭제)를 묶어서 일컫는 말입니다.
 
   - Create : 생성(POST,PUT)
-    - POST는 key를 모를때 사용  
-    - PUT은 key를 알고 있을때 사용
+    - POST는 key가 없을때 사용
+    - PUT은 key가 있을때 사용
 
   - Read : 조회(GET)
 
