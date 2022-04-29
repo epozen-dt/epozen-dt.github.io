@@ -10,7 +10,10 @@ author: 김수민
 ------
 
 HDFS는 Hadoop Distributed File Syste으로, 대용량 데이터를 분산된 서버에 저장하고, 데이터를 빠르게 처리할 수 있게 하는 파일시스템 입니다.
+
 ![hadoop-hdfs](https://user-images.githubusercontent.com/87166420/165899323-b7ff35ba-08e9-4677-b087-9134b995191f.jpg)
+
+​																																[[하둡 로고](https://mr-devlife.com/all-about-hdfs-concept/)]
 
 HDFS는 구글 파일 시스템을 본떠 만든 오픈소스로, 다음과 같은 특징을 갖고 있습니다.
 
@@ -32,7 +35,11 @@ HDFS는  **Name Node(master)**와 **Data Node(worker)**로 구성되어 있습�
 
 ![hdfsarchitecture](https://user-images.githubusercontent.com/87166420/165899369-f98e219b-48fb-46c4-87e3-632b8547478c.png)
 
--  **Name Node** 기능
+​																											[[HDFS Architecture](https://wikidocs.net/23582)]
+
+
+
+- **Name Node** 기능
 
   - 메타 데이터 관리
 
@@ -109,6 +116,8 @@ READ 과정을 간략하게 보자면 다음과 같습니다.
 
 ![file-read](https://wikidocs.net/images/page/23582/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-01-10_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_10.41.49.png)
 
+​																												[[파일 읽기 프로세스](https://wikidocs.net/23582)]
+
 
 
 WRITE 과정은 다음과 같습니다.
@@ -118,6 +127,10 @@ WRITE 과정은 다음과 같습니다.
 3. Data Node 간 복제 진행
 
 ![hdfs-write](https://wikidocs.net/images/page/23582/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-01-10_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_10.40.00.png)
+
+​																												[[파일 쓰기 프로세스](https://wikidocs.net/23582)]
+
+
 
 ---
 
