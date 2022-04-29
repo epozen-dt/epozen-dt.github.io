@@ -21,6 +21,7 @@ author: 심건우
   - 표준 파일 시스템과 유사하게 구성된 공유 계층 네임스페이스를 통해 분산 프로세스 간 조정 가능
   - 네임스페이스는 Zookeeper 용어로 "znodes"라고 불리는 데이터 레지스터로 구성 (파일 및 디렉토리와 유사)
   - 파일 시스템과 다르게 Zookeeper 데이터는 메모리에 저장 -> 높은 처리량, 낮은 지연 시간
+
 #### 2. 복제 가능하다.
   - Zookeeper 자체는 앙상블이라 불리는 호스트 집합을 통해 복제됨
   
@@ -155,6 +156,7 @@ docker-compose up -d
  [kazoo 관련 자료](https://kazoo.readthedocs.io/en/latest/)
  
  - notebook 작성
+ 
 ```python
 # kazoo 라이브러리 import
 from kazoo.client import KazooClient
