@@ -10,8 +10,7 @@ author: 김수민
 ------
 
 HDFS는 Hadoop Distributed File Syste으로, 대용량 데이터를 분산된 서버에 저장하고, 데이터를 빠르게 처리할 수 있게 하는 파일시스템 입니다.
-
-![hadoop-hdfs](C:\Users\epozen\Downloads\hadoop-hdfs.webp)
+![hadoop-hdfs](https://user-images.githubusercontent.com/87166420/165899323-b7ff35ba-08e9-4677-b087-9134b995191f.jpg)
 
 HDFS는 구글 파일 시스템을 본떠 만든 오픈소스로, 다음과 같은 특징을 갖고 있습니다.
 
@@ -31,7 +30,7 @@ HDFS는 구글 파일 시스템을 본떠 만든 오픈소스로, 다음과 같�
 
 HDFS는  **Name Node(master)**와 **Data Node(worker)**로 구성되어 있습니다.
 
-![hdfsarchitecture](C:\Users\epozen\Downloads\hdfsarchitecture.png)
+![hdfsarchitecture](https://user-images.githubusercontent.com/87166420/165899369-f98e219b-48fb-46c4-87e3-632b8547478c.png)
 
 -  **Name Node** 기능
 
