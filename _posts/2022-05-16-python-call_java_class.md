@@ -53,7 +53,8 @@ PyTest.java compile
 ```
 javac -d . PyTest.java
 ```    
-![image](https://user-images.githubusercontent.com/92565548/168507687-fc3dac95-70f3-4cb6-9b62-cbd6a2851ab9.png)  
+
+![image](https://user-images.githubusercontent.com/92565548/168508265-396faa54-100d-4014-acc0-7e499dd77d63.png)
     
 ### 3. python에서 pyjnius를 호출하기 위한 환경변수 설정     
 JAVA가 설치되어 있는 디렉토리를 JAVA_HOME 환경 변수로 설정해야 함     
@@ -94,7 +95,8 @@ print(result.toString())
 ```       
     
 실행 결과     
-![image](https://user-images.githubusercontent.com/92565548/168507710-59bda71b-b7c9-4cbb-b2a1-4e57c1782075.png)     
+![image](https://user-images.githubusercontent.com/92565548/168508337-ade56ea1-300e-4b09-942a-e9fd9b4845e7.png)
+
      
      
 감사합니다.     
