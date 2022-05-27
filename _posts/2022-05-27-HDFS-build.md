@@ -26,8 +26,7 @@ git clone https://github.com/big-data-europe/docker-hadoop.git
 ```
 
 해당 파일 내부에는 다음과 같이 구성되어 있습니다.
-
-![image-20220503093143697](C:\Users\epozen\AppData\Roaming\Typora\typora-user-images\image-20220503093143697.png)
+![git-folder](https://user-images.githubusercontent.com/87166420/170618964-c258553a-8df8-461e-ba1d-b73f8369edd0.PNG)
 
 각 디렉토리를 보면 datanode, namenode를 기본으로 이를 관리하는 manager와 내역을 관리하는 historyserver까지 제공하도록 구성되어 있습니다.
 
@@ -53,8 +52,7 @@ docker-compose.yml 파일에 volumes를 확인하면 됩니다.
 docker ps
 ```
 
-![image-20220503094358916](C:\Users\epozen\AppData\Roaming\Typora\typora-user-images\image-20220503094358916.png)
-
+![docker ps 결과](https://user-images.githubusercontent.com/87166420/170619022-8d5dd3d8-408b-4e18-8345-1f449624c1ff.PNG)
 
 
 각 노드의 주소는 다음과 같습니다.
@@ -71,7 +69,7 @@ docker ps
 
 이 중 nomenode의 주소에 접속하면, ui를 사용한 namenode에 대한 정보들이 나옵니다.
 
-![image-20220503094854636](C:\Users\epozen\AppData\Roaming\Typora\typora-user-images\image-20220503094854636.png)
+![namenode ui](https://user-images.githubusercontent.com/87166420/170619053-eeb9177f-ed67-439e-a1d6-a7f340cfe778.PNG)
 
 
 
@@ -79,8 +77,7 @@ docker ps
 
 또한 탭 중 Browse the file system 탭을 통해 현재 업로드 되어있는 디렉토리 및 목록에 대한 정보가 올라와 있으며, upload까지 수행할 수 있습니다.
 
-![image-20220503095022463](C:\Users\epozen\AppData\Roaming\Typora\typora-user-images\image-20220503095022463.png)
-
+![upload ui](https://user-images.githubusercontent.com/87166420/170619072-6cf74326-dadd-4d7f-8612-2ca9f3257a98.PNG)
 
 
 다만, 업로드 과정에서 local에서 작업하지 않은 경우에 간혹 upload가 되지 않는다고 오류가 뜨는 경우가 발생합니다.
