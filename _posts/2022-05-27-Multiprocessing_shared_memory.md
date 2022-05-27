@@ -162,8 +162,8 @@ s1+s2= 4999999950000000.0
 
 ---
 
-## **2. Dict**
-공유 데이터는 Manager()를 이용해 Dictionary로도 저장될 수 있습니다.
+## **3. Dict**
+공유 데이터는 Manager()를 이용해 Dictionary로도 저장될 수 있습니다.<br>
 중첩 딕셔너리에 각 프로세스의 pid, 걸린 시간, 결과값을 출력하도록 해보겠습니다.
 ```python
 import multiprocessing as mp
