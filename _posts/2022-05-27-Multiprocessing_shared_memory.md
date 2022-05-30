@@ -82,7 +82,8 @@ if __name__ == '__main__':
 
 ## **1. Value**
 데이터는 Value, Array, Dict를 사용하여 공유 메모리에 저장 될 수 있습니다.<br>
-Value를 이용해 두 프로세스 결과를 더해보도록 하겠습니다.
+Value를 이용해 두 프로세스 결과를 더해보도록 하겠습니다.<br>
+Value를 이용해 값을 args로 넘겨줍니다. 이때 사용되는 'd' 는 부동 소수점을 나타내고, 'i' 는 부호 있는 정수를 나타냅니다.
 
 ```python
 from multiprocessing import Process, Value, Array
@@ -99,7 +100,7 @@ def sum(start, end, s_num):
 if __name__ == '__main__':
     start_time = time.time()
 
-    s1_num = Value('d', 0.0)  # 'd'는 부동 소수점을 나타냄
+    s1_num = Value('d', 0.0)
     s2_num = Value('d', 0.0)
     p1 = Process(target=sum, args=(1, 50000000, s1_num))
     p2 = Process(target=sum, args=(50000000, 100000000, s2_num))
@@ -119,9 +120,11 @@ if __name__ == '__main__':
 s1+s2= 4999999950000000.0
 걸린 시간 :  2.7269644737243652
 ```
+두 결과를 value로 받아 값을 더한 결과입니다.
+
 ---
 ## **2. Array**
-다음은 Array를 이용해 프로세스의 pid와 연산 결과를 저장해 보도록 하겠습니다.
+다음은 Array를 이용해 [프로세스의 pid, 연산 결과]를 저장해 보도록 하겠습니다.
 ```python
 import multiprocessing as mp
 from multiprocessing import Process, Value, Array
@@ -159,11 +162,12 @@ if __name__ == '__main__':
 s1+s2= 4999999950000000.0
 걸린 시간 :  2.8744490146636963
 ```
+프로세스의 pid, 연산 결과를 array로 받아 연산 결과값만 더한 결과입니다.
 
 ---
 
 ## **3. Dict**
-공유 데이터는 Manager()를 이용해 Dictionary로도 저장될 수 있습니다.<br>
+공유 데이터는 Manager를 이용해 Dictionary로도 저장될 수 있습니다.<br>
 중첩 딕셔너리에 각 프로세스의 pid, 걸린 시간, 결과값을 출력하도록 해보겠습니다.
 ```python
 import multiprocessing as mp
@@ -210,10 +214,15 @@ if __name__ == '__main__':
     print("걸린 시간 : ", time.time()-start_time)
 
 <결과창>
-{'sum-30500': {'time': 2.9461288452148438, 'result': 1249999975000000}, 'sum-39700': {'time': 3.4378139972686768, 'result': 3749999975000000}}
+{'sum-30500': {'time': 2.9461288452148438, 'result': 1249999975000000}, 
+'sum-39700': {'time': 3.4378139972686768, 'result': 3749999975000000}}
 4999999950000000
 걸린 시간 :  3.0267534255981445
 ```
+중첩 딕셔너리를 이용하여 각 프로세스의 pid를 기준으로 프로세스 실행 시간과 연산 결과를 저장하였습니다.
+
 ---
 
-이번 포스팅은 여기까지입니다. 감사합니다. 
+이번 포스팅에서는 멀티프로세스의 데이터를 공유하는 방법을 알아보았습니다.<br> 하나의 프로그램에 속하는 프로세스들 사이의 변수를 공유할 수 없다는 멀티프로세스의 단점을 보완할 수 있는 유용한 방법인 것 같습니다.
+
+이번 포스팅은 여기까지입니다. 감사합니다.
