@@ -124,45 +124,43 @@ s1+s2= 4999999950000000.0
 
 ---
 ## **2. Array**
-다음은 Array를 이용해 [프로세스의 pid, 연산 결과]를 저장해 보도록 하겠습니다.
+다음은 Array를 이용해 저장해 보도록 하겠습니다.
+args에 index값을 전달해 arr에 연이어 값을 저장해보겠습니다.
 ```python
 import multiprocessing as mp
 from multiprocessing import Process, Value, Array
 import time
 
 
-def sum(start, end, arr):
+def sum(start, end, index, arr):
     result = 0
-    arr[0] = mp.current_process().pid
     for i in range(start, end):
         result += i
-    arr[1] = result
+    arr[index] = result
     print(arr[:])
 
 if __name__ == '__main__':
     start_time = time.time()
 
-    arr1 = Array('d', range(2))
-    arr2 = Array('d', range(2))
-    p1 = Process(target=sum, args=(1, 50000000, arr1))
-    p2 = Process(target=sum, args=(50000000, 100000000, arr2))
+    arr = Array('d', range(2))
+    s1 = Process(target=sum, args=(1, 50000000, 0, arr))
+    s2 = Process(target=sum, args=(50000000, 100000000, 1, arr))
 
-    p1.start()
-    p2.start()
+    s1.start()
+    s2.start()
 
-    p1.join()
-    p2.join()
+    s1.join()
+    s2.join()
 
-    print("s1+s2=",arr1[1] + arr2[1])
+    print("s1+s2=",arr[0] + arr[1])
     print("걸린 시간 : ", time.time() - start_time)
 
 <결과창>
-[33540.0, 3749999975000000.0]
-[3808.0, 1249999975000000.0]
+[1249999975000000.0, 3749999975000000.0]
 s1+s2= 4999999950000000.0
 걸린 시간 :  2.8744490146636963
 ```
-프로세스의 pid, 연산 결과를 array로 받아 연산 결과값만 더한 결과입니다.
+연산 결과를 array로 받아 연산 결과값을 더한 결과입니다.
 
 ---
 
