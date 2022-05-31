@@ -96,118 +96,144 @@ author: 심건우
 
 ```java
 public Boolean nsr1(double data, Double UCL, Double LCL) {
- // 위반
- if (data > UCL or data < LCL) {
-  return false;
- }
- 
- // 통과
- else {
-  return true;
- }
+	// 위반
+	if (data > UCL || data < LCL) {
+		return false;
+	}
+
+	// 통과
+	else {
+		return true;
+	}
 }
+
 ```
 
  - Rule 3
 
 ```java
-public Boolean nsr3(double data) throws Exception {
- // 데이터 임시 저장
- nsrData3.add(data);
+public Boolean nsr3(double data) {
+	// 데이터 임시 저장
+	nsrData3.add(data);
 
- // 데이터 확보 (6개)
- if (nsrData3.size() == 6) {
-  // 위반 (연속 증가)
-  if (nsrData3.get(0) < nsrData3.get(1) && nsrData3.get(1) < nsrData3.get(2) &&
-      nsrData3.get(2) < nsrData3.get(3) && nsrData3.get(3) < nsrData3.get(4) &&
-      nsrData3.get(4) < nsrData3.get(5)) {
-   nsrData3.remove(0);
-   return false;
-  }
+	// 데이터 확보 (6개)
+	if (nsrData3.size() == 6) {
+		// 위반 (연속 증가)
+		if (nsrData3.get(0) < nsrData3.get(1) && nsrData3.get(1) < nsrData3.get(2) &&
+		  nsrData3.get(2) < nsrData3.get(3) && nsrData3.get(3) < nsrData3.get(4) &&
+		  nsrData3.get(4) < nsrData3.get(5)) {
+			nsrData3.remove(0);
+			return false;
+		}
 
-  // 위반 (연속 감소)
-  else if (nsrData3.get(0) > nsrData3.get(1) && nsrData3.get(1) > nsrData3.get(2) &&
-           nsrData3.get(2) > nsrData3.get(3) && nsrData3.get(3) > nsrData3.get(4) &&
-           nsrData3.get(4) > nsrData3.get(5)) {
-   nsrData3.remove(0);
-   return false;
-  }
+		// 위반 (연속 감소)
+		else if (nsrData3.get(0) > nsrData3.get(1) && nsrData3.get(1) > nsrData3.get(2) &&
+			   nsrData3.get(2) > nsrData3.get(3) && nsrData3.get(3) > nsrData3.get(4) &&
+			   nsrData3.get(4) > nsrData3.get(5)) {
+			nsrData3.remove(0);
+			return false;
+		}
 
-  // 통과
-  else {
-    nsrData3.remove(0);
-    return true;
-   }
- }
+		// 통과
+		else {
+			nsrData3.remove(0);
+			return true;
+		}
+	}
 
- // 데이터 미확보
- else {
-  return true;
- }
+	// 데이터 미확보
+	else {
+		return true;
+	}
 }
 ```
 
  - Rule 5
 
 ```java
-public Boolean nsr5(double data, Double UCL, Double CL) throws Exception {
- // 시그마 간격
- Double sigma = (UCL - CL) / 3;
- // + 2시그마
- Double sigma2Plus = CL + (2 * sigma);
- // - 2시그마
- Double sigma2Minus = CL - (2 * sigma);
- // + 2시그마를 넘어선 횟수
- Integer countPlus = 0;
- // - 2시그마를 넘어선 횟수
- Integer countMinus = 0;
- // 통계값 임시 저장
- nsrData5.add(data);
- // 넬슨 룰 검사하기 위한 통계값을 확보한 경우
- if (nsrData5.size() == 3) {
-  // 측정된 3개의 관측치 중 2개의 관측치가 +- 2시그마를 넘어선 경우
-  for (int i = 0; i <= 2; i++) {
-   // + 2 시그마를 넘어선 경우
-   if (nsrData5.get(i) > sigma2Plus) {
-    countPlus += 1;
-   }
-   // - 2 시그마를 넘어선 경우
-   else if (nsrData5.get(i) < sigma2Minus) {
-    countMinus += 1;
-   }
-  }
-  // 2개 이상인 경우 -> 넬슨 룰 5 위반
-  if (countPlus >= 2) {
-   nsrData5.remove(0);
-   return false;
-  }
-  // 2개 이상인 경우 -> 넬슨 룰 5 위반
-  else if (countMinus >= 2) {
-   nsrData5.remove(0);
-   return false;
-  } 
-  else {
-   nsrData5.remove(0);
-   return true;
-  }
- }
- // 넬슨 룰 검사하기 위한 통계값이 모이지 않은 경우
- else if (nsrData5.size() < 3) {
- return true;
- }
- // 에러 상황 : 넬슨 룰 검사하기 위해 필요한 통계값 보다 더 많이 가지고 있는 경우
- else {
- throw new Exception("#### [Nelson Rule] Statistic values must stored no more than 3 values");
- }
+public Boolean nsr5(double data, Double UCL, Double CL) {
+	// 시그마 간격
+	Double sigma = (UCL - CL) / 3;
+	// + 2시그마
+	Double sigma2Plus = CL + (2 * sigma);
+	// - 2시그마
+	Double sigma2Minus = CL - (2 * sigma);
+	// + 2시그마를 넘어선 횟수
+	Integer countPlus = 0;
+	// - 2시그마를 넘어선 횟수
+	Integer countMinus = 0;
+	// 데이터 임시 저장
+	nsrData5.add(data);
+	
+	// 데이터 확보 (3개)
+	if (nsrData5.size() == 3) {
+		for (int i = 0; i <= 2; i++) {
+			// +2시그마 초과
+			if (nsrData5.get(i) > sigma2Plus) {
+				countPlus += 1;
+			}
+			// -2시그마 미만
+			else if (nsrData5.get(i) < sigma2Minus) {
+				countMinus += 1;
+			}
+		}
+		
+		// 위반
+		if (countPlus >= 2 || countMinus >= 2) {
+			nsrData5.remove(0);
+			return false;
+		}
+		// 통과
+		else {
+			nsrData5.remove(0);
+			return true;
+		}
+	}
+	
+	// 데이터 미확보
+	else {
+		return true;
+	}
 }
-
 ```
 
  - Rule 7
 
 ```java
-
+public Boolean nsr7(double data, Double UCL, Double CL) {
+	// 시그마 간격
+	Double sigma = (UCL - CL) / 3;
+	// + 1시그마
+	Double sigma1Plus = CL + (1 * sigma);
+	// - 1시그마
+	Double sigma1Minus = CL - (1 * sigma);
+	// +- 1시그마 이내에 존재하는 경우
+	Integer count = 0;
+	// 데이터 임시 저장
+	nsrData7.add(data);
+	
+	// 데이터 확보 (15개)
+	if (nsrData7.size() == 15) {
+		// +1시그마보다 작고, -1시그마보다 큰 경우
+		for (int i = 0; i <= 14; i++) {
+			if (sigma1Minus <= nsrData7.get(i) && nsrData7.get(i) <= sigma1Plus) {
+				count += 1;
+			}
+		}
+		// 위반
+		if (count >= 15) {
+			nsrData7.remove(0);
+			return false;
+		} 
+		// 정상
+		else {
+			nsrData7.remove(0);
+			return true;
+		}
+	}
+	// 데이터 미확보
+	else {
+		return true;
+	}
+}
 ```
-
-## 정리
- 
