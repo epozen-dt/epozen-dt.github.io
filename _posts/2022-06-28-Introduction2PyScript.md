@@ -170,6 +170,11 @@ index()
 
 ![image](https://user-images.githubusercontent.com/92565548/176118320-af16b39e-4b29-40f9-82af-f6d43c650e8f.png)
 
+
+별 다른 서버 구성이나 프레임워크 없이, 위와 같이 html 파일만 작성해서 실행하면 끝입니다. 
+
+바로 이게 PyScript의 최대 장점인 것이죠.
+
 이 정도만 알면, 지금 바로 웹 애플리케이션을 만들어 볼 수 있습니다.
 
 한번 만들어볼까요?
