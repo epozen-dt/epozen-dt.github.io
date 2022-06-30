@@ -1,12 +1,9 @@
 ---
 layout: post
 title: "Unittest - Python 단위 테스트 프레임워크 사용법"
-date: 2022-6-27
+date: 2022-6-30
 author: 이한솔
 ---
-https://docs.python.org/ko/3/library/unittest.html 
-https://www.daleseo.com/python-unittest-testcase/ 
-https://sjquant.tistory.com/11 
 
 이 포스팅에서는 Python 단위 테스트 프레임워크인 unittest 모듈 이용 방법에 대해 알아보겠습니다.
 
@@ -36,6 +33,7 @@ class Test(unittest.Testcase):
         ...
 ```
 
+---
 
 ### **Assert 메서드**
 TestCase 클래스는 값을 검사하고 실패를 보고하기 위해 몇 개의 **assert 메서드**를 제공합니다.
