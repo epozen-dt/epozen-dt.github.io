@@ -7,7 +7,9 @@ author: 이한솔
 
 이 포스팅에서는 Python 단위 테스트 프레임워크인 unittest 모듈 이용 방법에 대해 알아보겠습니다.
 
-개발 단계에서 단위 테스트는 필수적입니다. Python에서는 내장 모듈인 unittest를 통해서 별도의 설치 없이 비교적 간단하게 단위 테스트를 작성할 수 있습니다.
+개발 단계에서 단위 테스트는 필수적입니다. 
+
+Python에서는 내장 모듈인 unittest를 통해서 별도의 설치 없이 비교적 간단하게 단위 테스트를 작성할 수 있습니다.
 
 간단한 예제를 통해 unittest 사용법을 알려드리겠습니다.
 
@@ -74,7 +76,7 @@ if __name__ == '__main__':
 
 이외에 값을 확인하는 다른 assert 메소드는 다음과 같습니다.
 
-<img src="https://user-images.githubusercontent.com/96156882/176571652-ca87abc7-0e6c-4f16-9a23-5f00cfacf00c.png" width="300">
+![image](https://user-images.githubusercontent.com/96156882/176571652-ca87abc7-0e6c-4f16-9a23-5f00cfacf00c.png) 
 
 ---
 
@@ -126,14 +128,13 @@ if __name__ == '__main__':
     unittest.main()
 
 ```
-이처럼 두 개 중 하나의 결과가 실패했다는 것을 확인할 수 있습니다.
+이처럼 두 개 중 예외가 발생하지 않는 하나의 결과가 실패했다는 것을 확인할 수 있습니다.
 
 ![image](https://user-images.githubusercontent.com/96156882/176573956-c195b622-9c44-477a-876f-182d2e155ba1.png)
 ![image](https://user-images.githubusercontent.com/96156882/176573977-24c18e59-c821-4c2c-bc39-8700d2f65a97.png) 
 
 이밖에도 경고, 로그 메시지 발생을 검사하는 메소드는 다음과 같습니다.
-
-<img src="https://user-images.githubusercontent.com/96156882/176576987-1b240ae2-4a83-4808-8ef2-ad756f349fd3.png" width="400">
+![image](https://user-images.githubusercontent.com/96156882/176576987-1b240ae2-4a83-4808-8ef2-ad756f349fd3.png) 
 
 ---
 
