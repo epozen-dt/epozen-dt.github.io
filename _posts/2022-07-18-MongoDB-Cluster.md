@@ -106,7 +106,7 @@ mongo mongodb://[config-server-1 ip]:[config-server-1 port]
 ```
 rs.initiate(
   {
-    _id: "cfgrs",
+    _id: "config-rs",
     configsvr: true,
     members: [
       { _id : 0, host : "[config-server-1 ip]:[config-server-1 port]" },
@@ -117,9 +117,26 @@ rs.initiate(
 )
 ```
 
+![image](https://user-images.githubusercontent.com/87160438/179454088-97fc62ed-deb4-44fa-b101-c2dcfbcc0bba.png)
 
 
 #### 5. 확인
+
+```
+rs.status()
+```
+
+![image](https://user-images.githubusercontent.com/87160438/179454195-e7ea89b9-84c8-4e79-914e-938b9582cfd0.png)
+
+
+![image](https://user-images.githubusercontent.com/87160438/179454292-f96e482d-3624-446f-835e-8d38ffa26360.png)
+
+
+![image](https://user-images.githubusercontent.com/87160438/179454376-bef45bbf-aaaa-4883-9220-911c29fce2c9.png)
+
+
+![image](https://user-images.githubusercontent.com/87160438/179454477-54b23de5-c1cb-45db-93ba-19afea3beaba.png)
+
 
 ## shard-server
  데이터의 실제 저장소
@@ -170,19 +187,86 @@ volumes:
 docker-compose up -d
 ```
 
+![image](https://user-images.githubusercontent.com/87160438/179455097-72dd76b5-4660-4132-ad3d-aee97e706b27.png)
+
+
+```
+docker ps
+```
+
+![image](https://user-images.githubusercontent.com/87160438/179455122-f7f96032-3b72-47ba-9155-2cd785ce87ea.png)
+
+
 #### 3. 컨테이너 접속
 
 ```
 docker exec -it [컨테이너 아이디] /bin/bash
 ```
 
+![image](https://user-images.githubusercontent.com/87160438/179455197-6eabe847-3723-4396-b83c-5749096f92f0.png)
+
+
 #### 4. replicat set 구성
+
+```
+mongo mongodb://[shard-1-sever-1 ip]:[shard-1-server-1 port]
+```
+
+![image](https://user-images.githubusercontent.com/87160438/179455670-0944bc9f-238d-4c3f-9c14-abdba4109482.png)
+
+
+```
+rs.initiate(
+  {
+    _id: "shard-1-rs",
+    members: [
+      { _id : 0, host : "[shard-1-server-1 ip]:[shard-1-server-1 port]" },
+      { _id : 1, host : "[shard-1-server-2 ip]:[shard-1-server-2 port]" },
+      { _id : 2, host : "[shard-1-server-3 ip]:[shard-1-server-3 port]" }
+    ]
+  }
+)
+```
+
+![image](https://user-images.githubusercontent.com/87160438/179456330-2c3d8f49-ee3c-4761-be8e-9fc4e6eaf138.png)
+
+
 #### 5. 확인
+
+```
+rs.status()
+```
+
+![image](https://user-images.githubusercontent.com/87160438/179456410-2a5a749c-826d-41e1-a983-850fc0eab9c9.png)
+
+
+![image](https://user-images.githubusercontent.com/87160438/179456514-4f6c4702-6073-43a2-81fe-e638171b7792.png)
+
+
+![image](https://user-images.githubusercontent.com/87160438/179456625-605dd2fa-ba2a-4b52-9c7b-cffaa6e32f24.png)
+
+
+![image](https://user-images.githubusercontent.com/87160438/179456731-72eb7246-2394-446a-8dd6-6c4f83e5671f.png)
+
 
 ## mongos router
  config-server의 설정을 참조하여, 데이터를 각 샤드에 분산 및 결과 반환
  
 #### 1.docker-compose.yml 작성
+
+```yml
+version: '3'
+
+services:
+
+  mongos:
+    container_name: mongos
+    image: mongo
+    command: mongos --configdb cfgrs/[config-server-1 ip]:[config-server-1 port],[config-server-2 ip]:[config-server-2 port],[config-server-3 ip]:[config-server-3 port] --bind_ip 0.0.0.0 --port 27017
+    ports:
+      - 60000:27017
+```
+
 #### 2.shard 클러스터 등록
 #### 3.확인
 
