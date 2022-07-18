@@ -21,14 +21,16 @@ author: 심건우
 
 [Set up Sharding in MongoDB using Docker containers](https://www.youtube.com/watch?v=7Lp6R4CmuKE&list=LL&index=5&t=1150s&ab_channel=JustmeandOpensource)
 
+## 클러스터 구조
 
-파워포인트 클러스터 구조 이미지 첨부
+![image](https://user-images.githubusercontent.com/87160438/179451795-23de0e2d-ad80-4cfc-8615-37ff7e13eedd.png)
+
 
 ## config-server
- 샤드 분산 정보 관리
+ 샤드 분산 정보 관리 
  
-### 1.docker-compose.yml 작성
-- docker-compose.yml 작성
+#### 1. docker-compose.yml 작성
+
 ```yml
 version: '3'
 
@@ -37,29 +39,29 @@ services:
   config-server-1:
     container_name: config-server-1
     image: mongo
-    command: mongod --configsvr --replSet cfgrs --port 27017 --dbpath /data/db
+    command: mongod --configsvr --replSet config-rs --port 27017 --dbpath /data/db
     ports:
       - 40001:27017
     volumes:
-      - config-server-1:/data/db
+      - ./config-server-1:/data/db
 
   config-server-2:
     container_name: config-server-2
     image: mongo
-    command: mongod --configsvr --replSet cfgrs --port 27017 --dbpath /data/db
+    command: mongod --configsvr --replSet config-rs --port 27017 --dbpath /data/db
     ports:
       - 40002:27017
     volumes:
-      - config-server-2:/data/db
+      - ./config-server-2:/data/db
 
   config-server-3:
     container_name: config-server-3
     image: mongo
-    command: mongod --configsvr --replSet cfgrs --port 27017 --dbpath /data/db
+    command: mongod --configsvr --replSet config-rs --port 27017 --dbpath /data/db
     ports:
       - 40003:27017
     volumes:
-      - config-server-3:/data/db
+      - ./config-server-3:/data/db
 
 volumes:
   config-server-1: {}
@@ -67,19 +69,125 @@ volumes:
   config-server-3: {}
 ```
 
+#### 2. 컨테이너 생성
 
-### 2.레플리카셋 구성
-### 3.확인
+```
+docker-compose up -d
+```
+
+![image](https://user-images.githubusercontent.com/87160438/179452817-40cd800d-6667-448c-8a87-8e4f10ebdf02.png)
+
+
+```
+docker ps
+```
+
+![image](https://user-images.githubusercontent.com/87160438/179452862-57f4e44e-28eb-492c-826a-9b4d49fded60.png)
+
+
+#### 3. 컨테이너 접속
+
+```
+docker exec -it [컨테이너 아이디] /bin/bash
+```
+
+![image](https://user-images.githubusercontent.com/87160438/179452924-3f9b30df-733c-40f9-bf9b-466d271ab24b.png)
+
+
+#### 4. replicat set 구성
+
+```
+mongo mongodb://[config-server-1 ip]:[config-server-1 port]
+```
+
+![image](https://user-images.githubusercontent.com/87160438/179453160-8cc1ae14-2aad-4e18-ad8f-f0f9bd50afcf.png)
+
+
+```
+rs.initiate(
+  {
+    _id: "cfgrs",
+    configsvr: true,
+    members: [
+      { _id : 0, host : "[config-server-1 ip]:[config-server-1 port]" },
+      { _id : 1, host : "[config-server-2 ip]:[config-server-2 port]" },
+      { _id : 2, host : "[config-server-3 ip]:[config-server-3 port]" }
+    ]
+  }
+)
+```
+
+
+
+#### 5. 확인
+
 ## shard-server
  데이터의 실제 저장소
-### 1.docker-compose.yml 작성
-### 2.클러스터 구성
-### 3.확인
+ 
+#### 1. docker-compose.yml 작성
+
+```yml
+version: '3'
+
+services:
+
+  shard-1-server-1:
+    container_name: shard-1-server-1
+    image: mongo
+    command: mongod --shardsvr --replSet shard-1-rs --port 27017 --dbpath /data/db
+    ports:
+      - 50001:27017
+    volumes:
+      - ./shard-1-server-1:/data/db
+
+  shard-1-server-2:
+    container_name: shard-1-server-2
+    image: mongo
+    command: mongod --shardsvr --replSet shard-1-rs --port 27017 --dbpath /data/db
+    ports:
+      - 50002:27017
+    volumes:
+      - ./shard-1-server-2:/data/db
+
+  shard-1-server-3:
+    container_name: shard-1-server-3
+    image: mongo
+    command: mongod --shardsvr --replSet shard-1-rs --port 27017 --dbpath /data/db
+    ports:
+      - 50003:27017
+    volumes:
+      - ./shard-1-server-3:/data/db
+
+volumes:
+  shard-1-server-1: {}
+  shard-1-server-2: {}
+  shard-1-server-3: {}
+```
+
+#### 2. 컨테이너 생성
+
+```
+docker-compose up -d
+```
+
+#### 3. 컨테이너 접속
+
+```
+docker exec -it [컨테이너 아이디] /bin/bash
+```
+
+#### 4. replicat set 구성
+#### 5. 확인
+
 ## mongos router
  config-server의 설정을 참조하여, 데이터를 각 샤드에 분산 및 결과 반환
-### 1.docker-compose.yml 작성
-### 2.shard 클러스터 등록
-### 3.확인
-## 데이터 분산 확인
+ 
+#### 1.docker-compose.yml 작성
+#### 2.shard 클러스터 등록
+#### 3.확인
+
+## 결과
+#### 1. 데이터 삽입 확인
+#### 2. 보안 관련 추가 필요(TLS)
 
  
