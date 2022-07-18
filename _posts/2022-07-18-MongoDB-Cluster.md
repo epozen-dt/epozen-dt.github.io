@@ -27,7 +27,7 @@ author: 심건우
 
 
 ## config-server
- 샤드 분산 정보 관리 
+ shard 분산 정보 관리 
  
 #### 1. docker-compose.yml 작성
 
@@ -250,7 +250,7 @@ rs.status()
 
 
 ## mongos router
- config-server의 설정을 참조하여, 데이터를 각 샤드에 분산 및 결과 반환
+ config-server의 설정을 참조하여, 데이터를 각 shard 에 분산 및 결과 반환
  
 #### 1.docker-compose.yml 작성
 
@@ -393,21 +393,28 @@ sh.status()
 
 ![image](https://user-images.githubusercontent.com/87160438/179464610-82661c75-8f93-4584-996a-cc05e9d77f85.png)
 
- 
+
+- mongos 보안 관련 로그 (TCP fast Open)
+
+![image](https://user-images.githubusercontent.com/87160438/179466946-63a61e4a-770f-4b4a-9d24-bc68a976c056.png)
+
+
+- mongo-express 화면 
+
 ![image](https://user-images.githubusercontent.com/87160438/179465775-ba47d29c-0a0c-4c6d-ba84-5c417786451e.png)
 
 
+- 생성된 collection
+
 ![image](https://user-images.githubusercontent.com/87160438/179466282-ffec9c3f-bc6d-4b67-857d-a52d8beae306.png)
-
-
-![image](https://user-images.githubusercontent.com/87160438/179466946-63a61e4a-770f-4b4a-9d24-bc68a976c056.png)
 
 
  * 보안 관련 항목(TLS, id, pw 등) 미설정 -> replica set, balancer 미동작
  * shard와 데이터베이스는 정상 등록
 
 ## 정리
- docker-compose를 활용해 MongoDB 클러스터 구성 예제를 진행해보았다.
- 실제 환경에 적용할 때는 보안 관련 사항을 엄수해야 할 것으로 예상된다.
+- docker-compose를 활용해 MongoDB 클러스터 구성 예제를 진행해보았다.
+- 컨테이너 내부에 진입해야 하는 과정이 반복되어 약간 번거로웠다.
+- 실제 환경에 적용 시, 보안 관련 사항 관리에 어려움이 있을 것으로 예상된다.
 
  
