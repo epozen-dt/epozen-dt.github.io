@@ -267,8 +267,37 @@ services:
       - 60000:27017
 ```
 
-#### 2.shard 클러스터 등록
+#### 2. 컨테이너 생성
+
+```
+docker-compose up -d
+```
+
+```
+docker ps
+```
+
+#### 3. 컨테이너 접속
+
+```
+docker exec -it [컨테이너 아이디] /bin/bash
+```
+
+#### 4.shard 클러스터 등록
+
+```
+mongo mongodb://[mongos server ip]:[mongos server port]
+```
+
+```
+sh.addShard("shard-1-rs/[shard-1-server-1 ip]:[shard-1-server-1 port],[shard-1-server-2 ip]:[shard-1-server-2 port],[shard-1-server-3 ip]:[shard-1-server-3 port]")
+```
+
 #### 3.확인
+
+```
+sh.status()
+```
 
 ## 결과
 #### 1. 데이터 삽입 확인
