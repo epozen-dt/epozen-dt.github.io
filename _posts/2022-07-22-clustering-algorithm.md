@@ -151,7 +151,7 @@ K-Mean Clustering은 <u>각 군집의 평균을 활용해 데이터를 K 개의 
 
 다음은 두 군집화 알고리즘의 결과를 도식화한 결과입니다.
 
-#### ![image-20220721175333233](C:\Users\epozen\AppData\Roaming\Typora\typora-user-images\image-20220721175333233.png)
+![kmeanvsdbscan](https://user-images.githubusercontent.com/87166420/180347184-99cab414-5370-4d3a-9ba8-81a9970abac1.PNG)
 
 K-Mean Clustering은 군집을 직접 설정해 마치 데이터가 하나의 형상을 보임에도 같은 데이터라고 판단하지 않는 경우들이 있습니다.
 
