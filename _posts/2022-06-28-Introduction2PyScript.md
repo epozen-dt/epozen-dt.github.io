@@ -192,11 +192,11 @@ SARIMA에 대한 내용은 아래의 이전 포스팅을 참고하세요.
 
 실행 속도도 기록해 보았습니다. 약 7.75초 정도 걸렸습니다.
 
-![image](https://user-images.githubusercontent.com/92565548/176118391-331f85b1-73db-4702-8069-0310db663d34.png)
+![image](https://user-images.githubusercontent.com/92565548/176118391-331f85b1-73db-4702-8069-0310db663d34.png){: width="50%" height="50%"}
 
 비교를 위해 Python으로도 한번 만들어 보았습니다. 약 2.87초 정도가 걸렸네요.
 
-![image](https://user-images.githubusercontent.com/92565548/176118455-cd23d0b0-b61e-4722-ac72-089016c830f6.png)
+![image](https://user-images.githubusercontent.com/92565548/176118455-cd23d0b0-b61e-4722-ac72-089016c830f6.png){: width="50%" height="50%"}
 
 아직까진 PyScript가 성능에 문제가 있음을 확인할 수 있습니다.
 
