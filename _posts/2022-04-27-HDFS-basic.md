@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "HDFS 블록 파일 시스템[1] - 기본 특징 및 구성"
-date: 2022-04-27
+last_modified_at: 2022-04-27
 author: 김수민
 ---
 

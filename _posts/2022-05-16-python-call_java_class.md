@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "Python에서 Java Class 호출(Jython 사용안함)"
-date: 2022-05-16
+last_modified_at: 2022-05-16
 author: 손정모
 
 ---

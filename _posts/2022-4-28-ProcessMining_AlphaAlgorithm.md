@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "프로세스 마이닝 - 알파 알고리즘 적용"
-date: 2022-4-28
+last_modified_at: 2022-4-28
 author: Gun-ha, KANG
 ---
 

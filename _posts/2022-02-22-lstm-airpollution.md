@@ -1,8 +1,6 @@
 ---
-
-layout: post
 title: "순환 신경망 예제 - LSTM 모델을 활용한 베이징 공기질 예측"
-date: 2022-02-22
+last_modified_at: 2022-02-22
 author: 김수민
 ---
 

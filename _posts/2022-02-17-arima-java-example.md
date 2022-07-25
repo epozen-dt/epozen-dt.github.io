@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "시계열 데이터 분석 - ARIMA & S-ARIMA 모형 적용 결과 비교 테스트 (Python vs Java)"
-date: 2022-02-24
+last_modified_at: 2022-02-24
 author: 심건우
 ---
 

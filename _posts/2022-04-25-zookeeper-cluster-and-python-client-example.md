@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "Zookeeper 클러스터 구성 및 Python 클라이언트 예제"
-date: 2022-04-25
+last_modified_at: 2022-04-25
 author: 심건우
 ---
 

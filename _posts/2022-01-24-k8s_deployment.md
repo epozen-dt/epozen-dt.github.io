@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "쿠버네티스 테스트하기 #2: 쿠버네티스 클러스터에 어플리케이션 배포하기"
-date: 2022-01-24
+last_modified_at: 2022-01-24
 author: Do-soo, KIM
 
 ---

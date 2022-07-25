@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "REST API란"
-date: 2022-4-26
+last_modified_at: 2022-4-26
 author: 권재우
 ---
 

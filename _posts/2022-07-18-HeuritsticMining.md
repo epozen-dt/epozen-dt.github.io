@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "프로세스 마이닝-휴리스틱 마이닝(Heuristic Mining)에 대해서"
-date: 2022-07-18
+last_modified_at: 2022-07-18
 author: Do-soo, KIM
 ---
 

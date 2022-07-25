@@ -1,14 +1,11 @@
 ---
-layout: post
 title: "PyScript 소개"
-date: 2022-06-28
+last_modified_at: 2022-06-28
 author: Do-soo, KIM
-
----
-
 ---
 
 ### 1. 개요
+
 
 빅데이터와 인공지능의 열풍으로 최근 Python 언어의 인기가 대단하죠.
 

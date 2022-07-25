@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "자바스크립트: Joint JS 사용하기"
-date: 2022-05-24
+last_modified_at: 2022-05-24
 author: Do-soo, KIM
 
 ---

@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "군집화 - K-Mean, DBSCAN 소개"
-date: 2022-07-22
+last_modified_at: 2022-07-22
 author: 김수민
 ---
 

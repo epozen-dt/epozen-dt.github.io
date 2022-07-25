@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "Nelson Rule 개념 정리 및 간단한 예제"
-date: 2022-05-31
+last_modified_at: 2022-05-31
 author: 심건우
 ---
 

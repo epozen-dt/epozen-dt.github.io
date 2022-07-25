@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "Kafka 서버 Docker 설치 및 Java Producer/Consumer 구현"
-date: 2021-12-30
+last_modified_at: 2021-12-30
 author: 손정모
 
 ---

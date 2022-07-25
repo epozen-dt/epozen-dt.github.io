@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "Kafka Schema Registry 서버 Docker 설치 및 Java Producer/Consumer 구현"
-date: 2022-01-27
+last_modified_at: 2022-01-27
 author: 손정모
 
 ---

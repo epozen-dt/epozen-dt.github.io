@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "MongoDB 클러스터 구성 예제(docker-compose)"
-date: 2022-07-18
+last_modified_at: 2022-07-18
 author: 심건우
 ---
 

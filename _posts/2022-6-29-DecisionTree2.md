@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "의사결정 트리 - CART 알고리즘 II"
-date: 2022-6-29
+last_modified_at: 2022-6-29
 author: Gun-ha, KANG
 ---
 

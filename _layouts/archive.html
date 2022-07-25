@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
+  {% include page__hero.html %}
+{% elsif page.header.video.id and page.header.video.provider %}
+  {% include page__hero_video.html %}
+{% endif %}
+
+{% if page.url != "/" and site.breadcrumbs %}
+  {% unless paginator %}
+    {% include breadcrumbs.html %}
+  {% endunless %}
+{% endif %}
+
+<!-- 메인 타이틀 이미지 삽입 추가 by DSKIM -->
+{% if page.author_profile or layout.author_profile or page.sidebar %}
+    <div style="height: 430px; color: white; text-align: center; vertical-align:middle; padding: 100px 0; background: url('/assets/images/center_img.jpg') no-repeat 50% ">
+      <span style="font-size: 48pt">
+        Digital Transformation
+      </span>
+      <br/>
+      <span style="font-size: 20pt">
+        우리 연구소는 4차 산업혁명에 발맞춰 Cloud와 AI & 빅데이터 등을 활용한
+      </span>
+        <br/>
+      <span style="font-size: 20pt">
+        고객지향적 신기술을 개발하고 있습니다.
+      </span>
+    </div>
+
+{% endif %}
+  
+<div id="main" role="main">
+{% include sidebar.html %}
+
+  <div class="archive">
+    {% unless page.header.overlay_color or page.header.overlay_image %}
+      <h1 id="page-title" class="page__title">{{ page.title }}</h1>
+    {% endunless %}
+    {{ content }}
+  </div>
+</div>
