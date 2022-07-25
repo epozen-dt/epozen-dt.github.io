@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "Unittest - Python 단위 테스트 프레임워크 사용법"
-date: 2022-6-30
+last_modified_at: 2022-6-30
 author: 이한솔
 ---
 

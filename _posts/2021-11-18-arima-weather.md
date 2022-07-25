@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "시계열 데이터 분석 - ARIMA 모형을 활용한 날씨 예측"
-date: 2021-11-29
+last_modified_at: 2021-11-29
 author: 심건우
 ---
 

@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "HDFS 블록 파일 시스템[2] - 구축 및 간단 예제"
-date: 2022-05-27
+last_modified_at: 2022-05-27
 author: 김수민
 ---
 

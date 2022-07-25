@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "멀티 프로세스 데이터 공유하는 방법"
-date: 2022-5-27
+last_modified_at: 2022-5-27
 author: 이한솔
 ---
 

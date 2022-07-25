@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "InfluxDB 예제 - Java Client를 활용한 간단한 Write & Read"
-date: 2021-12-16
+last_modified_at: 2021-12-16
 author: 심건우
 
 ---

@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "도커 컨테이너로 서비스 실행하기"
-date: 2022-03-28
+last_modified_at: 2022-03-28
 author: 심건우
 ---
 

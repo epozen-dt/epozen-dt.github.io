@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "Thymeleaf(타임리프) 기본 문법 사용하기"
-date: 2022-04-20
+last_modified_at: 2022-04-20
 author: Do-soo, KIM
 
 ---

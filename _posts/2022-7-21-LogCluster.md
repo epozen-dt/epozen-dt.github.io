@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "로그 자동 파싱 - LogCluster"
-date: 2022-7-21
+last_modified_at: 2022-7-21
 author: Gun-ha, KANG
 ---
 

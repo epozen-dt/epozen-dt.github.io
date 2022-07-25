@@ -1,0 +1,16 @@
+# main links
+main:
+  - title: "연구소 소개"
+    url: /about/
+  - title: "우리의 특허"
+    url: "/patent/"
+  - title: "검색"
+    url: "/search/"  
+  # - title: "About"
+  #   url: https://mmistakes.github.io/minimal-mistakes/about/
+  # - title: "Sample Posts"
+  #   url: /year-archive/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/

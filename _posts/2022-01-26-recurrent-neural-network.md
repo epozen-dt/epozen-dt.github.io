@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "순환 신경망-RNN, LSTM, GRU"
-date: 2022-01-26
+last_modified_at: 2022-01-26
 author: 김수민
 ---
 

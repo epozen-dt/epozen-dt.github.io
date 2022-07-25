@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "SpringBoot - PostgreSQL CDC"
-date: 2022-3-31
+last_modified_at: 2022-3-31
 author: Gun-ha, KANG
 ---
 

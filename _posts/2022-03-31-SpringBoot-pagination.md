@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "SpringBoot - 페이징 처리 구현하기"
-date: 2022-03-31
+last_modified_at: 2022-03-31
 author: 김수민
 ---
 

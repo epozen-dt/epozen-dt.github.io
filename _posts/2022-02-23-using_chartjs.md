@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "chart.js를 사용하여 웹에서 차트 그리기"
-date: 2022-02-23
+last_modified_at: 2022-02-23
 author: Do-soo, KIM
 
 ---

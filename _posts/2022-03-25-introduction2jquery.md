@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "jQuery에 대해서 알아보기"
-date: 2022-03-25
+last_modified_at: 2022-03-25
 author: Do-soo, KIM
 
 ---

@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "Keras 모델 학습 커스터마이징"
-date: "2021-12-30"
+last_modified_at: "2021-12-30"
 author: "김수민"
 
 ---
