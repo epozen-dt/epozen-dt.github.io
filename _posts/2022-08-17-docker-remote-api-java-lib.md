@@ -1,10 +1,8 @@
 ---
-title: "Docker remote api - Java 라이브러리"
+title: "Docker remote api - Java 클라이언트 라이브러리"
 last_modified_at: 2022-08-17
 author: 심건우
 ---
-
-이번 포스팅에선, Docker remote api 접근 시 사용 가능한 java 라이브러리에 대해 정리했다. 
 
 ## Docker remote API
  클라이언트에서 원격으로 도커 서비스를 제어할 수 있는 API
@@ -15,12 +13,12 @@ author: 심건우
 [이미지 출처](https://wiki.kicco.com/space/SYS/312967547/Docker+Remote+API+%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)
 
 
-## Java 라이브러리 비교
- 아래 표 내 3개의 라이브러리는 Docker 공식 문서의 Unofficial libraries 목록을 참고하여 선정했다.
+## Java 클라이언트 라이브러리 비교
+ 아래 표 내 3개의 라이브러리는 Docker 공식 문서의 Unofficial libraries 목록을 참고하여 선정
  
- 각 라이브러리 관련 정보는 각 라이브러리의 github와 mvnrepository를 참고했다.
+ 각 라이브러리 관련 정보는 각 라이브러리의 github와 mvnrepository를 참고
  
- 각 라이브러리의 취약점은 dependency들의 버전 업데이트로 회피 가능하다.
+ 각 라이브러리의 취약점은 dependency들의 버전 업데이트로 회피 가능
  
  ![image](https://user-images.githubusercontent.com/87160438/185052474-d0854ae7-22cd-4595-9fa7-340b5e164e56.png)
 

@@ -26,7 +26,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f181198d-a263-40cd-a905-423ec04900b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_posts/2022-08-17-docker-remote-api-java-lib.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2022-08-17-docker-remote-api-java-lib.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2022-08-17-docker-remote-api-java-lib.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +159,21 @@
       <option name="project" value="LOCAL" />
       <updated>1658131444432</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="8월 포스팅 - docker remote api (java lib)">
+      <created>1660711717626</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1660711717626</updated>
+    </task>
+    <task id="LOCAL-00015" summary="8월 포스팅 - docker remote api (java lib)">
+      <created>1660711834711</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1660711834711</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -195,7 +211,8 @@
     <MESSAGE value="5월 포스팅 완료 - Nelson Rule 개념 정리 및 간단한 예제" />
     <MESSAGE value="6월 포스팅" />
     <MESSAGE value="7월 포스팅 - MongoDB 클러스 구성 예제" />
-    <option name="LAST_COMMIT_MESSAGE" value="7월 포스팅 - MongoDB 클러스 구성 예제" />
+    <MESSAGE value="8월 포스팅 - docker remote api (java lib)" />
+    <option name="LAST_COMMIT_MESSAGE" value="8월 포스팅 - docker remote api (java lib)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="60" y="254" key="IDE.errors.dialog" timestamp="1650852178405">
