@@ -4,6 +4,8 @@ last_modified_at: 2022-08-17
 author: 심건우
 ---
 
+이번 포스팅에선 docker remote api를 java 클라이언트로 접근해보았다.
+
 ## Docker remote API
  클라이언트에서 원격으로 도커 서비스를 제어할 수 있는 API
  
@@ -25,28 +27,18 @@ author: 심건우
 
 [Unofficial libraries](https://docs.docker.com/engine/api/sdk/#unofficial-libraries)
 
-[A github 주소](https://github.com/spotify/docker-client)
+[A github 링크](https://github.com/spotify/docker-client)
 
-[A mvnrepository 주소](https://mvnrepository.com/artifact/com.spotify/docker-client)
+[A mvnrepository 링크](https://mvnrepository.com/artifact/com.spotify/docker-client)
 
-[B github 주소](https://github.com/docker-java/docker-java)
+[B github 링크](https://github.com/docker-java/docker-java)
 
-[B mvnrepository 주소](https://mvnrepository.com/artifact/com.github.docker-java/docker-java)
+[B mvnrepository 링크](https://mvnrepository.com/artifact/com.github.docker-java/docker-java)
 
-[C github 주소](https://github.com/amihaiemil/docker-java-api)
+[C github 링크](https://github.com/amihaiemil/docker-java-api)
 
-[C mvnrepository 주소](https://mvnrepository.com/artifact/com.amihaiemil.web/docker-java-api)
+[C mvnrepository 링크](https://mvnrepository.com/artifact/com.amihaiemil.web/docker-java-api)
 
-
-### - 주장
- java 환경에서 Docker remote api 적용 시, 라이브러리 A(spotify/docker-client)가 적합하다고 판단
- 
-### - 근거
- 1. 관리 주체가 명확함 -> Spotify (음원 스트리밍 기업)
- 2. 조사한 라이브러리 중 가장 사용량이 많음
- 3. 사용 방법이 직관적이고, 이해가 쉬움
- 4. Apache License 2.0
- 5. 취약점 전부 회피 가능
 
 ## Docker remote 환경설정
 - 도커 환경설정을 위해 root로 switch user
