@@ -325,7 +325,7 @@ sh.addShard("shard-1-rs/[shard-1-server-1 ip]:[shard-1-server-1 port],[shard-1-s
 sh.status()
 ```
 
-![image](https://user-images.githubusercontent.com/87160438/179462837-d7a6c806-f2d5-44cf-b567-3125026187db.png)
+![image](https://user-images.githubusercontent.com/87160438/185006266-f5a3e9d7-9da6-4132-b00c-277d077893fe.png)
 
 
 ## 결과
@@ -338,7 +338,7 @@ from pymongo import MongoClient
 from pprint import pprint
 
 # client 연결
-client = MongoClient(host='192.168.10.9', 
+client = MongoClient(host='host ip address', 
                      port=60000)
 # Database
 epozen = client.epozen
@@ -395,12 +395,12 @@ sh.status()
 
 - mongos 보안 관련 로그 (TCP fast Open)
 
-![image](https://user-images.githubusercontent.com/87160438/179466946-63a61e4a-770f-4b4a-9d24-bc68a976c056.png)
+![image](https://user-images.githubusercontent.com/87160438/185006441-867c8e6e-e595-4e2d-9b70-cac94f7a24f5.png)
 
 
 - mongo-express 화면 
 
-![image](https://user-images.githubusercontent.com/87160438/179465775-ba47d29c-0a0c-4c6d-ba84-5c417786451e.png)
+![image](https://user-images.githubusercontent.com/87160438/185006598-ee2ad9cd-e987-43ea-8196-a08102e2a77f.png)
 
 
 - 생성된 collection
