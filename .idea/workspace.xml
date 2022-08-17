@@ -27,7 +27,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f181198d-a263-40cd-a905-423ec04900b7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_posts/2022-08-17-docker-remote-api-java-lib.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2022-08-17-docker-remote-api-java-lib.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -173,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660711834711</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="8월 포스팅 - docker remote api (java lib)">
+      <created>1660721246852</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1660721246852</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
