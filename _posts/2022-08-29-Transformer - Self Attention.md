@@ -4,8 +4,6 @@ last_modified_at: 2022-8-29
 author: 권재우
 ---
 
-# Transformer - Self Attention
-
 이번 포스팅은 자연어 처리 모델인 트랜스포머(transformer)의 Attention 매커니즘에 대해 포스팅하겠습니다.
 
 
@@ -32,9 +30,9 @@ Transformer 모델에서는 Self라는 단어가 붙은 Attention매커니즘 �
 
 ![selfa2](https://user-images.githubusercontent.com/70212461/187122216-8e171160-2a37-49f0-83ae-8d1ccf510a5d.png)
 
-X는 입력단어 시퀀스이고 입력단어에 가중치 행렬을 곱해서 Q(Query), K(Key), V(Value) 세 가지 값을 계산합니다.  
+**X는 입력단어 시퀀스이고 입력단어에 가중치 행렬을 곱해서 Q(Query), K(Key), V(Value) 세 가지 값을 계산합니다. **
 
-Query, Key, Value가 모두 동일한 입력 시퀀스 X에서 생성되는 경우 이를 Self-Attention이라고 합니다. 
+Query, Key, Value가 모두 동일한 입력 시퀀스 X에서 생성되는 경우 이를 **Self-Attention**이라고 합니다. 
 
 - 예시문장 
 
@@ -51,7 +49,7 @@ Query, Key, Value가 모두 동일한 입력 시퀀스 X에서 생성되는 경�
 ![self5](https://user-images.githubusercontent.com/70212461/187124728-3372448d-d4a8-4716-97f8-8553ff9599b8.png)
 
 
-위 함수식이 Self-Attention의 함수식으로 단어간의 유사도를 계산하는 방법입니다. 각 단어에 대한 Q, K, V 값을 구하고 K를 Transpose를 해서 Q값과 내적을 통해서 각 단어간 유사도를 구합니다 그리고 root(dk)와 softmax함수를 통해 출력된 스코어를 정규화해주고 백분율화 합니다. 이 score 값을 V에 곱해줌으로써 입력 값과 같은 차원의 값을 출력할 수 있게 됩니다. 
+위 함수식이 Self-Attention의 함수식으로 단어간의 유사도를 계산하는 방법입니다. 각 단어에 대한 Q, K, V 값을 구하고 K를 Transpose를 해서 Q값과 내적한 값으로 각 단어간 유사도를 구합니다 그리고 root(dk)와 softmax함수를 통해 출력된 스코어를 정규화해주고 백분율화 합니다. 이 score 값을 V에 곱해줌으로써 입력 값과 같은 차원의 값을 출력할 수 있게 됩니다. 
 
 ![selfa4](https://user-images.githubusercontent.com/70212461/187123576-5e9a0d31-5c60-4726-9c10-e76d8ad4d867.png)
 
