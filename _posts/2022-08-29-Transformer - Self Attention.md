@@ -1,7 +1,6 @@
 ---
-layout: post
 title: "Transformer - Self Attention"
-date: 2022-8-29
+last_modified_at: 2022-8-29
 author: 권재우
 ---
 
