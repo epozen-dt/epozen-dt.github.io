@@ -33,7 +33,7 @@ Transformer의 입력 방식은 Embedding vector에 Positional Encoding을 더�
 
 벡터화 방법에는 희소 표현과 밀집 표현이 있습니다.
 
-<img src="https://user-images.githubusercontent.com/96156882/187332647-0b8ced50-b380-47db-b794-285ad458a913.png" width="500">
+<img src="https://user-images.githubusercontent.com/96156882/187332647-0b8ced50-b380-47db-b794-285ad458a913.png" width="600">
 
 ### **1) 희소 표현**
 
