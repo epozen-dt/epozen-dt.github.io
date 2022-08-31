@@ -29,17 +29,13 @@ Transformer의 입력 방식은 Embedding vector에 Positional Encoding을 더�
 
 > Embedding은 단어를 밀집 벡터로 만들어주는 기술입니다.
 
-밀집 벡터가 무엇인지 알기 위해서는 벡터화 방법에 대해 알아야 합니다.
-
-벡터화 방법에는 희소 표현과 밀집 표현이 있습니다.
+밀집 벡터가 무엇인지 알기 위해서는 벡터화 방법에 대해 알아야 합니다.<br>벡터화 방법에는 희소 표현과 밀집 표현이 있습니다.
 
 <img src="https://user-images.githubusercontent.com/96156882/187332647-0b8ced50-b380-47db-b794-285ad458a913.png" width="600">
 
 ### **1) 희소 표현**
 
-희소 표현의 대표적인 방식은 One-hot encoding으로 표현하고 싶은 단어의 인덱스에 1의 값, 나머지 인덱스에는 0으로 표현합니다.
-
-One-hot encoding은 단어 개수가 늘어날 수록 벡터의 차원이 계속 늘어난다는 것과 단어 유사도 표현이 불가하다는 문제점이 있습니다.
+희소 표현의 대표적인 방식은 One-hot encoding으로 표현하고 싶은 단어의 인덱스에 1의 값, 나머지 인덱스에는 0으로 표현합니다.<br>One-hot encoding은 단어 개수가 늘어날 수록 벡터의 차원이 계속 늘어난다는 것과 단어 유사도 표현이 불가하다는 문제점이 있습니다.
 
 ### **2) 밀집 표현**
 
@@ -49,7 +45,7 @@ One-hot encoding은 단어 개수가 늘어날 수록 벡터의 차원이 계속
 
 1. 임베딩 층을 랜덤 초기화하여 처음부터 학습하는 Embedding layer
 2. 사전에 학습된 임베딩 벡터들을 가져와 사용하는 pre-trained word embedding
-ex) Word2Vec, Glove, Elmo 등
+<br>ex) Word2Vec, Glove, Elmo 등
 
 <br>
 
@@ -103,15 +99,13 @@ CBOW의 학습 방법은 다음과 같습니다.
 <br>
 
 ### **2) Skip-gram**
-Skip-gram은 중간에 있는 단어들을 입력으로 주변 단어들을 예측하는 방법입니다.
-
-메커니즘은 CBOW와 같으나, 은닉층에서 벡터들의 평균을 구하는 과정은 제외됩니다.
+Skip-gram은 중간에 있는 단어들을 입력으로 주변 단어들을 예측하는 방법입니다.<br>메커니즘은 CBOW와 같으나, 은닉층에서 벡터들의 평균을 구하는 과정은 제외됩니다.
 
 <img src="https://user-images.githubusercontent.com/96156882/187568117-90c6b13f-8a2b-4443-950f-b50a720dd0b5.png" width="600">
 
 ---
 
-이번 포스팅에서는 Transformer의 입력을 위해 Embedding vector를 만드는 Embedding 방식에 대해 알아보았습니다. 
+이번 포스팅에서는 Transformer의 입력을 위해 Embedding vector를 만드는 Embedding 방식에 대해 알아보았습니다.<br>
 다음 포스팅에서는 Positional Encoding에 대해 알아보도록 하겠습니다.
 
 ---
