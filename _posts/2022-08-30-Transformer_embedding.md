@@ -79,13 +79,15 @@ Word2Vec은 2013년 구글에서 발표한 Pre-trained word embedding 방법입�
 Word2Vec은 2가지 방식이 있습니다.
 1. CBOW
 2. Skip-gram
+   
+<br>
 
 ### **1) CBOW**
 CBOW는 주변에 있는 단어들을 입력으로 중간에 있는 단어들을 예측합니다.
 
 예를 들어 "You say goodbye and I hello" 문장이 있을 때, say를 예측하기 위해 you와 goodbye를 입력값으로 넣어주는 것입니다.
 
-<img src="https://user-images.githubusercontent.com/96156882/187334860-6311795f-7e61-4119-be4f-4267c8727a14.png" width="500">
+<img src="https://user-images.githubusercontent.com/96156882/187334860-6311795f-7e61-4119-be4f-4267c8727a14.png" width="600">
 
 CBOW의 학습 방법은 다음과 같습니다.
 
@@ -105,7 +107,7 @@ Skip-gram은 중간에 있는 단어들을 입력으로 주변 단어들을 예�
 
 메커니즘은 CBOW와 같으나, 은닉층에서 벡터들의 평균을 구하는 과정은 제외됩니다.
 
-<img src="https://user-images.githubusercontent.com/96156882/187568117-90c6b13f-8a2b-4443-950f-b50a720dd0b5.png" width="500">
+<img src="https://user-images.githubusercontent.com/96156882/187568117-90c6b13f-8a2b-4443-950f-b50a720dd0b5.png" width="600">
 
 ---
 
