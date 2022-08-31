@@ -57,10 +57,10 @@ Embedding layer는 단어를 랜덤하게 밀집 벡터로 변환한 뒤 인공 
 
 keras의 embedding layer와 pytorch의 nn.embedding을 통해 쉽게 사용할 수 있습니다.
 
-임베딩 층 사용 방법은 단어를 정수로 인코딩 한 뒤 정수를 인덱스로 가지는 테이블로부터 임베딩 벡터 값을 가져옵니다.
+임베딩 층 사용 방법은 단어를 정수로 인코딩 한 뒤 정수를 인덱스로 가지는 테이블로부터 임베딩 벡터 값을 가져옵니다.<br>
 이 밀집 벡터는 학습 과정에서 가중치과 학습되는 것과 같은 방식으로 훈련합니다.
 
-<img src="https://user-images.githubusercontent.com/96156882/187333483-010cd231-b7d7-4b85-9f41-c899526d65e7.png" width="400">
+<img src="https://user-images.githubusercontent.com/96156882/187333483-010cd231-b7d7-4b85-9f41-c899526d65e7.png" width="500">
 
 <br>
 
