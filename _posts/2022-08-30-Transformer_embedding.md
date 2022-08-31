@@ -5,9 +5,7 @@ author: 이한솔
 ---
 Transformer는 2017년 NIPS를 통해 발표 되었으며, 번역 부분 SOTA를 차지한 우수한 모델입니다.
 
-Transformer의 입력 방식은 Embedding vector에 Positional Encoding을 더해서 입력합니다.
-
-이 포스팅에서는 Embedding에 대해 알아보겠습니다.
+Transformer의 입력 방식은 Embedding vector에 Positional Encoding을 더해서 입력하게 되는데, 이 포스팅에서는 Embedding vector를 만드는 Embedding 방식에 대해 알아보겠습니다.
 
 ---
 
@@ -34,6 +32,7 @@ Transformer의 입력 방식은 Embedding vector에 Positional Encoding을 더�
 밀집 벡터가 무엇인지 알기 위해서는 벡터화 방법에 대해 알아야 합니다.
 
 벡터화 방법에는 희소 표현과 밀집 표현이 있습니다.
+
 <img src="https://user-images.githubusercontent.com/96156882/187332647-0b8ced50-b380-47db-b794-285ad458a913.png" width="500">
 
 ### **1) 희소 표현**
@@ -64,6 +63,7 @@ keras의 embedding layer와 pytorch의 nn.embedding을 통해 쉽게 사용할 �
 
 임베딩 층 사용 방법은 단어를 정수로 인코딩 한 뒤 정수를 인덱스로 가지는 테이블로부터 임베딩 벡터 값을 가져옵니다.
 이 밀집 벡터는 학습 과정에서 가중치과 학습되는 것과 같은 방식으로 훈련합니다.
+
 <img src="https://user-images.githubusercontent.com/96156882/187333483-010cd231-b7d7-4b85-9f41-c899526d65e7.png" width="400">
 
 <br>
@@ -104,6 +104,7 @@ CBOW의 학습 방법은 다음과 같습니다.
 Skip-gram은 중간에 있는 단어들을 입력으로 주변 단어들을 예측하는 방법입니다.
 
 메커니즘은 CBOW와 같으나, 은닉층에서 벡터들의 평균을 구하는 과정은 제외됩니다.
+
 <img src="https://user-images.githubusercontent.com/96156882/187568117-90c6b13f-8a2b-4443-950f-b50a720dd0b5.png" width="500">
 
 ---
