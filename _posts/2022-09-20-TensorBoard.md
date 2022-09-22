@@ -27,7 +27,7 @@ author: 김상민
 
 > ## TensorBoard 시작하기
 
-```Python
+``` python
 from keras.datasets import mnist
 from tensorflow.keras.utils import to_categorical
 from tensorflow.python.keras.callbacks import TensorBoard
@@ -39,8 +39,7 @@ from keras import models
 
 > ## 데이터 로드 및 타입 변경
 
-```Python
-
+``` python
 (train_images, train_labels), (test_images, test_labels) = mnist.load_data() 
 
 train_images = train_images.reshape((60000, 28, 28, 1))
@@ -53,8 +52,7 @@ test_images = test_images.astype('float32') / 255
 
 > ## 라벨 One-hot 인코딩
 
-```Python
-
+``` python
 train_labels = to_categorical(train_labels)
 test_labels = to_categorical(test_labels)
 
@@ -63,8 +61,7 @@ test_labels = to_categorical(test_labels)
 
 > ## 모델 생성
 
-```Python
-
+``` python
 model = models.Sequential()
 model.add(layers.Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1), padding='same'))
 model.add(layers.MaxPooling2D(2, 2))
@@ -84,8 +81,7 @@ print(model.summary())
 > ## 텐서 보드 생성 및 경로 설정
    - log 기록을 위해 디렉토리 위치 설정합니다.
 
-```Python
-
+``` python
 tensorboard = TensorBoard(log_dir = f"{base_dir}/log/{time()}")
 
 ```
@@ -93,8 +89,7 @@ tensorboard = TensorBoard(log_dir = f"{base_dir}/log/{time()}")
 
 > ## 모델 컴파일
 
-```Python
-
+``` python
 model.compile(optimizer='rmsprop',
               loss='categorical_crossentropy',
               metrics=['accuracy'])
@@ -104,8 +99,7 @@ model.compile(optimizer='rmsprop',
 
 > ## 모델 훈련
 
-```Python
-
+``` python
 model.fit(train_images, train_labels, epochs=5, batch_size=64, callbacks=[tensorboard])
 
 ```
@@ -113,24 +107,23 @@ model.fit(train_images, train_labels, epochs=5, batch_size=64, callbacks=[tensor
 
 > ## 모델 테스트
 
-```Python
-
+``` python
 test_loss, test_acc = model.evaluate(test_images, test_labels)
 
 ```
 
 
 > ## 디렉토리 이동 및 텐서보드 실행
-  - 현재 경로로 이동하고 tensorboad -- logdir=(현재디렉토리)를 실행시킵니다.
+ - 현재 경로로 이동하고 tensorboad -- logdir=(현재디렉토리)를 실행시킵니다.
 ![cmd창](https://user-images.githubusercontent.com/60912905/191175474-12d9da01-6c44-48fd-bc27-9e74fe416cb8.JPG)
 
 
 > ## 페이지 접속
-  - cmd창에서 나오는 http://localhost:6006/으로 접속합니다.
+ - cmd창에서 나오는 http://localhost:6006/으로 접속합니다.
 
 
 > ## 텐서보드 결과확인
-  - 실행 결과를 확인합니다.
+ - 실행 결과를 확인합니다.
 ![텐서보드](https://user-images.githubusercontent.com/60912905/191176037-23f790e0-4044-4590-add6-c692a61b74f6.JPG)
 
 
