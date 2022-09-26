@@ -23,21 +23,92 @@ author: 심건우
 
 
 ## 코드 예시
+ - docker import
+
+```python
+import docker
+```
+
  - 컨테이너 목록 조회
 
-![image](https://user-images.githubusercontent.com/87160438/192230717-c47a16d4-1974-4db5-8cd5-ab1648204261.png)
+```python
+def test_get_container_list(self):
+ """
+ docker ps
+ :return:
+ """
+ # 클라이언트 연결
+ client = docker.DockerClient(base_url = '도커 host url')
+ 
+ # 컨테이너 목록 출력
+ for container in client.containers.list():
+  print(container.attrs)
+ 
+ # 클라이언트 연결 종료
+ client.close()
+```
 
 
  - 도커 이미지 pull
 
-![image](https://user-images.githubusercontent.com/87160438/192230835-e6fd1b34-7b51-4af3-8c70-b4257f087a87.png)
+```python
+def test_pull_image(self):
+ """
+ docker pull
+ :return:
+ """
+ # 클라이언트 연결
+ client = docker.DockerClient(base_url = '도커 host url')
+ 
+ # docker image pull, mongodb
+ client.images.pull("mongo:5.0")
+ 
+ # 클라이언트 연결 종료
+ client.close()
+```
 
 
  - 컨테이너 환경 변수 설정 및 실행
 
-![image](https://user-images.githubusercontent.com/87160438/192231110-444726b2-0836-407a-a7b0-9767bde07270.png)
+```python
+def test_run_container(self):
+ """
+ docker run
+ :return:
+ """
+ # 클라이언트 연결
+ client = docker.DockerClient(base_url = '도커 host url')
+ 
+ # 컨테이너 환경 설정 및 실행
+ client.containers.run(image="mongo:5.0",
+                       restart_policy={'Name' : 'always'},
+                       ports={'27017/tcp': ('', 27017)},
+                       volumes=["/home/gunwu/8.mongo/mongodb:/data/db"],
+                       environment=[
+                           "MONGO_INITDB_ROOT_PASSWORD=''",
+                           "MONGO_INITDB_DATABASE=''",
+                           "MONGO_INITDB_ROOT_USERNAME=''"
+                       ],
+                       name='epozen-test',
+                       detach=True)
+ # 클라이언트 연결 종료
+ client.close()                       
+```
 
 
  - 컨테이너 중지 및 삭제
 
-![image](https://user-images.githubusercontent.com/87160438/192231213-6307a2d1-d0b2-44c6-8c3d-dc82c464bd3c.png)
+```python
+def test_stop_and_remove_container(self):
+ # 클라이언트 연결
+ client = docker.DockerClient(base_url = '도커 host url')
+ 
+ # 컨테이너 중지
+ client.containers.get('epozen-test').stop()
+ 
+ # 컨테이너 삭제
+ client.containers.get('epozen-test').remove()
+ 
+ # 클라이언트 연결 종료
+ client.close()                       
+```
