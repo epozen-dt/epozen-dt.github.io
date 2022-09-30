@@ -76,10 +76,10 @@ Transformer 모델은 RNN을 사용하지 않는 Attention 기반의 모델로, 
 <img src="https://user-images.githubusercontent.com/96156882/193165242-6bab6346-a927-423e-a433-e2acc18349bf.png" width="300">
 
 하지만 벡터 값일 경우<br>
-예시로 차원이 4개일 경우를 가정해보면 하나의 위치 벡터가 4개의 차원으로 표현된다면 각 요소는 서로 다른 4개의 주기를 갖게 되기 때문에 겹칠 걱정을 하지 않아도 됩니다.
+예시로 차원이 4개일 경우를 가정해보면 하나의 위치 벡터가 4개의 차원으로 표현된다면 각 요소는 서로 다른 4개의 주기를 갖게 되기 때문에 겹칠 걱정을 하지 않아도 됩니다.<br>
 (물론 모든 주기의 공배수만큼 지난 위치는 겹칠 수 있겠지만, 그 정도면 이미 대부분의 단어 위치를 표현 할 수 있습니다.)
 
-<img src="https://user-images.githubusercontent.com/96156882/193165512-4f1d6cc7-b436-4609-9ba1-6baca934615c.png" width="300">
+<img src="https://user-images.githubusercontent.com/96156882/193165512-4f1d6cc7-b436-4609-9ba1-6baca934615c.png" width="350">
 
 <br>
 
