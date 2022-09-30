@@ -85,7 +85,7 @@ Transformer 모델은 RNN을 사용하지 않는 Attention 기반의 모델로, 
 
 ---
 
-저번 포스팅에 이해 이번 포스팅까지 Transformer의 입력 방식에 대해 알아보았습니다.
+저번 포스팅에 이해 이번 포스팅까지 Transformer의 입력 방식에 대해 알아보았습니다.<br>
 다시 한번 정리하면, 기계가 이해할 수 있도록 숫자(벡터)로 바꾸는 Embedding vector에 위치 정보를 넣어주는 Positional Encoding을 더해서 입력하게 됩니다.
 
 ---
