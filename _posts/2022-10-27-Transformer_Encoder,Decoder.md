@@ -19,16 +19,13 @@ author: 권재우
 
 - Inputs
 
-[Embedding]  
-https://epozen-dt.github.io/Transformer_embedding/
+[Embedding 설명 바로가기](https://epozen-dt.github.io/Transformer_embedding/)
 
-[Positional-Encoding]  
-https://epozen-dt.github.io/Transformer_positional-encoding/
+[Positional-Encoding 설명 바로가기](https://epozen-dt.github.io/Transformer_positional-encoding/)
 
 - Attention
 
-[self-attention]  
-https://epozen-dt.github.io/Transformer-Self-Attention/
+[self-attention 설명 바로가기](https://epozen-dt.github.io/Transformer-Self-Attention/)
 
 오늘 포스팅에서는 Attention을 제외하고 Encoder부분에서는 Normalize, Feed-Forward를 설명하고 Decoder에서는 Masked Multi-Head Attention, ouput 기술을 설명하겠습니다. 
 
