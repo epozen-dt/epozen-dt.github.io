@@ -12,13 +12,21 @@ author: 심건우
  - Docker는 HTTP 관련 보안 설정 방법으로 TLS(HTTPS) 기능을 제공한다.
  - 아래 구조는 서버와 클라이언트 서로 인증이 가능한 Docker TLS 구조이다.
 
+![image](https://user-images.githubusercontent.com/87160438/198226274-4e51feaf-6a16-41c6-a533-43e07aacee4d.png)
+
 
 [TLS 상세 설명](https://www.ibm.com/docs/ko/ibm-mq/9.1?topic=mechanisms-cryptographic-security-protocols-tls)
 
 # Docker TLS 적용 방법
 - 서버에 생성되는 파일 목록
 
+![image](https://user-images.githubusercontent.com/87160438/198226387-788611cd-211e-4b74-bd41-2653c127c05d.png)
+
+
 - 클라이언트에 생성되는 파일 목록
+
+![image](https://user-images.githubusercontent.com/87160438/198226422-053d97dd-4c28-46e0-9ff9-2633211a470c.png)
+
 
 ## 1. CA(Certificate Authority) 개인키 생성
  - 인증서 내 공개키 디지털 서명 용도, 유출 금지
