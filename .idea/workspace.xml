@@ -25,9 +25,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f181198d-a263-40cd-a905-423ec04900b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/_posts/2022-09-26-docker-remote-api-python-lib.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f181198d-a263-40cd-a905-423ec04900b7" name="Default Changelist" comment="10월 포스팅">
+      <change beforePath="$PROJECT_DIR$/_posts/2022-10-27-docker-remote-api-security.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2022-10-27-docker-remote-api-security.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,16 +47,19 @@
     </option>
   </component>
   <component name="ProjectId" id="21OZk2pzm0XrTFfYPSJNj3PED5o" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Project.color": "ff1167",
-    "last_opened_file_path": "D:/WORKSPACE/epozen-dt.github.io/_posts"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Project.color&quot;: &quot;ff1167&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/WORKSPACE/epozen-dt.github.io/_posts&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\WORKSPACE\epozen-dt.github.io\_posts" />
@@ -184,7 +186,28 @@
       <option name="project" value="LOCAL" />
       <updated>1660721246852</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="9월 포스팅">
+      <created>1664171494097</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1664171494097</updated>
+    </task>
+    <task id="LOCAL-00018" summary="10월 포스팅">
+      <created>1666829238858</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1666829238858</updated>
+    </task>
+    <task id="LOCAL-00019" summary="10월 포스팅">
+      <created>1666857573557</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1666857573557</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -222,7 +245,9 @@
     <MESSAGE value="6월 포스팅" />
     <MESSAGE value="7월 포스팅 - MongoDB 클러스 구성 예제" />
     <MESSAGE value="8월 포스팅 - docker remote api (java lib)" />
-    <option name="LAST_COMMIT_MESSAGE" value="8월 포스팅 - docker remote api (java lib)" />
+    <MESSAGE value="9월 포스팅" />
+    <MESSAGE value="10월 포스팅" />
+    <option name="LAST_COMMIT_MESSAGE" value="10월 포스팅" />
   </component>
   <component name="WindowStateProjectService">
     <state x="60" y="254" key="IDE.errors.dialog" timestamp="1650852178405">
