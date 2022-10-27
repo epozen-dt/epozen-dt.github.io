@@ -26,8 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f181198d-a263-40cd-a905-423ec04900b7" name="Default Changelist" comment="10월 포스팅">
-      <change afterPath="$PROJECT_DIR$/_posts/2022-10-27-docker-remote-api-security.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2022-10-27-docker-remote-api-security.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2022-10-27-docker-remote-api-security.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666829238858</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="10월 포스팅">
+      <created>1666857573557</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1666857573557</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
