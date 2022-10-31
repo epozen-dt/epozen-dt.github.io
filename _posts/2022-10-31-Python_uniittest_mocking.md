@@ -131,13 +131,13 @@ class TestAPI(unittest.TestCase):
     @patch('utils.common.DBManager.del_data')
     def test_check_data(self, del_data):
         # given
-        user_id = "5"
+        no = "5"
 
         # case1. is_check_data() 의 리턴을 True 로 설정
         with patch('utils.common.is_check_data', return_value=True):
 
             # when
-            right_resp = self.app.delete(self.domain + '/'+user_id)
+            right_resp = self.app.delete(self.domain + '/'+no)
 
             # then
             assert right_resp.status_code == 200
@@ -146,7 +146,7 @@ class TestAPI(unittest.TestCase):
         # case2. is_check_data() 의 리턴을 False 로 설정
         with patch('utils.common.is_check_data', return_value=False):
             # when
-            right_resp = self.app.delete(self.domain + '/' + user_id)
+            right_resp = self.app.delete(self.domain + '/' + no)
 
             # then
             assert right_resp.status_code == 200
