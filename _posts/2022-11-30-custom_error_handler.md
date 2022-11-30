@@ -8,7 +8,7 @@ author: 이한솔
 
 ---
 프로그램 실행시 에러가 발생하면 그 상황에 대해 적절한 처리가 필요합니다. <br>
-이번 시간에는 API의 에러 응답(error response)을 정의할 수 있는 Custom exception handler에 대해 설명하려고 합니다. <br>
+API의 에러 응답(error response)을 정의할 수 있는 Custom exception handler에 대해 설명하려고 합니다. <br>
 >Flask에서는 데코레이터를 통해 error handling이 가능합니다. <br>
 이 포스팅에서는 Flask로 구현해보도록 하겠습니다.
 
@@ -83,12 +83,13 @@ def index(valid: ValidRequest):
 ```
 id에 아무것도 입력하지 않았을 경우, ip를 정규식에 맞지 않는 값을 입력해 요청한 결과
 다음과 같이 정의한대로 응답하는 것을 확인할 수 있었습니다.
+
 <img src="https://user-images.githubusercontent.com/96156882/204724430-652f5541-3343-4813-ac09-0bf38d530a1f.png" width="400">
 
 ---
 
 이번 시간에는 사용자가 에러 처리를 정의하는 custom error handler에 대해 알아보았습니다. <br>
-custom error_handler를 통해 원하는대로 response 할 수 있고, 전체적인 에러 관리를 한 곳에서 모여 처리할 수 있다는 장점이 있는 것 같습니다.
+custom error handler를 이용하면 원하는대로 response 할 수 있고, 전체적인 에러 관리를 한 곳에서 모여 처리할 수 있다는 장점이 있는 것 같습니다.
 
 ---
 
