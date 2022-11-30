@@ -60,6 +60,8 @@ def index():
 > 이번에는 지난 시간에 포스팅 했던 flask request validator를 이용해
 유효성 검사를 통과하지 못한 값이 들어왔을 경우 에러를 정의해보도록 하겠습니다.
 
+[flask request validator로 파라미터 유효성 검사하기](https://epozen-dt.github.io/flask_request_validator/)
+
 ```python
 
 @app.errorhandler(RequestError)
