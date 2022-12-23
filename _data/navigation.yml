@@ -1,9 +1,9 @@
 # main links
 main:
-  - title: "연구소 소개"
-    url: /about/
-  - title: "우리의 특허"
-    url: "/patent/"
+#  - title: "연구소 소개"
+#    url: /about/
+#  - title: "우리의 특허"
+#    url: "/patent/"
   - title: "검색"
     url: "/search/"  
   # - title: "About"
