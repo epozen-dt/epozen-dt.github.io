@@ -101,15 +101,12 @@ Delayed 인터페이스 <br>
 <br>
 
 ## 5. SynchronousQueue
-
-
----
-
-
----
-
-이번 시간에는 사용자가 에러 처리를 정의하는 custom error handler에 대해 알아보았습니다. <br>
-custom error handler를 이용하면 원하는대로 response 할 수 있고, 전체적인 에러 관리를 한 곳에서 모여 처리할 수 있다는 장점이 있는 것 같습니다.
+삽입 메소드를 호출하면 다른 스레드에서 제거 메소드가 호출 될 때까지 대기하는 큐입니다.따라서 서로 대칭되는 큐가 없으면 대기합니다.<br>
+이 큐에는 저장되는 데이터가 없어 내부 용량을 지니지 않고, 
+스레드가 없으면 제거에 사용할 수 없는 요소가 없습니다.
 
 ---
+
+## Blocking Queue 정리
+![image](https://user-images.githubusercontent.com/96156882/209922591-82232635-6942-4f59-859e-bfb6fdacb065.png)
 
