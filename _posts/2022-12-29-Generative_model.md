@@ -35,7 +35,9 @@ GAN은 생성기(Generator)와 판별기(Discriminator)로 이루어져 있습�
 
 &nbsp;
 
-VAE는 Encoder-Decoder 구조로 Encoder의 출력에서 평균과 표준편차를 각각 구한 후 랜덤 노이즈와 연산하여 구한 잠재변수 Z_i를 Decoder의 입력으로 이미지를 생성합니다. 
+VAE는 Encoder-Decoder 구조로 Encoder의 출력에서 평균과 표준편차를 각각 구한 후 랜덤 노이즈와 연산하여 구한 잠재변수 Z_i를 Decoder의 입력으로 이미지를 생성합니다. 이 때, 예측 이미지는 입력 이미지와 똑같이 생긴 이미지가 생성됩니다.
+
+&nbsp;
 
 * Normalizing flow 
 ![NF](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FWuLzZ%2FbtqOCdSfy7h%2FQw8uu14U79cpBBRAzpHV01%2Fimg.png)
@@ -43,6 +45,8 @@ VAE는 Encoder-Decoder 구조로 Encoder의 출력에서 평균과 표준편차�
 &nbsp;
 
 Normalizing flow는 flow-based generative model이라고도 부르는데, 어떤 쉬운 분포 z에 f 함수를 연산하여 복잡한 확률분포 p(x)를 만듦으로서 새로운 이미지를 생성합니다.
+
+위의 Normalizing flow와 VAE를 합쳐서 만들어진 모델이 Diffusion model 입니다.
 
 &nbsp;
 
