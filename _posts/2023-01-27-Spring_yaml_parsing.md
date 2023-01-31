@@ -60,7 +60,7 @@ component:
     from: agent_log
     name: alert_filter
   - class: com.epozen.acelletl.Appender
-	from: alert_filter
+    from: alert_filter
 	name: alert_appender
 ```
 ```java
