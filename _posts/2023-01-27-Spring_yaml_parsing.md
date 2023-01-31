@@ -4,7 +4,7 @@ last_modified_at: 2023-01-27
 author: 이한솔
 ---
 
-이번 시간에는 Spring에서 yaml파일을 파싱하는 방법에 대해 알아보도록 하겠습니다.
+이번 포스팅에서는 Spring에서 yaml파일을 파싱하는 방법에 대해 알아보도록 하겠습니다.
 
 ---
 > **@ConfigurationProperties**는 Spring에서 YAML, properties 파일에 정의된 프로퍼티들을 POJO에 매핑하여 Bean으로 만들 수 있게 해주는 어노테이션입니다.
@@ -35,11 +35,11 @@ public class Property {
 예를 들어 다음과 같이 다양한 표기 방법으로 표현된 'classname'은
 ```yaml
 component:
-	className: com.epozen.acelletl.Filter
-	classname: com.epozen.acelletl.Filter
-	class_name: com.epozen.acelletl.Filter
-	class-name: com.epozen.acelletl.Filter
-	CLASS_NAME: com.epozen.acelletl.Filter
+  className: com.epozen.acelletl.Filter
+  classname: com.epozen.acelletl.Filter
+  class_name: com.epozen.acelletl.Filter
+  class-name: com.epozen.acelletl.Filter
+  CLASS_NAME: com.epozen.acelletl.Filter
 ```
 다음과 같이 카멜식인 'className'으로 모두 바인딩 가능합니다.
 ```java
@@ -56,11 +56,11 @@ public class Property {
 List 형태의 경우는 다음과 같이 구현할 수 있습니다.
 ```yaml
 component:  
-  - class: com.epozen.acelletl.Filter    
-    from: agent_log    
-    name: alert_filter 
-  - class: com.epozen.acelletl.Appender    
-	from: alert_filter    
+  - class: com.epozen.acelletl.Filter
+    from: agent_log
+    name: alert_filter
+  - class: com.epozen.acelletl.Appender
+	from: alert_filter
 	name: alert_appender
 ```
 ```java
