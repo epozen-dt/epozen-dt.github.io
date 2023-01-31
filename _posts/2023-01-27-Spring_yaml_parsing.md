@@ -61,7 +61,7 @@ component:
     name: alert_filter
   - class: com.epozen.acelletl.Appender
     from: alert_filter
-	name: alert_appender
+    name: alert_appender
 ```
 ```java
 @Getter
