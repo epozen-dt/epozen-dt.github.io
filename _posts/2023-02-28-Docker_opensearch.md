@@ -3,16 +3,15 @@ title: "Docker로 Opensearch Cluster 구축하기"
 last_modified_at: 2023-02-28
 author: 이한솔
 ---
+<br>
 
 이번 포스팅에서는 Docker로 Opensearch Cluster 구축하는 방법에 대해 공유하겠습니다.
 
-> Opensearch는 Elastic Search 7.1에서 Fork 된 것으로 분산형 커뮤니티 기반 오픈 소스 검색 및 분석 제품입니다. 실시간 애플리케이션 모니터링, 로그 분석 및 웹 사이트 검색과 같이 다양한 사용 사례에 사용되고 있습니다.
+> **Opensearch**는 Elastic Search 7.1에서 Fork 된 것으로 분산형 커뮤니티 기반 오픈 소스 검색 및 분석 제품입니다. 실시간 애플리케이션 모니터링, 로그 분석 및 웹 사이트 검색과 같이 다양한 사용 사례에 사용되고 있습니다.
 
 <br>
 
----
-
-## Opensearch Cluster 구성
+# Opensearch Cluster 구성
 Cluster 구성도는 다음과 같습니다. <br>
 1번 서버에는 Cluster Manager Node와 Data Node1을, 2번 서버에는 Data Node2를 구성하였습니다. <br>
 Opensearch Dashboard 또한 1번 서버에 설치하겠습니다.
@@ -21,13 +20,11 @@ Opensearch Dashboard 또한 1번 서버에 설치하겠습니다.
 
 <br>
 
----
-
-## 설정 파일
+# 설정 파일
 Docker를 이용해 설치하기 위해서 두가지의 설정 파일을 작성해야 합니다.<br>
 설정 파일은 Cluster Manager 기준으로 작성하겠습니다. <br>
 
-**<docker-compose.yaml>** <br>
+### **docker-compose.yaml** <br>
 도커 설치를 위한 도커 컴포즈 파일입니다.
 
 ```yaml
@@ -80,9 +77,7 @@ volumes:
 
 <br>
 
----
-
-**<config.yml>** <br>
+### **config.yml** <br>
 opensearch의 config 파일입니다.
 
 ```yml
@@ -114,9 +109,7 @@ cluster.initial_cluster_manager_nodes: ["opensearch-cluster_manager"]
 
 <br>
 
----
-
-## 결과
+# 결과
 클러스터 구성 결과입니다.
 ![image](https://user-images.githubusercontent.com/96156882/221735354-9ab46c80-d70d-4680-bc6a-917225f4941e.png)
 
