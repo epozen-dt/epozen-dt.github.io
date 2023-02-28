@@ -17,7 +17,7 @@ Cluster 구성도는 다음과 같습니다. <br>
 1번 서버에는 Cluster Manager Node와 Data Node1을, 2번 서버에는 Data Node2를 구성하였습니다. <br>
 Opensearch Dashboard 또한 1번 서버에 설치하겠습니다.
 
-![image](https://user-images.githubusercontent.com/96156882/221719523-a5773918-f9a2-44c0-b4ef-2ba70363de47.png)
+<img src="https://user-images.githubusercontent.com/96156882/221719523-a5773918-f9a2-44c0-b4ef-2ba70363de47.png" width="500">
 
 <br>
 
@@ -67,13 +67,13 @@ volumes:
 - bootstrap.memory_lock=true : 디스크 스왑 방지
 - "OPENSEARCH_JAVA_OPTS=-Xms4g -Xmx4g" : Java Heap 메모리 설정. 최소 및 최대 JVM 힙 크기를 시스템 RAM의 50% 이상으로 설정
 
-1. ulimits : 프로세스들에 대한 시스템 자원사용을 제한
+2. ulimits : 프로세스들에 대한 시스템 자원사용을 제한
 - soft : 새로운 프로그램을 생성하면 기본적으로 적용되는 한도 
 - hard : 소프트한도에서 최대로 늘릴 수 있는 한도 <br>
   → -1로 memlock을 무제한으로 설정(soft 또는 hard 제한 없음)
 - nofile : 해당 도메인 (사용자, 그룹)이 오픈할 수 있는 최대 파일 개수
 
-1. volumes
+3. volumes
 - opensearch-cluster_manager:/usr/share/opensearch : opensearch-cluster_manager 볼륨을 생성하여 컨테이너에 마운트
 - ./manager-opensearch.yml:/usr/share/opensearch/config/opensearch.yml : 현재 디렉토리에 있는 manager-opensearch.yml를 컨테이너 내부의 opensearch.yml에 매핑 <br>
   → _**클러스터 설정 및 암호화 설정 할 때 중요한 파일 입니다**_
