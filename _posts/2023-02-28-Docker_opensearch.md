@@ -17,7 +17,7 @@ Cluster 구성도는 다음과 같습니다. <br>
 1번 서버에는 Cluster Manager Node와 Data Node1을, 2번 서버에는 Data Node2를 구성하였습니다. <br>
 Opensearch Dashboard 또한 1번 서버에 설치하겠습니다.
 
-<img src="https://user-images.githubusercontent.com/96156882/221719523-a5773918-f9a2-44c0-b4ef-2ba70363de47.png" width="500">
+<img src="https://user-images.githubusercontent.com/96156882/221719523-a5773918-f9a2-44c0-b4ef-2ba70363de47.png" width="700">
 
 <br>
 
