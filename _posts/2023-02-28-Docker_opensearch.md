@@ -86,12 +86,12 @@ node.name: opensearch-cluster_manager
 node.roles: [ cluster_manager ]
 
 network.host: 0.0.0.0
-network.publish_host: xxx.xxx.xx.1
+network.publish_host: cluster_manager IP
 
 http.port: 9200
 transport.port: 9301
 
-discovery.seed_hosts: ["192.168.10.9:9301","192.168.10.9:9302","192.168.10.112:9300"]
+discovery.seed_hosts: [cluster_manager IP, data_node1 IP, data_node2 IP]
 cluster.initial_cluster_manager_nodes: ["opensearch-cluster_manager"]
 
 ```
