@@ -46,7 +46,7 @@ _※게슈탈트: 예를들면 정지된 장면들을 연속적으로 제시하�
 <p>
 
 * **수식 3**  
-  + ![eq3](https://user-images.githubusercontent.com/92897860/235077123-a19b1678-ff9d-46fe-9ec1-42abc4675b67.png)
+  + ![eq3](https://user-images.githubusercontent.com/92897860/235077123-a19b1678-ff9d-46fe-9ec1-42abc4675b67.png)  
   + 입력 패턴 $s'$와 가중치 행렬을 이용하여 $j$번째 뉴런의 활성화 값을 계산하는 식  
   + 입력 패턴 $s'$와 저장된 정보 간의 내적 연산을 이용합니다. 내적 연산을 통해 구한 값은 $H_j^{s'}$   
   + $[\sum_j V_j^{s'}(2V_j^s-1)]$는 해당 뉴런이 입력 패턴 $s'$와 유사한 정보를 저장하고 있는 정도를 나타내는 값  
@@ -54,8 +54,8 @@ _※게슈탈트: 예를들면 정지된 장면들을 연속적으로 제시하�
 
 <p>
 
-* **수식 4**
-  + ![eq4](https://user-images.githubusercontent.com/92897860/235077170-1dcf00de-77bd-447f-89d8-2f34fc885953.png)
+* **수식 4**  
+  + ![eq4](https://user-images.githubusercontent.com/92897860/235077170-1dcf00de-77bd-447f-89d8-2f34fc885953.png)  
   + $H_i^{s'}$은 뉴런 $i$가 입력 패턴 $s'$와 유사한 패턴을 출력하도록 하는 값  
   + 평균 내서 $\left\langle H_i^{s^{\prime}}\right\rangle$로 나타냄  
   + $N$은 뉴런의 갯수로, 활성화된 뉴런의 경우 $(2 V_i^{s'}-1)$ 값이 큰 양수가 되며, 이 값을 $N/2$와 곱함으로써 더욱 큰 값을 얻으며, 음수인 경우에는 더욱 작은 값을 만듬
@@ -65,8 +65,8 @@ _※게슈탈트: 예를들면 정지된 장면들을 연속적으로 제시하�
 
 모델의 생물학적 해석에 대한 내용을 설명합니다. Hebbian property 는 Hebbian rule 에서 연결된 뉴런들이 동시에 활성화되면 해당 시냅스 강도가 강화되는 현상으로,  Hebbian property 가 생물학적 신경망에서도 관찰됩니다. 홉필드에서도 마찬가지로 규칙을 통해 시냅스 강도를 업데이트하고, 이를 통해 뉴런 간의 연결이 동적으로 조정됨을 말합니다.
 
-* **수식 6**
-  + ![eq6](https://user-images.githubusercontent.com/92897860/235077308-7f3d04e5-36a1-4a1f-a661-21e876b33207.png)
+* **수식 6**  
+  + ![eq6](https://user-images.githubusercontent.com/92897860/235077308-7f3d04e5-36a1-4a1f-a661-21e876b33207.png)  
   + 시간$t$에서 전체 네트워크에 대한 시냅스 강도의 변화량을 나타내는 식   
 
 
@@ -74,16 +74,16 @@ _※게슈탈트: 예를들면 정지된 장면들을 연속적으로 제시하�
 
 모델의 집합적인 행동을 연구하는 내용을 설명합니다. 특히 에너지 함수를 이용한 시스템의 상태 표현에 대한 설명을 주로 다룹니다. 
 
-* **수식 7**
-  + ![eq7](https://user-images.githubusercontent.com/92897860/235077370-530ee017-b396-49bc-b195-45a1d5c8c0ce.png)
+* **수식 7**  
+  + ![eq7](https://user-images.githubusercontent.com/92897860/235077370-530ee017-b396-49bc-b195-45a1d5c8c0ce.png)  
   + 모델의 에너지 함수 식  
   + 각 뉴런간의 연결강도와 상태에 따라 에너지가 결정됨  
   + 에너지가 최소가 될 때, 네트워크가 안정상태를 띔  
 
 <p>
 
-* **수식 8**
-  + ![eq8](https://user-images.githubusercontent.com/92897860/235077455-ed9b6245-75af-463c-b31d-c73a0e4480c0.png)
+* **수식 8**  
+  + ![eq8](https://user-images.githubusercontent.com/92897860/235077455-ed9b6245-75af-463c-b31d-c73a0e4480c0.png)  
   + 뉴런의 상태 변화에 따른 에너지 변화를 나타내며, 이를 통해 이러한 상태 변화가 네트워크의 에너지에 어떤 영향을 주는지를 계산 
   + $\Delta$i, 뉴런 $i$의 상태가 변화가 일어났을 때의 그와 연결된 뉴런 $j$  
 
@@ -93,8 +93,8 @@ _※게슈탈트: 예를들면 정지된 장면들을 연속적으로 제시하�
 
 추가적으로 모델의 성능평가를 위한 지표로 사용 중인 수식들입니다.
 
-* **수식 9**
-  + ![eq9](https://user-images.githubusercontent.com/92897860/235077526-ddff96ec-4a2e-46c6-adc0-5c8c7e82ed98.png)
+* **수식 9**  
+  + ![eq9](https://user-images.githubusercontent.com/92897860/235077526-ddff96ec-4a2e-46c6-adc0-5c8c7e82ed98.png)  
   + 엔트로피를 계산하는 식
   + 엔트로피란 시스템 내에서 가능한 상태들이 갖는 불확실성을 나타내는 척도  
   + $M$은 모든 가능한 상태의 수, $pi$는 i번째 상태의 확률  
@@ -102,8 +102,8 @@ _※게슈탈트: 예를들면 정지된 장면들을 연속적으로 제시하�
 
 <p>
 
-* **수식 10**
-  + ![eq10](https://user-images.githubusercontent.com/92897860/235077623-9d420095-c774-435c-b44a-c78e4831c6b4.png)
+* **수식 10**  
+  + ![eq10](https://user-images.githubusercontent.com/92897860/235077623-9d420095-c774-435c-b44a-c78e4831c6b4.png)  
   + 정규 분포를 따르는 확률변수의 특정 범위 내의 확률을 계산하는 식  
   + 모델이 얼마나 잘 작동하는지 평가  
   + 입력패턴에 대해 잘 작동한다면, 정규분포의 확률분포를 따르는 출력 패턴이 생성됨  
@@ -114,8 +114,8 @@ _※게슈탈트: 예를들면 정지된 장면들을 연속적으로 제시하�
 뉴런 간의 연결 강도 업데이트를 위한 수식들입니다.
 
 
-* **수식 11**  
-  + ![eq11](https://user-images.githubusercontent.com/92897860/235077975-b972d91c-bac7-4c0d-918f-b9d5866cfa5d.png)
+* **수식 11**    
+  + ![eq11](https://user-images.githubusercontent.com/92897860/235077975-b972d91c-bac7-4c0d-918f-b9d5866cfa5d.png)  
   + $i,j$ 뉴런 사이의 전체의 연결 강도를 업데이트하기 위한 식  
   + $k$개의 뉴런만 사용하여 전체 네트워크의 연결 강도를 업데이트  
   + $X_i$와 $X_j$는 뉴런 $i$와 $j$의 현재 상태  
@@ -123,15 +123,15 @@ _※게슈탈트: 예를들면 정지된 장면들을 연속적으로 제시하�
 
 <p>
 
-* **수식 12**
-  + ![eq12](https://user-images.githubusercontent.com/92897860/235077863-05146ac6-b1cd-4c4a-8b14-dfedc8c2ebf4.png)
+* **수식 12**  
+  + ![eq12](https://user-images.githubusercontent.com/92897860/235077863-05146ac6-b1cd-4c4a-8b14-dfedc8c2ebf4.png)  
   + $i$ 뉴런의 출력을 계산하기 위한 가중합을 나타내는 식
   + $c_{ij}$는 뉴런 $i$와 $j$ 사이의 가중치, $x_j$는 뉴런 $j$의 출력 상태
 
 <p>
 
-* **수식 13**
-  + ![eq13](https://user-images.githubusercontent.com/92897860/235077888-90f3809f-8168-4e7b-9d4a-aae0fce76cd2.png)
+* **수식 13**  
+  + ![eq13](https://user-images.githubusercontent.com/92897860/235077888-90f3809f-8168-4e7b-9d4a-aae0fce76cd2.png)  
   + 두 특정 $i,j$ 뉴런 사이의 연결 강도를 업데이트하기 위한 식 
   + $A$는 상수, $s$는 입력 패턴  
   + 이전 상태와 현재 상태의 차이를 이용하여 각 뉴런 사이의 연결 강도가 갱신  
