@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -25,8 +28,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f181198d-a263-40cd-a905-423ec04900b7" name="Default Changelist" comment="10월 포스팅">
-      <change beforePath="$PROJECT_DIR$/_posts/2022-10-27-docker-remote-api-security.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2022-10-27-docker-remote-api-security.md" afterDir="false" />
+    <list default="true" id="f181198d-a263-40cd-a905-423ec04900b7" name="Default Changelist" comment="9월 블로그 수정">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2023-09-21-Docker_RemoteAPI_내부접속.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2023-09-21-Docker_RemoteAPI_내부접속.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2023-09-21-Docker_registry_HTTP_API_V2.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2023-09-21-Docker_registry_HTTP_API_V2.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +39,22 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;choiseonb1n&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="cc9be4b5-cc78-453f-8030-19ec08c55dc8" />
+        <option name="url" value="https://github.com/choiseonb1n/epozen-dt.github.io.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -46,8 +66,12 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: -1
+}</component>
   <component name="ProjectId" id="21OZk2pzm0XrTFfYPSJNj3PED5o" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -57,11 +81,15 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Project.color&quot;: &quot;ff1167&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/WORKSPACE/epozen-dt.github.io/_posts&quot;
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/epozen/Desktop/AMS-image-sample/epozen-dt.github.io/_posts&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\epozen\Desktop\AMS-image-sample\epozen-dt.github.io\_posts" />
       <recent name="D:\WORKSPACE\epozen-dt.github.io\_posts" />
     </key>
   </component>
@@ -207,7 +235,39 @@
       <option name="project" value="LOCAL" />
       <updated>1666857573557</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="9월 포스팅">
+      <option name="closed" value="true" />
+      <created>1695275903953</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1695275903953</updated>
+    </task>
+    <task id="LOCAL-00021" summary="9월 포스팅">
+      <option name="closed" value="true" />
+      <created>1695276286045</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1695276286045</updated>
+    </task>
+    <task id="LOCAL-00022" summary="9월 포스팅">
+      <option name="closed" value="true" />
+      <created>1695282150885</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1695282150885</updated>
+    </task>
+    <task id="LOCAL-00023" summary="9월 블로그 수정">
+      <option name="closed" value="true" />
+      <created>1695282191141</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1695282191141</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -245,18 +305,9 @@
     <MESSAGE value="6월 포스팅" />
     <MESSAGE value="7월 포스팅 - MongoDB 클러스 구성 예제" />
     <MESSAGE value="8월 포스팅 - docker remote api (java lib)" />
-    <MESSAGE value="9월 포스팅" />
     <MESSAGE value="10월 포스팅" />
-    <option name="LAST_COMMIT_MESSAGE" value="10월 포스팅" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="60" y="254" key="IDE.errors.dialog" timestamp="1650852178405">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="60" y="254" key="IDE.errors.dialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1650852178405" />
-    <state x="551" y="94" key="new project wizard" timestamp="1658205098006">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="551" y="94" key="new project wizard/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1658205098006" />
+    <MESSAGE value="9월 포스팅" />
+    <MESSAGE value="9월 블로그 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="9월 블로그 수정" />
   </component>
 </project>
