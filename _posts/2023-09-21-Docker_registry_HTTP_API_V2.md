@@ -1,5 +1,5 @@
 ---
-title: "Docker"
+title: "Docker Registry HTTP API"
 last_modified_at: 2023-07-31
 author: 최선빈
 ---
