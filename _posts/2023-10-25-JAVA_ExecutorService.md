@@ -11,15 +11,13 @@ author: Do-soo, KIM
 ### 1. 개요
 
 프로젝트르 진행하면서 어떤 이벤트에 의해서 타이머를 실행하고, 특정 시간이 되면 타이머를 종료하는 기능을 구현이 필요했습니다.<br>
-SpringBoot에서는 @Scheduled로 편하게 사용하는 방법이 있지만, 이 방법을 사용하면 특정 이벤트에 의해 실행할 수 있는 구현이 어렵고,<br>
-딱 한번만 실행이 필요한 저에게는 비효율적이라고 생각해서 다른 방법을 찾아보던 중에 ExecutorService를 사용하면 좋겠다고 생각해서 적용해 보았습니다.
+SpringBoot에서는 @Scheduled로 편하게 사용하는 방법이 있지만, 이 방법을 사용하면 특정 이벤트에 의해 실행할 수 있는 구현이 어렵고, 딱 한번만 실행이 필요한 저에게는 비효율적이라고 생각해서 다른 방법을 찾아보던 중에 ExecutorService를 사용하면 좋겠다고 생각해서 적용해 보았습니다.
 
 이 ExecutorService를 상속하는 ScheduledExecutorService interface를 사용하면 TimeUnit을 사용하여 미리 정의된 지연 후에 작업을 한번 수행할 수 있습니다.<br>
 ExecutorService는 아래 그림과 같이, 각각 고유한 특징과 기능을 가진 ThreadPoolExecutor, ScheduledThreadPoolExecutor, ForkJoinPool을 포함한 여러 구현 클래스를 제공합니다.<br>
 
 ![image](https://github.com/epozen-dt/epozen-dt.github.io/assets/92565548/79dca518-06be-473d-a8a2-a497ecc6daf2)
-
-출처: https://www.geeksforgeeks.org/scheduledexecutorservice-interface-in-java/
+<br>출처: https://www.geeksforgeeks.org/scheduledexecutorservice-interface-in-java/
 
 그럼 ScheduledExecutorService를 어떻게 사용하는지 보겠습니다.
 
@@ -66,7 +64,7 @@ shutdown() 메서드는 ExecutorService를 즉시 종료하지 않고, 새 작�
 
 ### Reference
 
-ScheduledExecutorService JavaDoc(https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ScheduledExecutorService.html)<br>
+JavaDoc - ScheduledExecutorService<br>
 https://colevelup.tistory.com/33<br>
 https://mkyong.com/java/java-scheduledexecutorservice-examples/<br>
 
