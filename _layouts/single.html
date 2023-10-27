@@ -34,7 +34,7 @@ layout: default
             <a href="{{ page.url | absolute_url }}" class="u-url" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
           </h1>{% endif %}
           <!-- 포스팅 작성일/작성자 표출 추가 by DSKIM -->
-          {%- assign date_format = site.minima.date_format | default: "%Y-%m-%-d" -%}
+          {%- assign date_format = site.minima.date_format | default: "%Y-%m-%d" -%}
           <span class="archive__item-excerpt">{{ page.date | date: date_format }} / {{ page.author }}</span>
           <!-- {% include page__meta.html %} -->
         </header>
