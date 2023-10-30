@@ -25,11 +25,13 @@
       {% endif %}
     </h2>
   </article>
+  
   <!-- 포스팅 작성일/작성자 표출 추가 by DSKIM -->
   {%- assign date_format = site.minima.date_format | default: "%Y-%m-%d" -%}
-  <span class="archive__item-excerpt">{{ post.date | date: date_format }} / {{ post.author }}</span>
+  <span class="archive__item-author">{{ post.date | date: date_format }},&nbsp;&nbsp;&nbsp;{{ post.author }}</span>
+  {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
   <!--
   {% include page__meta.html type=include.type %}
   -->
-  {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
+  
 </div>

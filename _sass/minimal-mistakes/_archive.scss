@@ -74,7 +74,21 @@
 
 .archive__item-excerpt {
   margin-top: 0;
+  font-size: $type-size-5;
+
+  & + p {
+    text-indent: 0;
+  }
+
+  a {
+    position: relative;
+  }
+}
+
+.archive__item-author {
+  margin-top: 0;
   font-size: $type-size-6;
+  color: #808080; //added by DSKIM
 
   & + p {
     text-indent: 0;

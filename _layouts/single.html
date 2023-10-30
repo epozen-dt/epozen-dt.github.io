@@ -35,7 +35,7 @@ layout: default
           </h1>{% endif %}
           <!-- 포스팅 작성일/작성자 표출 추가 by DSKIM -->
           {%- assign date_format = site.minima.date_format | default: "%Y-%m-%d" -%}
-          <span class="archive__item-excerpt">{{ page.date | date: date_format }} / {{ page.author }}</span>
+          <span class="archive__item-author">{{ page.date | date: date_format }},&nbsp;&nbsp;&nbsp;{{ page.author }}</span>
           <!-- {% include page__meta.html %} -->
         </header>
       {% endunless %}
