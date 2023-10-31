@@ -68,7 +68,7 @@ PSNR에서는 평균 제곱 오차를 이용하여, 화질을 평가합니다. �
 
 ![SSIM-1](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbdQ28x%2FbtrIMBdswp4%2F4klTVYTTkfKZhguVx6BC10%2Fimg.png)
 
-![SSIM-2](ssim-2.png)
+![ssim-2](https://github.com/khw927/epozen-dt.github.io/assets/107157737/747fb66b-89f7-4ac2-b479-956e0958ceaf)
 
     * 요소
 
