@@ -28,7 +28,7 @@ FID는 생성모델에서 생성된 이미지의 품질을 평가하는 지표�
     3. 각 이미지의 평균과 표준편차를 구함.
     4. 공식에 각 값을 넣어 FID 값을 구함.
 
-![FID_공식](./FID_formula.PNG)
+![FID_formula](https://github.com/khw927/epozen-dt.github.io/assets/107157737/53d5b093-5291-4792-9a7f-2427a6a0f7bc)
 
 &nbsp;
 
