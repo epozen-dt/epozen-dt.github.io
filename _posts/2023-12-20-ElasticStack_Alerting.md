@@ -37,6 +37,7 @@ Elastic Stack Alerting은 Elasticsearch 데이터에 대해 Kibana를 통해 “
 &emsp;각 Rule이 얼마나 자주 수행될 지에 대한 일정 정의
 
 ### Alerting 적용 방법
+---
 
 본 포스팅에서는 Elastic Cloud에서 사용하는 방법을 소개하고 있습니다. Elastic Cloud는 시험판 버전으로 14일 동안 무료 사용이 가능합니다.
 
