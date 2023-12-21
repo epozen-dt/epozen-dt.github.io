@@ -18,7 +18,7 @@ author: Do-soo, KIM
 그럼 Eclipse에서 멀티 모듈 프로젝트를 생성하는 방법을 알아볼까요?
 
 아래 그림과 같이, 이름이 Multi인 최상위 Maven 프로젝트 아래, 2개의 하위 프로젝트가 있는 구조를 만들어 볼 겁니다. 하위 프로젝트를 이제부터는 모듈이라고 부르겠습니다.<br>
-각 모듈의 이름은 CommonModule과 Module1이라고 할텐데, CommonModule의 클래스를 Module1에서 공통으로 사용하는 구조로 만들려고 하는거라서 때문에 이름을 이렇게 붙였습니다.
+각 모듈의 이름은 CommonModule, Module1 이라고 할텐데, CommonModule의 클래스를 Module1에서 공통으로 사용하는 구조로 만들려고 하는거라서 편의상 이름을 이렇게 붙였습니다.
 
 <p align="center">
     <img src="https://github.com/epozen-dt/epozen-dt.github.io/assets/92565548/a4b79388-c008-495a-9300-1a8f4a599e58" width="50%" height="50%" />
