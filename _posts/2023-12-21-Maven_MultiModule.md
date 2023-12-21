@@ -154,16 +154,19 @@ CommonContoller라는 Controller 클래스를 생성하여 코드를 작성합�
 ```java
 package com.epozen.commonmodule;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication
-public class CommonModuleApplication {
+@RestController
+public class CommonController {
 
-	public static void main(String[] args) throws Exception {
-		SpringApplication.run(CommonModuleApplication.class, args);
+	@GetMapping("/test")
+	public String msg(@RequestParam String param) {
+		return param;
 	}
 }
+
 ```
 
 한번 실행해 볼까요?
@@ -191,8 +194,8 @@ public class SubController {
 
 	@GetMapping("/module")
 	public String msg(@RequestParam String param) {
-		CommonController commonController = new CommonCotroller();
-		commonCotroller.msg(param);
+		CommonController commonController = new CommonController();
+		commonController.msg(param);
 		return param;
 	}
 }
