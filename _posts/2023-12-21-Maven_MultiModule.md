@@ -1,6 +1,6 @@
 ---
 title: "스프링부트 메이븐 멀티모듈 프로젝트 관리 방법"
-last_modified_at: 2023-12-21
+last_modified_at: 2023-12-22
 author: Do-soo, KIM
 ---
 
@@ -203,18 +203,8 @@ public class SubController {
 그런데 CommonModule의 CommonController 클래스를 찾을 수 없어 코드에 빨간 줄들이 보이게 될 겁니다.<br>
 CommonController 클래스를 사용할 수 있도록 다음과 같이 진행합니다.
 
-우선, CommonModule의 jar를 추출합니다. 
-
-- CommonModule의 jar 추출을 위해 Project Explorer에서 CommonModule Project 마우스 오른쪽 버튼 클릭 --> Run As --> Maven install 클릭
-
-- Module1 프로젝트 classpath에 추가
-
-- Project Explorer에서 Module1 Project에 마우스 오른쪽 버튼 클릭 --> Build Path --> Configure Build Path 클릭 --> Add External JARS 클릭
-
-<p align="center">
-    <img src="https://github.com/epozen-dt/epozen-dt.github.io/assets/92565548/583c6faa-a105-40a7-a917-99bc537d24a8" width="80%" height="80%" />
-</p>
-
+- CommonModule의 jar 추출<br>
+&emsp;Project Explorer에서 CommonModule Project 마우스 오른쪽 버튼 클릭 --> Run As --> Maven install 클릭
 
 - CommonModule 의 dependency 추가<br>
 &emsp;Module1의 pom.xml을 열어서 다음과 같이 추가합니다.
