@@ -52,81 +52,84 @@ author: 조평연
 <br>
 
 ## 3-3) DB 연결
-사용하고자 하는 DB를 선택 후 url, user, password 입력 후 생성
+- 사용하고자 하는 DB를 선택 후 url, user, password 입력 후 생성
 
 ![그림](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FBFL2H%2FbtsBrMrpQ33%2FS632lEnsmBVnj3YrUQD4x0%2Fimg.png)
 <br>
 
 ## 3-4) Alerting 세팅
-아래와 같이 Alerting 메뉴를 볼 수 있다
+- 아래와 같이 Alerting 메뉴를 볼 수 있다
 
 ![그림](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdTNJWX%2FbtsBgwXOS0L%2FTuV6K8ZK20vjckwiG9xFY1%2Fimg.png)
 <br>
 
 ## 3-4-1) Alert rules
-임계값이나 여러 표현식을 사용하여 알람을 설정하는 메뉴이다
+- 임계값이나 여러 표현식을 사용하여 알람을 설정하는 메뉴이다
 
-Alert rules 생성
+## Alert rules 생성
 ![그림](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FYNJc1%2FbtsBqtF0pTN%2FrmZZiJpKX5DMU3k9aqnB10%2Fimg.png)
 <br>
 
-Alert rules 이름 작성
+## Alert rules 이름 작성
 ![그림](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbc8zMo%2FbtsBqJPmQBK%2FHwdyLI1vL4hiEk9wk1FJbK%2Fimg.png)
 <br>
 
-확인할 테이블 쿼리 작성
+## 확인할 테이블 쿼리 작성
 ![그림](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FzDGnv%2FbtsBqC3TbXL%2FikHTQ0Ve0O0jXP3yiVvFCk%2Fimg.png)
 <br>
 
-임계값 설정
+## 임계값 설정
 ![그림](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdrGApz%2FbtsButEBG1C%2FuzA5Ia7NLRnJepvpBRBwz0%2Fimg.png)
 <br>
 
-evaluation Interval 시간, pending period 시간 설정
+## evaluation Interval 시간, pending period 시간 설정
 ![그림](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbzSFiE%2FbtsBqtTzn0s%2F0LunJqwpChOqj1nKuS8sFK%2Fimg.png)
+<br>
 <br>
 ![그림](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fllses%2FbtsBuxfRGih%2FDVou6oXGcc3R4ASc8J9QB0%2Fimg.png)
 <br>
 
-주석 설정
+## 주석 설정
 ![그림](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbJTgjh%2FbtsBuowHTdR%2F51aqFTvBpsknscKzmdQA5K%2Fimg.png)
 <br>
 
-라벨 설정 (임계점 검사에서는 불필요)
+## 라벨 설정 (임계점 검사에서는 불필요)
 ![그림](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcHH7Uw%2FbtsButLnn2a%2FKhuP5uZHmOz1fyeOw3l09k%2Fimg.png)
 <br>
 
 ## 3-4-2) Contact points
-Alert message의 템플릿을 만들거나 Alert를 어떠한 플랫폼(gmail, slack 등)으로 전송할지 정하는 메뉴이다
-알림 받을 이메일 설정 (이외 20종류의 방법 존재 integration 에서 설정)
+- Alert message의 템플릿을 만들거나 Alert를 어떠한 플랫폼(gmail, slack 등)으로 전송할지 정하는 메뉴이다
+
+## 알림 받을 이메일 설정 (이외 20종류의 방법 존재 integration 에서 설정)
 ![그림](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkIsx7%2FbtsBuzLvNoD%2FI6iXmtO0GhfOPKUiScznjk%2Fimg.png)
 <br>
 
-Test 후 지정한 이메일로 온 메일 확인
+## Test 후 지정한 이메일로 온 메일 확인
 ![그림](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbClCqK%2FbtsBueukggi%2Fg9xAIJDENIaW6NQp4jfFh1%2Fimg.png)
 <br>
 
 ## 3-4-3) Notification policies
-Label을 체계적으로 정리하여 그룹화 시켜 확인할 수 있는 메뉴이다
+- Label을 체계적으로 정리하여 그룹화 시켜 확인할 수 있는 메뉴이다
 
-알림정책에서 그룹화를 통해 알림 간격, 반복 간격 등 설정 가능
+## 알림정책에서 그룹화를 통해 알림 간격, 반복 간격 등 설정 가능
 ![그림](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FtxBBq%2FbtsBr6wAdwB%2FDxfn4kFLL1sdkdebQ13lWK%2Fimg.png)
+<br>
 <br>
 ![그림](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F1mGDv%2FbtsBla8iU9z%2FmiKaxYUbyH0P3DCzUG4fA0%2Fimg.png)
 <br>
 
 ## 3-4-4) Silences
-특정 시간 또는 기간동안 Alert를 울리지 않게 하는 메뉴이다
+- 특정 시간 또는 기간동안 Alert를 울리지 않게 하는 메뉴이다
 
-특정 시간 및 기간 동안 알림을 받지않게 설정 가능
+## 특정 시간 및 기간 동안 알림을 받지않게 설정 가능
 ![그림](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbubHLF%2FbtsBq1bkxI7%2FvbqgpkKkfk3OVvoCG77zak%2Fimg.png)
 <br>
 
 ## 3-4-5) groups
-그룹화된 Alert 내용을 한번에 볼 수 있는 메뉴이다
+- 그룹화된 Alert 내용을 한번에 볼 수 있는 메뉴이다
 
 ## 3-4-6) Admin
-Alert의 Json파일을 확인할 수 있고 외부의 Alertmanager랑 연동할 수 있다
+- Alert의 Json파일을 확인할 수 있고 외부의 Alertmanager랑 연동할 수 있다
 
 ![그림](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FxRIxA%2FbtsBmSGoxBw%2F0eAXQfLCrdrQDKRvqrkGlk%2Fimg.png)
 <br>
@@ -138,8 +141,5 @@ Alert의 Json파일을 확인할 수 있고 외부의 Alertmanager랑 연동할 
 <br>
 
 5. 참고 문헌
-- Grafana Labs
-링크 : https://grafana.com/docs/grafana/latest/alerting/
-
-- 사진 출처
-출처 : https://vuddus526.tistory.com/494
+- Grafana Labs 링크 : https://grafana.com/docs/grafana/latest/alerting/
+- 사진 출처 출처 : https://vuddus526.tistory.com/494
