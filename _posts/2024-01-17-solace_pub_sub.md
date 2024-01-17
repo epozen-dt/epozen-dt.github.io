@@ -18,13 +18,13 @@ author: 조평연
 <br>
 
 ## 3-2) docker run 활용
-- 공식 문서에서 제공하는 docker run 명령어를 이용하여 리눅스 환경에서 이미지를 내려 받고 컨테이너를 올힙니다
+- 공식 문서에서 제공하는 docker run 명령어를 이용하여 리눅스 환경에서 이미지를 내려 받고 컨테이너를 올립니다.
 
 ![그림](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbGgNBE%2FbtsDxgDWGpM%2FRJkVJSaAkrB9Bjfku45bB0%2Fimg.png)
 <br>
 
 ## 3-3) docker-compose 활용
-- 공식 문서에서 제공되지는 않지만 아래와 같이 구축 가능합니다
+- 공식 문서에서 제공되지는 않지만 아래와 같이 구축 가능합니다.
 
 ![그림](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fxc9xH%2FbtsDuRR0Yew%2FMhlGqigu4LPO5KO8O4Nqlk%2Fimg.png)
 <br>
