@@ -30,7 +30,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f181198d-a263-40cd-a905-423ec04900b7" name="Default Changelist" comment="12월 블로그 업로드">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2023-12-29-PatchTST.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2023-12-29-PatchTST.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2024-01-17-solace_pub_sub.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2024-01-17-solace_pub_sub.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,15 +81,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Project.color&quot;: &quot;ff1167&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/epozen/Desktop/AMS-image-sample/epozen-dt.github.io/_posts&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Project.color": "ff1167",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/epozen/OneDrive/바탕 화면/epozen-dt.github.io",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\epozen\Desktop\AMS-image-sample\epozen-dt.github.io\_posts" />
@@ -104,6 +111,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1637814234205</updated>
+      <workItem from="1707094483637" duration="3491000" />
     </task>
     <task id="LOCAL-00001" summary="2021-11-29">
       <created>1638157122139</created>
@@ -320,6 +328,9 @@
     </task>
     <option name="localTasksCounter" value="30" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
