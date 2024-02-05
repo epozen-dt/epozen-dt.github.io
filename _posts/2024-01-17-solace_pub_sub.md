@@ -117,6 +117,6 @@ services: <br>
 
 <br>
 
-# 4. 참고문헌
+# 5. 참고문헌
 - https://docs.solace.com/Get-Started/Solace-PubSub-Platform.htm (solace PubSub+ 공식문서)
 - https://solace.com/products/event-broker/software/getting-started/ (웹 테스트 참고 공식문서)
