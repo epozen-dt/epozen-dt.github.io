@@ -114,7 +114,6 @@ services: <br>
 <p align="center">
     <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FYrqas%2FbtsEmC1lDts%2FnKeBKk60KtjV6jrk5JdZj1%2Fimg.png" width="70%" height="70%" />
 </p>
-
 <br>
 
 # 5. 참고문헌
