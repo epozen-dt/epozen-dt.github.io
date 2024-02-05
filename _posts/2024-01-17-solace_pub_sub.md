@@ -1,6 +1,6 @@
 ---
-title: "Solace pub sub 구축 및 웹 테스트"
-last_modified_at: 2024-01-17
+title: "Solace PubSub+ 구축 및 웹 테스트"
+last_modified_at: 2024-02-05
 author: 조평연
 ---
 
