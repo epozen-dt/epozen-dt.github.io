@@ -30,7 +30,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f181198d-a263-40cd-a905-423ec04900b7" name="Default Changelist" comment="12월 블로그 업로드">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2024-01-17-solace_pub_sub.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2024-01-17-solace_pub_sub.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +87,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/epozen/OneDrive/바탕 화면/epozen-dt.github.io",
+    "last_opened_file_path": "C:/Users/epozen/OneDrive/바탕 화면/project/AppCDCandAppQuery",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -111,7 +110,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1637814234205</updated>
-      <workItem from="1707094483637" duration="3491000" />
+      <workItem from="1707094483637" duration="4251000" />
     </task>
     <task id="LOCAL-00001" summary="2021-11-29">
       <created>1638157122139</created>
