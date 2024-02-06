@@ -28,7 +28,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f181198d-a263-40cd-a905-423ec04900b7" name="Default Changelist" comment="12월 블로그 업로드">
+    <list default="true" id="f181198d-a263-40cd-a905-423ec04900b7" name="Default Changelist" comment="24년 1월 기술블로그 파일 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -325,7 +325,39 @@
       <option name="project" value="LOCAL" />
       <updated>1704177778372</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="제목 수정">
+      <option name="closed" value="true" />
+      <created>1704330188486</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1704330188486</updated>
+    </task>
+    <task id="LOCAL-00031" summary="24년 1월 기술블로그 업로드">
+      <option name="closed" value="true" />
+      <created>1706502860090</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1706502860090</updated>
+    </task>
+    <task id="LOCAL-00032" summary="24년 1월 기술블로그 업로드">
+      <option name="closed" value="true" />
+      <created>1707182201771</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1707182201771</updated>
+    </task>
+    <task id="LOCAL-00033" summary="24년 1월 기술블로그 파일 수정">
+      <option name="closed" value="true" />
+      <created>1707182598281</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1707182598281</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,6 +405,9 @@
     <MESSAGE value="11월 블로그 업로드" />
     <MESSAGE value="11월 블로그 업로드 수정" />
     <MESSAGE value="12월 블로그 업로드" />
-    <option name="LAST_COMMIT_MESSAGE" value="12월 블로그 업로드" />
+    <MESSAGE value="제목 수정" />
+    <MESSAGE value="24년 1월 기술블로그 업로드" />
+    <MESSAGE value="24년 1월 기술블로그 파일 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="24년 1월 기술블로그 파일 수정" />
   </component>
 </project>
