@@ -28,9 +28,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f181198d-a263-40cd-a905-423ec04900b7" name="Default Changelist" comment="24년 1월 기술블로그 업로드">
-      <change beforePath="$PROJECT_DIR$/_posts/2023-12-29-PatchTST 밴치마크 결과.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2023-12-29-PatchTST 밴치마크 결과.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/result.png" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/result_csb.png" afterDir="false" />
+    <list default="true" id="f181198d-a263-40cd-a905-423ec04900b7" name="Default Changelist" comment="24년 1월 기술블로그 파일 수정">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -342,7 +341,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707182201771</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="24년 1월 기술블로그 파일 수정">
+      <option name="closed" value="true" />
+      <created>1707182598281</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1707182598281</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -389,6 +396,7 @@
     <MESSAGE value="12월 블로그 업로드" />
     <MESSAGE value="제목 수정" />
     <MESSAGE value="24년 1월 기술블로그 업로드" />
-    <option name="LAST_COMMIT_MESSAGE" value="24년 1월 기술블로그 업로드" />
+    <MESSAGE value="24년 1월 기술블로그 파일 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="24년 1월 기술블로그 파일 수정" />
   </component>
 </project>
