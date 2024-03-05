@@ -28,9 +28,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f181198d-a263-40cd-a905-423ec04900b7" name="Default Changelist" comment="수정">
+    <list default="true" id="f181198d-a263-40cd-a905-423ec04900b7" name="Default Changelist" comment="수정 - 이미지 삭제">
+      <change afterPath="$PROJECT_DIR$/_posts/2024-03-04-근본 원인 분석(RCA).md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2024-01-31-PatchTST 벤치마크 결과.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2024-02-06-PatchTST 벤치마크 결과.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -398,7 +398,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707187439184</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="수정 - 이미지 삭제">
+      <option name="closed" value="true" />
+      <created>1707195912279</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1707195912279</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,6 +458,7 @@
     <MESSAGE value="24년 1월 기술블로그 파일 수정" />
     <MESSAGE value="제목 수정" />
     <MESSAGE value="수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="수정" />
+    <MESSAGE value="수정 - 이미지 삭제" />
+    <option name="LAST_COMMIT_MESSAGE" value="수정 - 이미지 삭제" />
   </component>
 </project>
