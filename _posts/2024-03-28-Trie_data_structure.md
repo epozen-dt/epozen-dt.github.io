@@ -11,20 +11,30 @@ author: 이현지
 # Trie 자료구조
 Retrieval Tree(탐색 트리)의 약자<br>
 문자열을 저장하고 효율적으로 탐색하기 위한 트리 기반의 자료 구조<br>
+
 <br>
+
 # 장점 및 활용
 - 문자열 검색 시간 단축<br>
 for문의 경우 특정 문자열을 찾기 위해 전체 문자열을 순회해야 함<br>
 Trie 구조는 문자열 길이만큼 노드를 검사하면 됨<br>
 
 - 자동 완성 검색과 사전 탐색에 유용함<br>
+
 <br>
+
 # 단점
 - 메모리 측면에서 비효율적<br>
 각 노드가 자식 노드들을 저장하고 있음<br>
+
 <br>
+
 # 구조 (트리 구조와 동일)
 ![trie 구조 예시](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcc8fGF%2FbtsGa9g2UAF%2FlNMIphrx021IbKsdUA4E91%2Fimg.png)
+
+- 루트 노드 : 시작 노드<br>
+- 노드 : 각 노드는 하나의 문자를 표현. 루트노드부터 특정 노드까지의 경로 하나의 문자열을 나타냄<br>
+- 포인터 : 부모 노드와 자식 노드 연결<br>
 
 <br>
 
