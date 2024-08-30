@@ -1,5 +1,5 @@
 ---
-title: "Trie 자료 구조 구현하기"
+title: "자바 애플리케이션 종료 시 특정 작업 수행 방법"
 last_modified_at: 2024-08-02
 author: 이현지
 ---
