@@ -1,6 +1,6 @@
 ---
 title: "Observer Pattern과 알림 시스템"
-last_modified_at: 2024-08-31
+last_modified_at: 2024-10-04
 author: 이현지
 ---
 
